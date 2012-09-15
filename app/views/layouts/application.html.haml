@@ -3,21 +3,20 @@
   %head
     %meta{charset: "utf-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
-    = content_for(:head)
     %title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Karla:400,700|Capriola|Nunito:400,300"
     = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     #wrapper.container
       %header.row
         .columns.twelve
-          %h1 Header
+          = link_to(root_path) do
+            = render "layouts/logo"
       #main.row
         .columns.twelve
-          = render 'application/flashes'
           = yield
       %footer.row
         .columns.twelve
           %p &copy; #{Date.today.year} Gaslight Software LLC. All Rights Reserved.
-    = javascript_include_tag "application"
-    = content_for(:javascript)

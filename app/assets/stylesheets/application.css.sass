@@ -3,6 +3,8 @@
 body
   background-color: darken(#fff, 5)
   margin-top: 1em
+  p
+    font-smooth: always
 
 header, #main, footer
   background-color: #fff
@@ -16,3 +18,10 @@ footer
     font-size: 80%
     color: #aaa
 
+header
+  svg
+    margin-left: -6%
+    -webkit-animation: moveBars 1s linear infinite
+
+@keyframes moveBars { 100% { margin-left: -180px; } }
+@-webkit-keyframes moveBars { 100% { margin-left: -180px; } }

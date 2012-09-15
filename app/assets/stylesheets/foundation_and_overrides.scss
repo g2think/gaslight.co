@@ -23,11 +23,10 @@
 // $darkEdge: rgba(#000, .2);
 
 // Typography Settings
-
-// $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$headerFontFamily: "Karla", "Helvetica", Helvetica, Arial, sans-serif;
 // $headerFontWeight: bold;
 // $headerFontColor: #222;
-// $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$bodyFontFamily: "Karla", "Helvetica", Helvetica, Arial, sans-serif;
 // $bodyFontWeight: normal;
 // $bodyFontColor: #222;
 
@@ -55,7 +54,7 @@
 
 // Modular Scale
 // $ratio: $golden;
-// $baseFontSize: 14px;
+$baseFontSize: 16px;
 // $importantModNum: 44px;
 
 // Tooltip Settings
