@@ -17,7 +17,15 @@ html, body
   margin: 20px
 
 body
-  background: image-url('coffee/bg.jpg')
+  background:
+    image: image-url('coffee/bg.jpg')
+    attachment: fixed
+
+.coffee-icon
+  position: fixed
+  right: 52%
+  img
+    max-height: 95%
 
 h4
   color: #6b5c42
@@ -100,38 +108,29 @@ h5
   text-align: center
   text-shadow: 0px 1px 0px white, 0px -1px 0px #444444
 
-/*MOBILE
-
 @media only screen and (max-width: 767px)
+  .coffee-icon
+    display: none
   .icon
     margin: 1em 0
   .mainCopy
-    font-family: 'bree',sans-serif
+    font-family: 'bree', sans-serif
     font-size: 22px
     font-weight: bold
     text-align: center
     color: #503f23
     text-shadow: 0px 1px 0px #fff
     padding: 15px
-  .detail
-    width: auto
-    height: auto
-    border-radius: 0
-    background: none
-    text-align: left
-    color: #6b5c42
-    p
-      font-size: 18px
-      display: inline-block
-      margin-left: 1em
-      margin-bottom: 0
-    h4
-      color: #6b5c42
-      display: inline-block
-      min-width: 3em
-      text-align: right
-      padding: 0
+  .details.row
+    .four.columns
+      width: 65%
+      .detail
+        margin: 0 auto
+        width: 150px
+        height: 150px
+        padding: 0 10px 
+        h4
+          padding-top: 40px
   .content
     background: image-url('coffee/content_bg.jpg')
-    /*width:473px;
     padding-bottom: 100px

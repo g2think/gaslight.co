@@ -9,67 +9,67 @@
       try{Typekit.load();}catch(e){}             
     = stylesheet_link_tag 'coffee'
     /[if lt IE 9]
-      = stylesheet_link_tag 'ie'
+      =# stylesheet_link_tag 'ie'
       = javascript_include_tag 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
   %body
-    .row.main
-      .icon.six.columns
-        = image_tag 'coffee/coffee_icon.png'
-      .content.six.columns
-        .row
-          .ten.columns.centered.title
-            COME
-            %hr/
-            #coffee DRINK COFFEE
-            %hr/
-            BE COOL
-        .details.row
-          .four.columns
-            .detail
-              %h4 WHEN:
-              %p Fridays at 8am
-          .four.columns
-            .detail
-              %h4 WHERE:
-              %p 11126 Kenwood Rd, Suite C, 45242
-          .four.columns
-            .detail
-              %h4 WHY:
-              %p Why not?
-        .row.copy
-          .ten.columns.centered
+    .coffee-icon
+      = image_tag 'coffee/coffee_icon.png'
+    .container
+      .row.main
+        .content.six.columns.offset-by-six
+          .row
+            .ten.columns.centered.title
+              COME
+              %hr/
+              #coffee DRINK COFFEE
+              %hr/
+              BE COOL
+          .details.row
+            .four.columns
+              .detail
+                %h4 WHEN:
+                %p Fridays at 8am
+            .four.columns
+              .detail
+                %h4 WHERE:
+                %p 11126 Kenwood Rd, Suite C, 45242
+            .four.columns
+              .detail
+                %h4 WHY:
+                %p Why not?
+          .twelve.columns.centered
             %p.mainCopy
               We all have a morning routine. Let’s
               break it for just one morning each week. Come start your
               Friday off slow with awesome coffee and fun conversation.
               There’s no agenda, no slides, no topic, just coffee.
-        .twitter.row
-          %script{charset: "utf-8", src: "http://widgets.twimg.com/j/2/widget.js"}
-          :coffeescript
-            widget = new TWTR.Widget
-              version: 2
-              type: 'search'
-              search: '#gaslightcoffee'
-              interval: 30000
-              subject: 'Tweets about #gaslightcoffee'
-              width: '100%'
-              theme:
-                shell:
-                  background: 'none'
-                  color: '#6B5C42'
-                tweets:
-                  background: '#F3E9D8'
-                  color: '333'
-                  links: '#B35E03'
-              features:
-                scrollbar: true
-                loop: true
-                live: true
-                behavior: 'all'
-            widget.render().start()
-        .row
-          .five.columns.centered.logo
-            = link_to(image_tag('coffee/gaslight.png'), 'http://gaslightsoftware.com')
+          .twitter.row
+            %script{charset: "utf-8", src: "http://widgets.twimg.com/j/2/widget.js"}
+            :coffeescript
+              widget = new TWTR.Widget
+                version: 2
+                type: 'search'
+                search: '#gaslightcoffee'
+                interval: 30000
+                subject: 'Tweets about #gaslightcoffee'
+                width: '100%'
+                theme:
+                  shell:
+                    background: 'none'
+                    color: '#6B5C42'
+                  tweets:
+                    background: '#F3E9D8'
+                    color: '333'
+                    links: '#B35E03'
+                features:
+                  scrollbar: true
+                  loop: true
+                  live: true
+                  behavior: 'all'
+              widget.render().start()
+          .row
+            .five.columns.centered.logo
+              = link_to(image_tag('coffee/gaslight.png'), 'http://gaslightsoftware.com')
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-25957234-9']);
