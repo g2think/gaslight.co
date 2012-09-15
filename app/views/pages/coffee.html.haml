@@ -1,13 +1,13 @@
 !!! 5
 %html
-  %html.no-js{:lang => "en"}
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width", :name => "viewport"}/
+  %html.no-js{lang: "en"}
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width", name: "viewport"}/
     %title Drink Coffee with Gaslight
-    = stylesheet_link_tag 'coffee'
-    %script{:src => "//use.typekit.net/maj8kwp.js", :type => "text/javascript"}
+    = javascript_include_tag 'http://use.typekit.net/maj8kwp.js'
     :javascript
       try{Typekit.load();}catch(e){}             
+    = stylesheet_link_tag 'coffee'
     /[if lt IE 9]
       = stylesheet_link_tag 'ie'
       = javascript_include_tag 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
@@ -44,38 +44,32 @@
               Friday off slow with awesome coffee and fun conversation.
               There’s no agenda, no slides, no topic, just coffee.
         .twitter.row
-          %script{:charset => "utf-8", :src => "http://widgets.twimg.com/j/2/widget.js"}
-          :javascript
-            new TWTR.Widget({
-              version: 2,
-              type: 'search',
-              search: '#gaslightcoffee',
-              interval: 30000,
-              subject: 'Tweets about Friday coffee.',
-              width: '100%',
-              height: 250,
-              theme: {
-                shell: {
-                  background: 'none',
+          %script{charset: "utf-8", src: "http://widgets.twimg.com/j/2/widget.js"}
+          :coffeescript
+            widget = new TWTR.Widget
+              version: 2
+              type: 'search'
+              search: '#gaslightcoffee'
+              interval: 30000
+              subject: 'Tweets about #gaslightcoffee'
+              width: '100%'
+              theme:
+                shell:
+                  background: 'none'
                   color: '#6B5C42'
-                },
-                tweets: {
-                  background: '#F3E9D8',
-                  color: '333',
+                tweets:
+                  background: '#F3E9D8'
+                  color: '333'
                   links: '#B35E03'
-                }
-              },
-              features: {
-                scrollbar: false,
-                loop: false,
-                live: true,
+              features:
+                scrollbar: true
+                loop: true
+                live: true
                 behavior: 'all'
-              }
-            }).render().start();
+            widget.render().start()
         .row
           .five.columns.centered.logo
             = link_to(image_tag('coffee/gaslight.png'), 'http://gaslightsoftware.com')
-    = javascript_include_tag 'coffee'
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-25957234-9']);
