@@ -15,7 +15,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module GaslightNew
+module Gaslight
   class Application < Rails::Application
 
     config.generators do |generate|
