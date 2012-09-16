@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/divshot/rack-tumblr.git
+  revision: bcfef079a9bb555d96afb74bdcba00bbe5bfd105
+  specs:
+    rack-tumblr (0.0.1)
+      rack-reverse-proxy
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,6 +138,8 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-reverse-proxy (0.4.4)
+      rack (>= 1.0.0)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -228,6 +237,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   newrelic_rpm
+  rack-tumblr!
   rails (= 3.2.8)
   rdiscount
   rspec-rails (~> 2.9.0)

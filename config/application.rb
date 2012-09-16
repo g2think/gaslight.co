@@ -73,5 +73,7 @@ module Gaslight
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslightsoftware.com')
   end
 end
