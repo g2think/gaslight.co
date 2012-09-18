@@ -17,3 +17,5 @@
 # Vendor Everything
 /bin/
 /vendor/ruby/
+
+/.env
