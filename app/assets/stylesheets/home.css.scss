@@ -1,0 +1,211 @@
+@import "foundation_and_overrides";
+
+$red: #d63f31;
+$yellow: #ebd018;
+$blue: #60b6e4;
+
+#wrapper{
+  width: $rowWidth;
+  padding-bottom: 70px;
+  margin: 0 auto;
+  background: url(/assets/home/background.jpg) no-repeat;
+}
+
+#bars{
+  height: 15px;
+  overflow: visible;
+  li{
+    height: 100%;
+    list-style: none;
+    &.first{ background: $red; }
+    &.second{ background: $blue; }
+    &.third{ background: $yellow; }
+    &:hover{ height: 150%; }
+  }
+}
+
+#taglines{
+  overflow: auto;
+  li{
+    list-style: none;
+    position: relative;
+    display: none;
+    &.active{
+      display: block;
+    }
+    h1, h2{
+      display: block;
+      position: relative;
+      background: #000;
+      color: #fff;
+      float: left;
+      clear: both;
+      font-size: 65px;
+      padding: 10px 60px;
+      &:before{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 15px;
+        background: $blue;
+        content: "";
+      };
+    }
+    h1{
+      margin-left: 85px;
+    }
+    h2{
+      margin-left: 170px;
+    }
+  }
+}
+
+#about{
+  float: left;
+  width: 62%;
+  margin-top: 145px;
+  position: relative;
+  background: #fff;
+  @include opacity(.90);
+  &:before{
+    display: block;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #fff;
+    content: "";
+  };
+  h3{
+    display: block;
+    position: absolute;
+    top: -128px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 40px;
+    &:after{
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      width: 0; 
+      height: 0; 
+      border-left: 0px solid transparent;
+      border-right: 48px solid transparent;
+      border-bottom: 48px solid #000;
+      content: "";
+    };
+  }
+  .inner{
+    padding: 24px 2%;
+    overflow: auto;
+  }
+  .logo{ 
+    float: left;
+    width: 30%;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .sweetSkills{
+    float: right;
+    width: 66%;
+    p{
+      margin-left: 12px;
+      margin-bottom: 35px;
+      font-size: 17px;
+      line-height: 1.3em;
+    }
+    .icons{
+      li{
+        list-style: none;
+        float: left;
+        width: 18%;
+        text-align: center;
+        i{
+          width: 45px;
+          height: 45px;
+          display: inline-block;
+          border: 2px solid #000;
+          background: center center no-repeat;
+          background-size: 55%;
+          margin-bottom: 5px;
+          @include border-radius(50%);
+          &.rails{ background-image: url('/assets/home/icon-rails.png') }
+          &.backbone{ background-image: url('/assets/home/icon-backbone.png') }
+          &.ios{ background-image: url('/assets/home/icon-ios.png') }
+          &.design{ background-image: url('/assets/home/icon-design.png') }
+          &.ux{ background-image: url('/assets/home/icon-ux.png') }
+        }
+        label{
+          display: block;
+          font-size: 14px;
+          line-height: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+#contact{
+  float: right;
+  width: 34%;
+  margin-top: 146px;
+  position: relative;
+  h3{
+    display: block;
+    position: absolute;
+    top: -78px;
+    right: 0;
+    height: 32px;
+    background: #4d4d4d;
+    color: #fff;
+    font-size: 17px;
+    padding: 6px 40px;
+    &:before{
+      position: absolute;
+      right: 100%;
+      bottom: 0;
+      width: 0; 
+      height: 0; 
+      border-left: 32px solid transparent;
+      border-right: 0px solid transparent;
+      border-bottom: 32 solid #4d4d4d;
+      content: "";
+    };
+  }
+  .inner{
+    padding: 20px 5%;
+    background: rgb(60, 60, 60); /* The Fallback */
+    background: rgba(60, 60, 60, 0.5); 
+    form{
+      margin: 0;
+      overflow: auto;
+      .button{
+        float: right;
+      }
+      textarea{
+        height: 80px;
+      }
+    }
+  }
+}
+
+
+#main{
+  padding: 30px 0;
+  svg{
+    margin-left: -45px;
+    width: 257px;
+    height: 225px;
+  }
+  p{
+    font-size: 140%;
+  }
+  .columns.five{
+    padding-left: 30px;
+  }
+}
