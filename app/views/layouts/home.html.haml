@@ -1,0 +1,47 @@
+!!! 5
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title Home
+    = stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Karla:400,700|Capriola|Nunito:400,300"
+    = stylesheet_link_tag    "home"
+    = javascript_include_tag "home"
+    = csrf_meta_tags
+  %body
+    #wrapper.container
+      %header.row
+        .columns.twelve
+        %h1#opener
+          %span Catchy Opener
+      #main.row
+        .columns.twelve
+          .row
+            .columns.two
+              = link_to(root_path) do
+                = render "layouts/logo"
+            .columns.five
+              %h2 About Us
+              %p
+                We are a Cincinnati-based shop, partnering with you to turn your
+                imagination into reality. We build solutions and create digital
+                experiences.
+            .columns.three.offset-by-one
+              %h2 Skills
+              %ul
+                %li Ruby on Rails
+                %li Backbone.js
+                %li iOS
+      #contact.row
+        .columns.three
+          %h3 Contact Us
+        .columns.six
+          = form_tag('/contact') do
+            = text_field_tag 'Name', nil, placeholder: 'Name'
+            = text_field_tag 'Email', nil, placeholder: 'Email'
+            = text_area_tag 'Comments', nil, placeholder: 'Where do you want to go today?'
+        .columns.three
+          %h4 Address
+          %addr
+            11126 Kenwood Rd, Suite C
+            Blue Ash OH 45242

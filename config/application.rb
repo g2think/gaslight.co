@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 # Pick the frameworks you want:
 #require "active_record/railtie"
 require "action_controller/railtie"
-#require "action_mailer/railtie"
+require "action_mailer/railtie"
 #require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
@@ -73,6 +73,8 @@ module Gaslight
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.precompile += %w(coffee.css home.css home.js)
+    config.assets.initialize_on_precompile = false
 
     config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslightsoftware.com')
   end
