@@ -152,7 +152,10 @@ body{
   .sweetSkills{
     float: right;
     width: 50%;
-    h4.first{ color: $red;}
+    h4.first {
+      margin-top: 0;
+      color: $red;
+    }
     h4.second{ color: $blue;}
     p{
       margin-bottom: 35px;
@@ -206,6 +209,11 @@ body{
     background: rgb(60, 60, 60); /* The Fallback */
     background: rgba(60, 60, 60, 0.5); 
     form{
+      p.flash {
+        &.error { background-color: $yellow; }
+        &.success { background-color: $blue; }
+        padding: 5px;
+      }
       margin: 0;
       overflow: auto;
       .button{
@@ -218,7 +226,7 @@ body{
         height: 140px;
       }
     }
-    p{
+    .socialMedia p{
       color:#fff;
       margin:26px 5px 0 5px;
     }
@@ -280,18 +288,21 @@ body{
 }
 
 .icons{
+  width: 50%;
+  padding: 1.25em 0;
+  margin: 0 auto 1em auto;
   li{
     list-style: none;
     float: left;
-    width: 18%;
+    width: 33%;
     text-align: center;
-    i{
-      width: 45px;
-      height: 45px;
+    a {
+      width: 32px;
+      height: 32px;
       display: inline-block;
-      border: 2px solid #000;
-      background: center center no-repeat;
-      background-size: 55%;
+      //border: 2px solid #000;
+      //background: center center no-repeat;
+      //background-size: 55%;
       margin-bottom: 5px;
       @include border-radius(50%);
       &.rails{ background-image: url('/assets/home/icon-rails.png') }
@@ -299,6 +310,31 @@ body{
       &.ios{ background-image: url('/assets/home/icon-ios.png') }
       &.design{ background-image: url('/assets/home/icon-design.png') }
       &.ux{ background-image: url('/assets/home/icon-ux.png') }
+
+      &.github {
+        font-size: 0;
+        background-image: url(image-path('home/social media-02.png'));
+        background-position: 32.5px 0px;
+        &:hover {
+          background-position: 32.5px 32.5px;
+        };
+      }
+      &.twitter {
+        font-size: 0;
+        background-image: url(image-path('home/social media-02.png'));
+        background-position: 65px 0px;
+        &:hover {
+          background-position: 65px 32.5px;
+        };
+      };
+      &.facebook {
+        font-size: 0;
+        background-image: url(image-path('home/social media-02.png'));
+        background-position: 0px 0px;
+        &:hover {
+          background-position: 0px 32.5px;
+        };
+      }
     }
     label{
       display: block;

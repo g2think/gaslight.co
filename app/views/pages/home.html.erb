@@ -3,7 +3,8 @@
     <meta charset: "utf-8"></meta>
     <meta name="viewport", content="width=device-width, initial-scale=1.0"></meta>
     <title>Home</title>
-    <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Karla:400,700|Capriola|Nunito:400,300" %>
+    <%= javascript_include_tag "//use.typekit.net/ono5mit.js" %>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <%= stylesheet_link_tag    "home" %>
     <%= javascript_include_tag "home" %>
     <%= csrf_meta_tags %>
@@ -87,9 +88,20 @@
           <% end %>
               <div class="socialMedia">
                 <p>
-                Is reading about our awesomeness
-                good enough for you? We’re social!
+                  Is reading about our awesomeness
+                  good enough for you? We’re social!
                 </p>
+                <ul class="icons">
+                  <li>
+                    <%= link_to("", "https://github.com/gaslight", class: "github") %>
+                  </li>
+                  <li>
+                    <%= link_to("", "https://facebook.com/teamgaslight", class: "facebook") %>
+                  </li>
+                  <li>
+                    <%= link_to("", "https://twitter.com/teamgaslight", class: "twitter") %>
+                  </li>
+                </ul>
               </div>
         </div>
       </section>
