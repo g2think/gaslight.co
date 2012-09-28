@@ -33,7 +33,7 @@ end
 group :test do
   gem 'cucumber-rails', '1.3.0', :require => false
   gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  #gem 'database_cleaner'
   gem 'timecop'
   gem 'shoulda-matchers'
   gem 'launchy'
