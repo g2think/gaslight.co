@@ -211,9 +211,11 @@ body{
       .button{
         float: right;
       }
+      input[type=text], input[type=email], textarea {
+        font-size: 12px;
+      }
       textarea{
         height: 140px;
-        font-size: 12px;
       }
     }
     p{
