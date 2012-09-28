@@ -1,12 +1,13 @@
 #= require jquery
 
-jQuery -> 
-  timer = setInterval(updateText, 5000)
+  jQuery -> 
+    timer = setInterval(updateText, 5000)
 
-phrases = ['New Text', 'Awesome words', 'Catchy opener', 'Cool people', 'Funk radio, 'Tupac Tuesdays']
 
-updateText = ->
-  phrase = phrases[Math.floor(Math.random() * phrases.length)];
-  $('#opener span').fadeOut 1000, ->
-  	$('#opener span').text(phrase)
-  	$('#opener span').fadeIn(1000)
+  updateText = ->
+    taglines = $('#taglines li')
+    activeEl = taglines[Math.floor(Math.random() * taglines.length)]
+    $('#taglines').fadeOut 500, ->
+      taglines.removeClass('active')
+      $(activeEl).addClass('active')
+      $('#taglines').fadeIn(500)
