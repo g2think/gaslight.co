@@ -39,7 +39,7 @@ body{
     &.first{ background: $red; }
     &.second{ background: $blue; }
     &.third{ background: $yellow; }
-    &:hover{ height: 150%; }
+    &.hover{ height: 150%; }
   }
 }
 
@@ -52,7 +52,33 @@ body{
     display: none;
     &.active{
       display: block;
+    } 
+    h1, h2 {
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 15px;
+        content: "";
+        background: $red;
+      };
+    };
+    &.first {
+      h1, h2 {
+        &:before { background: $red; }
+      }
     }
+    &.second {
+      h1, h2 {
+        &:before { background: $blue; }
+      }
+    }
+    &.third {
+      h1, h2 {
+        &:before { background: $yellow; }
+      }
+    };
     h1, h2{
       display: block;
       position: relative;
@@ -62,15 +88,6 @@ body{
       clear: both;
       font-size: 65px;
       padding: 10px 60px;
-      &:before{
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 15px;
-        background: $blue;
-        content: "";
-      };
     }
     h1{
       margin-left: 85px;
