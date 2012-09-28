@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+echo ""
+echo " Running specs on gaslight.co"
+echo ""
+
+#
+# Set up ENV
+#
+PATH=$HOME/.rbenv/versions/$RBENV_VERSION/bin:$PATH
+cp .env.sample .env.test
+
+#
+# Check for Bundler
+#
+if test ! $(which bundle)
+then
+  echo "  x You need to install Bundler:"
+  echo "    gem install bundler"
+  exit
+else
+  echo "  + Bundler found."
+fi
+
+#
+# Install gems
+#
+echo "  + Bootstrapping your Rubies."
+bundle check || bundle install --local --path vendor/ruby --without production --binstubs --quiet
+
+#
+# Set up Jenkins output
+#
+mkdir -p jenkins
+
+#
+# Rspec
+#
+echo "  + Running Rspec  ================================================================="
+SPEC_OPTS="--format html -o jenkins/rspec.html --format documentation" ./bin/rspec spec
+echo ""
+
+#
+# Cucumber
+#
+echo "  + Running the cukes  ============================================================="
+bundle exec cucumber --format pretty --format html --out=jenkins/cucumber.html --tags ~@wip,~@pending
