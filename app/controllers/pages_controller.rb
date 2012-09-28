@@ -11,4 +11,9 @@ class PagesController < HighVoltage::PagesController
       'application'
     end
   end
+
+  def message
+    Message.new(params[:message] || {})
+  end
+  helper_method :message
 end

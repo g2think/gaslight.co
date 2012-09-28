@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe ContactController do
-
   describe "GET 'create'" do
     context "when valid" do
       before(:each) do
@@ -14,10 +13,11 @@ describe ContactController do
 
     context "when invalid" do
       before(:each) do
-        post :create
+        post :create, message: { name: 'Chris' }
       end
 
-      it { should respond_with(:redirect) }
+      it { should redirect_to("/?message%5Bname%5D=Chris") }
+      it { should assign_to(:message) }
       it { should set_the_flash }
     end
   end
