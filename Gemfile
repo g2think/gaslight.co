@@ -9,6 +9,7 @@ gem 'high_voltage', ">= 1.2.0"
 gem 'rdiscount'
 gem 'airbrake'
 gem 'rack-tumblr', git: 'https://github.com/divshot/rack-tumblr.git'
+gem "rails-backbone"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +29,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.9.0'
   gem 'dotenv'
+  gem 'jasminerice'
 end
 
 group :test do
