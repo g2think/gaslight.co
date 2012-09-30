@@ -1,45 +1,42 @@
 class Gaslight.Views.TaglineView extends Backbone.View
 
-  interval: 6000
-
   animation:
+    interval: 4000
     target: 'h1 span'
-    duration: 800
+    duration: 1000
     delay: 200
-    options:
-      left: [-500, 'swing']
+    easing: 'easeInOutExpo'
     
   initialize: (options) ->
     @$taglines = @$el.children()
-    @createInterval() unless options.preventInterval
+    @$activeTagline = @$el.find('.active')
+    @animate @$activeTagline, {left: 0}
+    @createTimer()
 
-  createInterval: ->
+  createTimer: ->
     intervalCallback = => @transition()
-    setInterval intervalCallback, @interval
+    @timer = setInterval intervalCallback, @animation.interval
 
-  transition: (index = @getRandomIndex()) ->
-    @deactivateActiveTagline =>
-      @activateTagline(index)
+  transition: (index) ->
+    newTagline = @$taglines.eq index or @getRandomIndex()
+    @animate @$activeTagline, {left: '-100%'}, =>
+      @activate newTagline
+      @animate newTagline, {left: '0'}, =>
 
-  activeTagline: ->
-    @$('.active')
-
-  deactivateActiveTagline: (callback)->
-    animation = @animation
-    animationTargets = @activeTagline().find(@animation.target)
-    activeTagline = @activeTagline()
-
+  animate: (element, options, callback)->
+    animationTargets = element.find(@animation.target)
+    
     for target, i in animationTargets
       done = i is animationTargets.length - 1
-      do (done) ->
-        $(target).stop().delay(animation.delay * i).animate animation.options, animation.duration, ->      
+      do (done) =>
+        $(target).stop().delay(@animation.delay * i).animate options, @animation.duration, @animation.easing, ->      
           if done
-            animationTargets.removeAttr('style')
-            activeTagline.removeClass('active')
-            callback()
-            
-  activateTagline: (index)->
-    @$taglines.eq(index).addClass('active')
+            callback() if callback
+
+  activate: (element)->
+    @$taglines.removeClass('active')
+    element.addClass('active')
+    @$activeTagline = element
 
   getRandomIndex: ->  
     Math.floor(Math.random() * @$taglines.length);

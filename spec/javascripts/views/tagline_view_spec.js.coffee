@@ -3,15 +3,20 @@ describe "TaglineView", ->
     loadFixtures 'taglines'
     @taglineView = new Gaslight.Views.TaglineView
       el: $('#taglines')
-      preventInterval: true
+
+    clearInterval(@taglineView.timer)
+
 
   describe "init", ->
     it "should have and el of type ul", ->
       expect(@taglineView.$el).toBe('ul')
-
     it "should have some taglines", ->
       expect(@taglineView.$taglines.first()).toBe('li')
       expect(@taglineView.$taglines.length).toBeGreaterThan(1)
+    it "should have an active tagline", ->
+      expect(@taglineView.$activeTagline).toBe('li.active')
+    it "should create the timer", ->
+      expect(typeof @taglineView.timer).toBe('number')
 
   describe "getRandomIndex", ->
     it "should return a random index", ->
@@ -20,27 +25,21 @@ describe "TaglineView", ->
       expect(randomIndex).toBeLessThan(@taglineView.$taglines.length)
 
   describe "transition", ->
+    timer = null
     describe "without a given index", ->
       beforeEach ->
+        spyOn(@taglineView, 'animate')
         @taglineView.transition()
-      it "should activate a random tagline", ->
+      it "should animate", ->
+        expect(@taglineView.animate).toHaveBeenCalled()
   
-  describe "activeTagline", ->
-    it "should return the currently active tagline", ->
-      expect(@taglineView.activeTagline().length).toBe(1)
-      expect(@taglineView.activeTagline()).toBe('li.active')
-
-  describe "deactivateActiveTagline", ->
-
-    animationCallback = null
-    describe "callback", ->
-      beforeEach ->
-        animationCallback = jasmine.createSpy('animationCallback');
-        jasmine.Clock.useMock();
-      it "calls the callback when the animations are finished", ->
-        @taglineView.deactivateActiveTagline(animationCallback)
-        expect(animationCallback).not.toHaveBeenCalled();
-        jasmine.Clock.tick(8000);
-        # expect(animationCallback).toHaveBeenCalled();
-
-
+  describe "activate", ->
+    beforeEach ->
+      @element = @taglineView.$taglines.last()
+      @taglineView.activate(@element)
+    it "should remove the currently active tagline", ->
+      expect(@taglineView.$taglines.first()).not.toHaveClass('active')
+    it "activate the new tagline", ->
+      expect(@element).toHaveClass('active')
+    it "set the activeTagline", ->
+      expect(@taglineView.$activeTagline).toBe(@element)

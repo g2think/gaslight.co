@@ -14,6 +14,7 @@
 #= require jquery
 #= require jquery-ui
 #= require jquery_ujs
+#= vendor/jquery-easing.js
 #= require underscore
 #= require backbone
 #= require backbone/gaslight
