@@ -10,4 +10,7 @@ class Gaslight.Routers.MainRouter extends Backbone.Router
     @taglines = new Gaslight.Views.TaglineView
       el: $('#taglines')
 
+    @taglines.on 'changeBrand', (activeBrand) =>
+      @colorbars.activate(activeBrand)
+
 

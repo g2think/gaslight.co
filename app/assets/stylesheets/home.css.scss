@@ -1,8 +1,8 @@
 @import "foundation_and_overrides";
 
 $red: #d63f31;
-$yellow: #ebd018;
 $blue: #60b6e4;
+$yellow: #ebd018;
 
 html, body{ height: 100%;}
 
@@ -36,10 +36,13 @@ body{
     float: left;
     height: 100%;
     list-style: none;
-    &.first{ background: $red; }
-    &.second{ background: $blue; }
-    &.third{ background: $yellow; }
-    &.hover{ height: 150%; }
+    &.brand1{ background: $red; }
+    &.brand2{ background: $blue; }
+    &.brand3{ background: $yellow; }
+    &.active{ height: 160%; }
+    @include transition-property(height);
+    @include transition-duration(.25s);
+    @include transition-timing-function(ease-in-out); 
   }
 }
 
@@ -87,21 +90,9 @@ body{
         background: $red;
       };
     };
-    &.first {
-      h1{
-        &:before { background: $red; }
-      }
-    }
-    &.second {
-      h1{
-        &:before { background: $blue; }
-      }
-    }
-    &.third {
-      h1{
-        &:before { background: $yellow; }
-      }
-    }
+    &.brand1 h1:before{ background: $red; }
+    &.brand2 h1:before{ background: $blue; }
+    &.brand3 h1:before{ background: $yellow; }
   }
 }
 
@@ -159,11 +150,11 @@ body{
   .sweetSkills{
     float: right;
     width: 50%;
-    h4.first {
+    h4.brand1 {
       margin-top: 0;
       color: $red;
     }
-    h4.second{ color: $blue;}
+    h4.brand2{ color: $blue;}
     p{
       margin-bottom: 35px;
       font-size: 17px;
@@ -317,9 +308,6 @@ body{
       width: 32px;
       height: 32px;
       display: inline-block;
-      //border: 2px solid #000;
-      //background: center center no-repeat;
-      //background-size: 55%;
       margin-bottom: 5px;
       @include border-radius(50%);
       &.rails{ background-image: url('/assets/home/icon-rails.png') }

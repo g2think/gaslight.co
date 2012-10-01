@@ -18,11 +18,17 @@ describe "TaglineView", ->
     it "should create the timer", ->
       expect(typeof @taglineView.timer).toBe('number')
 
-  describe "getRandomIndex", ->
-    it "should return a random index", ->
-      randomIndex = @taglineView.getRandomIndex()
-      expect(randomIndex).toBeGreaterThan(-1)
-      expect(randomIndex).toBeLessThan(@taglineView.$taglines.length)
+  describe "getNextIndex", ->
+    describe "with first element active", ->
+      beforeEach ->
+        @taglineView.activate(@taglineView.$taglines.first())
+      it "should increment the index", ->
+        expect(@taglineView.getNextIndex()).toBe(1)
+    describe "with last element active", ->
+      beforeEach ->
+        @taglineView.activate(@taglineView.$taglines.last())
+      it "should increment the index back to 0", ->
+        expect(@taglineView.getNextIndex()).toBe(0)
 
   describe "transition", ->
     timer = null
@@ -43,3 +49,21 @@ describe "TaglineView", ->
       expect(@element).toHaveClass('active')
     it "set the activeTagline", ->
       expect(@taglineView.$activeTagline).toBe(@element)
+
+  describe "changeBrand", ->
+    describe "incrementing the active brand", ->
+      beforeEach ->
+        @taglineView.activeBrand = 3
+        @taglineView.changeBrand()
+      it "should increment", ->
+        expect(@taglineView.activeBrand).toBe(1)
+    beforeEach ->
+      @brandClass = 'brand3'
+      @activeBrand = @taglineView.activeBrand
+      @taglineView.$activeTagline.addClass(@brandClass)
+      @taglineView.changeBrand()
+    it "should remove current brand classes", ->
+      expect(@taglineView.$activeTagline).not.toHaveClass(@brandClass)
+    it "should apply the new brand class", ->
+      expect(@taglineView.$activeTagline).toHaveClass("brand#{@activeBrand}")
+      
