@@ -4,8 +4,8 @@ class Gaslight.Routers.MainRouter extends Backbone.Router
     @index()
 
   index: ->
-    @colorbars = new Gaslight.Views.ColorbarView
-      el: $('#bars')
+    # @colorbars = new Gaslight.Views.ColorbarView
+    #   el: $('#bars')
     
     #@taglines = new Gaslight.Views.TaglineView
     #  el: $('#taglines')

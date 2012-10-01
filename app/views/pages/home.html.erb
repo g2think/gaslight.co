@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <meta charset: "utf-8"></meta>
@@ -17,10 +18,10 @@
     </ul>
 
     <div id="wrapper" class="container">
-      <header>
-        <img class="logo" src="/assets/home/logo.png">
-      </header>
-      <section id="about">
+      <div id="header">
+        <img class="logo" src="/assets/home/logo.png"/>
+      </div>
+      <div id="about">
         <h3 class="brand1">Let’s Build Great Things</h3>
         <div class="inner">
           <h4 class="brand1">Now with 100% Less Software!</h4>
@@ -49,9 +50,9 @@
             <li><span>Training</span></li>
           </ul>
         </div>
-      </section>
+      </div>
 
-      <section id="contact">
+      <div id="contact">
         <h3>Want to Talk?</h3>
         <div class="inner">
           <%= form_for(message, url: contact_path) do |f| %>
@@ -79,7 +80,7 @@
                 </ul>
               </div>
         </div>
-      </section>
+      </div>
 
     </div>
 
