@@ -76,6 +76,6 @@ module Gaslight
     config.assets.precompile += %w(coffee.css home.css home.js)
     config.assets.initialize_on_precompile = false
 
-    config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslightsoftware.com')
+    config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslight.co')
   end
 end
