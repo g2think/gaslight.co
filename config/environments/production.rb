@@ -75,10 +75,5 @@ Gaslight::Application.configure do
     domain:         'heroku.com'
   }
   ActionMailer::Base.delivery_method = :smtp
-
-  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-    r301 %r{.*}, 'http://blog.gaslight.co$&', if: Proc.new { |rack_env| rack_env['SERVER_NAME'] == 'blog.gaslightsoftware.com' }
-    r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'gaslight.co' }
-  end
 end
 

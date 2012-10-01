@@ -10,6 +10,7 @@ gem 'rdiscount'
 gem 'airbrake'
 gem 'rack-tumblr', git: 'https://github.com/divshot/rack-tumblr.git'
 gem 'rails-backbone'
+gem 'rack-rewrite'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,6 +44,5 @@ end
 
 group :staging, :production do
   gem 'newrelic_rpm'
-  gem 'rack-rewrite'
 end
 
