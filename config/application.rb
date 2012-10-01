@@ -79,8 +79,17 @@ module Gaslight
     config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslight.co')
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      r301 %r{.*}, 'http://blog.gaslight.co$&', if: Proc.new { |rack_env| rack_env['SERVER_NAME'] == 'blog.gaslightsoftware.com' }
-      r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'gaslight.co' }
+      r301 %r{.*}, 'http://training.gaslight.co$&', if: Proc.new { |rack_env|
+        rack_env['SERVER_NAME'] == 'training.gaslightsoftware.com'
+      }
+
+      r301 %r{.*}, 'http://blog.gaslight.co$&', if: Proc.new { |rack_env|
+        rack_env['SERVER_NAME'] == 'blog.gaslightsoftware.com'
+      }
+
+      r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env|
+        rack_env['SERVER_NAME'] =~ /^(www.)?gaslightsoftware.com/
+      }
     end
   end
 end
