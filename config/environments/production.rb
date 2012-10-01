@@ -74,4 +74,6 @@ Gaslight::Application.configure do
     domain:         'heroku.com'
   }
   ActionMailer::Base.delivery_method = :smtp
+
+  config.middleware.insert_before Rack::Lock, Rack::NoWWW
 end
