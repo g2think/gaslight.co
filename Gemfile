@@ -5,11 +5,11 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'haml-rails'
 gem 'coffee-filter'
-gem 'high_voltage', ">= 1.2.0"
+gem 'high_voltage', '>= 1.2.0'
 gem 'rdiscount'
 gem 'airbrake'
 gem 'rack-tumblr', git: 'https://github.com/divshot/rack-tumblr.git'
-gem "rails-backbone"
+gem 'rails-backbone'
 
 # Gems used only for assets and not required
 # in production environments by default.
