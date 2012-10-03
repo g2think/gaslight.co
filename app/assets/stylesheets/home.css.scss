@@ -12,8 +12,10 @@ body{
 }
 
 .container{
-  width: $rowWidth;
-  margin: 0 auto;
+  background: rgb(255, 255, 255); /* The Fallback */
+  background: rgba(255, 255, 255, 0.5);
+  padding-bottom: 60px;
+  overflow: hidden;
 }
 
 #wrapper{
@@ -21,7 +23,7 @@ body{
   min-height: 100%;
   background: rgb(255, 255, 255); /* The Fallback */
   background: rgba(255, 255, 255, 0.5);
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 #header{
@@ -100,11 +102,58 @@ body{
   }
 }
 
-#about{
+.banner{
+  background: #000;
+  h3{
+    color: #fff;
+    margin: 0;
+    text-align: center;
+  }
+  &.banner-left{
+    background: #000;
+    height: 48px;
+    margin-bottom: 60px;
+    &:after{
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      width: 0; 
+      height: 0; 
+      border-left: 0px solid transparent;
+      border-right: 48px solid transparent;
+      border-bottom: 48px solid #000;
+      content: "";
+    }
+    h3{
+      font-size: 24px;
+      line-height: 48px;
+    }
+  }
+  &.banner-right{
+    margin-top: 50px;
+    margin-right: -15px;
+    height: 28px;
+    margin-bottom: 30px;
+    background: #4D4D4D;
+    &:before{
+      position: absolute;
+      right: 100%;
+      bottom: 0;
+      width: 0; 
+      height: 0; 
+      border-right: 0px solid transparent;
+      border-left: 28px solid transparent;
+      border-bottom: 28px solid #4D4D4D;
+      content: "";
+    }
+    h3{
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+}
 
-  float: left;
-  width: 62%;
-  margin-top: 120px;
+#about{
   position: relative;
   background: rgb(255, 255, 255); /* The Fallback */
   background: rgba(255, 255, 255, 0.7);
@@ -120,31 +169,6 @@ body{
     box-sizing: border-box;
     content: "";
   };
-  h3{
-    display: block;
-    position: absolute;
-    top: -128px;
-    height: 48px;
-    background: #000;
-    color: #fff;
-    font-size: 24px;
-    padding: 10px 51px;
-    &:after{
-      position: absolute;
-      left: 100%;
-      bottom: 0;
-      width: 0; 
-      height: 0; 
-      border-left: 0px solid transparent;
-      border-right: 48px solid transparent;
-      border-bottom: 48px solid #000;
-      content: "";
-    };
-  }
-  .inner{
-    padding: 0 40px 24px 36px;
-    overflow: auto;
-  }
   h4.brand1 {
     margin-top: 0;
     color: $red;
@@ -171,69 +195,41 @@ body{
 }
 
 #contact{
-  float: right;
-  width: 34%;
-  margin-top: 119px;
   position: relative;
-  h3{
-    display: block;
-    position: absolute;
-    top: -78px;
-    right: 0;
-    height: 32px;
-    background: #4d4d4d;
-    color: #fff;
-    font-size: 17px;
-    padding: 6px 20px;
-    font-weight: normal;
-    &:before{
-      position: absolute;
-      right: 100%;
-      bottom: 0;
-      width: 0; 
-      height: 0; 
-      border-left: 32px solid transparent;
-      border-right: 0px solid transparent;
-      border-bottom: 32 solid #4d4d4d;
-      content: "";
-    };
+  background: rgb(60, 60, 60); /* The Fallback */
+  background: rgba(60, 60, 60, 0.5); 
+  form{
+    padding: 15px 0;
+    p.flash {
+      &.error { background-color: $yellow; }
+      &.success { background-color: $blue; }
+      padding: 5px;
+    }
+    margin: 0;
+    overflow: auto;
+    .button{
+      float: right;
+      &:hover {
+        @include box-shadow(0 1px 0 $blue inset);
+        background-color: $blue;
+        border: 1px solid $blue;
+        color: #fff;
+      }
+    }
+    input[type=text], input[type=email], textarea {
+      font-size: 12px;
+      &:focus {
+        border: 1px solid $blue;
+        box-shadow: 0 0 5px $blue;
+      };
+    }
+    textarea{
+      height: 140px;
+    }
   }
-  .inner{
-    padding: 20px 5%;
-    background: rgb(60, 60, 60); /* The Fallback */
-    background: rgba(60, 60, 60, 0.5); 
-    form{
-      p.flash {
-        &.error { background-color: $yellow; }
-        &.success { background-color: $blue; }
-        padding: 5px;
-      }
-      margin: 0;
-      overflow: auto;
-      .button{
-        float: right;
-        &:hover {
-          @include box-shadow(0 1px 0 $blue inset);
-          background-color: $blue;
-          border: 1px solid $blue;
-          color: #fff;
-        };
-      }
-      input[type=text], input[type=email], textarea {
-        font-size: 12px;
-        &:focus {
-          border: 1px solid $blue;
-          box-shadow: 0 0 5px $blue;
-        };
-      }
-      textarea{
-        height: 140px;
-      }
-    }
-    .socialMedia p{
-      color:#fff;
-      margin:26px 5px 0 5px;
-    }
+  .socialMedia p{
+    color:#fff;
+    margin:26px 5px 0 5px;
   }
 }
 
@@ -243,49 +239,41 @@ body{
   bottom: 0;
   background: url(/assets/home/footer.jpg);
   text-align: center;
-  ul{
-    display: inline-block;
-    margin: 0;
-    li{
-      list-style:none;
-      float: left;
-      z-index: 1;
-      overflow: visible;
-      position: relative;
+  .link{
+    padding: 10px 0;
+    z-index: 1;
+    overflow: visible;
+    position: relative;
+    color: #fff;
+    font-weight: normal;
+    a{
       color: #fff;
-      padding: 10px 0;
+      &:hover{ color: $blue; }
+    }
+    .diamond{
+      color:#fff;
+      display: inline-block;
       margin-right: 10px;
-      font-weight: normal;
-      a{
-        color: #fff;
-        &:hover{ color: $blue; }
+      width: 22px;
+      height: 22px;
+      position: relative;
+      font-size: 12px;
+      text-align: center;
+      line-height: 22px;
+      &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display:block;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include rotate(-45deg);
       }
-      .diamond{
-        color:#fff;
-        display: inline-block;
-        margin-right: 10px;
-        width: 22px;
-        height: 22px;
-        position: relative;
-        font-size: 12px;
-        text-align: center;
-        line-height: 22px;
-        &:after{
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          display:block;
-          top: 0;
-          left: 0;
-          z-index: -1;
-          @include rotate(-45deg);
-        }
-        &.email:after{background: $red;}
-        &.phone:after{background: $blue;}
-        &.address:after{background: $yellow;}
-      }
-      
+      &.email:after{background: $red;}
+      &.phone:after{background: $blue;}
+      &.address:after{background: $yellow;}
     }
   }
 }
@@ -344,7 +332,7 @@ body{
   }
 }
 
-@media screen and (max-width: 1024px) {
-  
+@media screen and (max-width: 768px) {
+  #footer{ position: relative;}
 }
 
