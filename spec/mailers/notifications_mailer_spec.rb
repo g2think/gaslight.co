@@ -7,11 +7,11 @@ describe NotificationsMailer do
   let(:mail) { NotificationsMailer.new_message(message) }
 
   it 'sets the from' do
-    mail.from.should == ['chris@cdmwebs.com']
+    mail.from.should == ['website@gaslight.co']
   end
 
   it 'sets the subject' do
-    mail.subject.should =~ /Contact/
+    mail.subject.should =~ /\[gaslight\.co\] Contact Form submission from \"Chris Moore\" <chris@cdmwebs\.com>/
   end
 
   it 'sets the body' do

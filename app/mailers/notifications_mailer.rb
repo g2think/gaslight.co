@@ -3,8 +3,7 @@ class NotificationsMailer < ActionMailer::Base
   default to: "hello@gaslight.co"
 
   def new_message(message)
-    mail(from: %Q{"#{message.name}" <#{message.email}>},
-         subject: "[gaslight.co] Contact Form",
+    mail(subject: "[gaslight.co] Contact Form submission from #{ %Q{"#{message.name}" <#{message.email}>} }",
          body: message.body)
   end
 end
