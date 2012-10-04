@@ -17,79 +17,90 @@
       <li class="brand3"></li>
     </ul>
 
-    <div id="wrapper" class="container">
-      <div id="header">
-        <img class="logo" src="/assets/home/logo.png"/>
-      </div>
-      <div id="about">
-        <h3 class="brand1">Let’s Build Great Things</h3>
-        <div class="inner">
-          <h4 class="brand1">Now with 100% Less Software!</h4>
-          <p>
-            Well, not really. You may remember us as Gaslight Software, the premier
-            Ruby on Rails shop in Cincinnati. We're not doing less software development 
-            these days, but we are doing more than software as well. 
-          </p>
-          <p>
-            We've been refining
-            our Agile process, we've added designers to our team, and we've been working
-            on platforms other than the web. Rather than let 'Software' limit what we do
-            we've decided to let Gaslight stand alone as the source of innovation for your next project.
-          </p>
-          <h4 class="brand2">What We Do:</h4>
-          <ul class="skills">
-            <li><span>Ruby/Ruby on Rails</span></li>
-            <li><span>Backbone JS</span></li>
-            <li><span>iOS</span></li>
-            <li><span>Embedded Systems</span></li>
-          </ul>
-          <ul class="skills">
-            <li><span>Agile Process</span></li>
-            <li><span>Design</span></li>
-            <li><span>User Experience</span></li>
-            <li><span>Training</span></li>
-          </ul>
+    <div class="row container">
+      <div class="row" id="header">
+        <div class="four columns centered">
+          <img class="logo" src="/assets/home/logo.png"/>
         </div>
       </div>
+      <div class="row main">
+        <div class="columns seven">
+          <div class="nine columns banner banner-left">
+            <h3>Let’s Build Great Things</h3>
+          </div>
+          <div class="twelve columns" id="about">
+            <h4 class="brand1">Now with 100% Less Software!</h4>
+            <p>
+              Well, not really. You may remember us as Gaslight Software, the premier
+              Ruby on Rails shop in Cincinnati. We're not doing less software development 
+              these days, but we are doing more than software as well. 
+            </p>
+            <p>
+              We've been refining
+              our Agile process, we've added designers to our team, and we've been working
+              on platforms other than the web. Rather than let 'Software' limit what we do
+              we've decided to let Gaslight stand alone as the source of innovation for your next project.
+            </p>
+            <h4 class="brand2">What We Do:</h4>
+            <ul class="skills">
+              <li><span>Ruby/Ruby on Rails</span></li>
+              <li><span>Backbone JS</span></li>
+              <li><span>iOS</span></li>
+              <li><span>Embedded Systems</span></li>
+            </ul>
+            <ul class="skills">
+              <li><span>Agile Process</span></li>
+              <li><span>Design</span></li>
+              <li><span>User Experience</span></li>
+              <li><span>Training</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="columns four offset-by-one">
+          <div class="five columns banner banner-right offset-by-seven">
+            <h3>Want to Talk?</h3>
+          </div>
 
-      <div id="contact">
-        <h3>Want to Talk?</h3>
-        <div class="inner">
-          <%= form_for(message, url: contact_path) do |f| %>
-            <% if flash[:error] %>
-              <p class="flash error"><%= flash[:error] %></p>
-            <% elsif flash[:success] %>
-              <p class="flash success"><%= flash[:success] %></p>
+          <div class="twelve columns" id="contact">
+            <%= form_for(message, url: contact_path) do |f| %>
+              <% if flash[:error] %>
+                <p class="flash error"><%= flash[:error] %></p>
+              <% elsif flash[:success] %>
+                <p class="flash success"><%= flash[:success] %></p>
+              <% end %>
+              <%= f.text_field :name, placeholder: 'Name' %>
+              <%= f.text_field :email, type: :email, placeholder: 'Email' %>
+              <%= f.text_area :body, placeholder: 'How can we help you?' %>
+              <%= f.submit 'Send it!', class: 'tiny secondary button' %>
             <% end %>
-            <%= f.text_field :name, placeholder: 'Name' %>
-            <%= f.text_field :email, type: :email, placeholder: 'Email' %>
-            <%= f.text_area :body, placeholder: 'How can we help you?' %>
-            <%= f.submit 'Send it!', class: 'tiny secondary button' %>
-          <% end %>
-              <div class="socialMedia">
-                <ul class="icons">
-                  <li>
-                    <%= link_to("", "https://github.com/gaslight", class: "github") %>
-                  </li>
-                  <li>
-                    <%= link_to("", "https://facebook.com/teamgaslight", class: "facebook") %>
-                  </li>
-                  <li>
-                    <%= link_to("", "https://twitter.com/teamgaslight", class: "twitter") %>
-                  </li>
-                </ul>
-              </div>
+            <div class="socialMedia">
+              <ul class="icons">
+                <li>
+                  <%= link_to("", "https://github.com/gaslight", class: "github") %>
+                </li>
+                <li>
+                  <%= link_to("", "https://facebook.com/teamgaslight", class: "facebook") %>
+                </li>
+                <li>
+                  <%= link_to("", "https://twitter.com/teamgaslight", class: "twitter") %>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
 
     <div id="footer">
-      <ul class="contact">
-        <li><span class="diamond email">e</span><a href="mailto:hello@gaslight.co">hello@gaslight.co</a></li>
-        <li><span class="diamond phone">p</span>1-888-507-3430</li>
-        <li><span class="diamond address">a</span>11126 Kenwood Rd Suite C, Cincinnati, OH 45242</li>
-      </ul>
+      <div class="row">
+        <div class="ten columns centered"
+          <div class="row">
+            <div class="three columns link"><span class="diamond email">e</span><a href="mailto:hello@gaslight.co">hello@gaslight.co</a></div>
+            <div class="three columns link"><span class="diamond phone">p</span>1-888-507-3430</div>
+            <div class="six columns link"><span class="diamond address">a</span>11126 Kenwood Rd Suite C, Cincinnati, OH 45242</div>
+          </div>
+        </div>
+      </div>
     </div>
     <%= render partial: 'application/analytics' %>
   </body>
