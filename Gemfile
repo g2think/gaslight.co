@@ -11,6 +11,7 @@ gem 'airbrake'
 gem 'rack-tumblr', git: 'https://github.com/divshot/rack-tumblr.git'
 gem 'rails-backbone'
 gem 'rack-rewrite'
+gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

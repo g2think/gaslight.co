@@ -5,6 +5,14 @@ GIT
     rack-tumblr (0.0.1)
       rack-reverse-proxy
 
+GIT
+  remote: https://github.com/sgruhier/foundation_rails_helper.git
+  revision: 73797c64d57036ebdf823412e760d3a606ce3a85
+  specs:
+    foundation_rails_helper (0.3.alpha)
+      actionpack (~> 3.0)
+      railties (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +250,7 @@ DEPENDENCIES
   dotenv
   factory_girl_rails
   foreman
+  foundation_rails_helper!
   haml-rails
   heroku
   high_voltage (>= 1.2.0)

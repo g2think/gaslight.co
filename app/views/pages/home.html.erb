@@ -64,11 +64,7 @@
 
           <div class="twelve columns" id="contact">
             <%= form_for(message, url: contact_path) do |f| %>
-              <% if flash[:error] %>
-                <p class="flash error"><%= flash[:error] %></p>
-              <% elsif flash[:success] %>
-                <p class="flash success"><%= flash[:success] %></p>
-              <% end %>
+              <%= render 'application/flashes' %>
               <%= f.text_field :name, placeholder: 'Name' %>
               <%= f.text_field :email, type: :email, placeholder: 'Email' %>
               <%= f.text_area :body, placeholder: 'How can we help you?' %>

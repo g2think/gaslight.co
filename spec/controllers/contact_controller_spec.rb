@@ -16,9 +16,11 @@ describe ContactController do
         post :create, message: { name: 'Chris' }
       end
 
-      it { should redirect_to("/?message%5Bname%5D=Chris") }
+      it { should respond_with(:success) }
+      it { should render_template('pages/home') }
+      it { should_not render_with_layout }
       it { should assign_to(:message) }
-      it { should set_the_flash }
+      it { should_not set_the_flash }
     end
   end
 end
