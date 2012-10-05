@@ -1,6 +1,10 @@
 class PagesController < HighVoltage::PagesController
   layout :layout_for_page
 
+  def render_404
+   render :action => :home, :status => 404, :layout => false
+  end
+  
   protected
 
   def layout_for_page
