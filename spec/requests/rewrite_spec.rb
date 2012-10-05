@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 describe "URL Rewriting" do
+  context "route not found" do
+    it "returns a 404 and shows the landing page" do
+      get 'http://gaslight.co/foo-bar'
+      response.response_code.should == 404
+    end
+  end
+
   context "blog.gaslightsoftware.com" do
     it "rewrites old blog requests to the new subdomain" do
       get 'http://blog.gaslightsoftware.com/post/12345'
