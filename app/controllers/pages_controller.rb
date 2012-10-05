@@ -1,10 +1,6 @@
 class PagesController < HighVoltage::PagesController
   layout :layout_for_page
 
-  def render_404
-    render action: :home, status: 404, layout: false
-  end
-  
   protected
 
   def layout_for_page
@@ -20,4 +16,12 @@ class PagesController < HighVoltage::PagesController
     Message.new(params[:message] || {})
   end
   helper_method :message
+
+  rescue_from ActionView::MissingTemplate do |exception|
+    if exception.message =~ %r{Missing template #{content_path}}
+      render action: :home, status: 404, layout: false
+    else
+      raise exception
+    end
+  end
 end
