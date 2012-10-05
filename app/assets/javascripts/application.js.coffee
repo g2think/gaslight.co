@@ -14,10 +14,13 @@
 #= require jquery
 #= require jquery-ui
 #= require jquery_ujs
+#= require jquery.placeholder
 #= vendor/jquery-easing.js
 #= require underscore
 #= require backbone
 #= require backbone/gaslight
 
+
 $ ->
   new Gaslight.Routers.MainRouter()
+  $('input, textarea').placeholder()
