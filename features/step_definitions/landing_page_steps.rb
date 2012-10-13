@@ -3,16 +3,17 @@ Given /^I am viewing the landing page$/ do
 end
 
 When /^I submit the empty form$/ do
-  fill_in 'message_name', with: ''
-  fill_in 'message_email', with: ''
-  fill_in 'message_body', with: ''
+  fill_in 'Name', with: ''
+  fill_in 'Email', with: ''
+  fill_in 'Body', with: ''
   click_button 'Send it!'
 end
 
 When /^I fill out the form$/ do
-  fill_in 'message_email', with: 'chris@cdmwebs.com'
-  fill_in 'message_name', with: 'Chris Moore'
-  fill_in 'message_body', with: 'This is a comment. It might be a question, though.'
+  fill_in 'Name', with: 'Chris Moore'
+  fill_in 'Email', with: 'chris@cdmwebs.com'
+  fill_in 'Body', with: 'This is a comment. It might be a question, though.'
+
   click_button 'Send it!'
 end
 
@@ -32,6 +33,6 @@ Then /^Gaslight should receive my email$/ do
     email.subject =~ /Contact/i && email.body =~ /might be a question/
   end
 
-  result.size.should == 1
+  result.should have(1).item
 end
 
