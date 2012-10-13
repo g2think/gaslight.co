@@ -1,5 +1,6 @@
 class PagesController < HighVoltage::PagesController
   layout :layout_for_page
+  caches_page :show
 
   protected
 
