@@ -15,6 +15,10 @@ class Message
     end
   end
 
+  def process
+    valid? ? NotificationsMailer.new_message(self).deliver : false
+  end
+
   private
 
   def persisted?

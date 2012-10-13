@@ -2,11 +2,22 @@ Given /^I am viewing the landing page$/ do
   visit '/'
 end
 
+When /^I submit the empty form$/ do
+  fill_in 'message_name', with: ''
+  fill_in 'message_email', with: ''
+  fill_in 'message_body', with: ''
+  click_button 'Send it!'
+end
+
 When /^I fill out the form$/ do
   fill_in 'message_email', with: 'chris@cdmwebs.com'
   fill_in 'message_name', with: 'Chris Moore'
   fill_in 'message_body', with: 'This is a comment. It might be a question, though.'
   click_button 'Send it!'
+end
+
+Then /^I should be notified that the contact has not been sent$/ do
+  page.should have_content("can't be blank")
 end
 
 Then /^I should be notified that the contact has been sent$/ do

@@ -63,13 +63,7 @@
           </div>
 
           <div class="twelve columns" id="contact">
-            <%= form_for(message, url: contact_path) do |f| %>
-              <%= render 'application/flashes' %>
-              <%= f.text_field :name, placeholder: 'Name' %>
-              <%= f.text_field :email, type: :email, placeholder: 'Email' %>
-              <%= f.text_area :body, placeholder: 'How can we help you?' %>
-              <%= f.submit 'Send it!', class: 'tiny secondary button' %>
-            <% end %>
+            <%= render partial: 'contact/form' %>
             <div class="socialMedia">
               <ul class="icons">
                 <li>
