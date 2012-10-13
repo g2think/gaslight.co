@@ -1,1 +1,19 @@
-<%= @message.body %>
+We've received your email and will get back with you as soon as we're able.
+
+Thanks!
+- The Gaslight Team
+
+Begin forwarded message:
+
+> From: <%= @email_with_name %>
+> Subject: Contact Form
+> Date: <%= Time.zone.now %>
+> To: Gaslight <hello@gaslight.co>
+>
+>
+<%= @body %>
+
+********* Request Info *********
+IP Address: <%= @remote_ip %>
+User Agent: <%= @user_agent %>
+
