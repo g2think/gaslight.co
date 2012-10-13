@@ -15,9 +15,8 @@ class PagesController < HighVoltage::PagesController
     end
   end
 
-  def message
-    Message.new(params[:message] || {})
-  end
+  # FIXME: Where does this belong?
+  def message; Message.new; end
   helper_method :message
 
   rescue_from ActionView::MissingTemplate do |exception|
