@@ -2,12 +2,14 @@ class ContactController < ApplicationController
 
   def create
     respond_to do |format|
-      if message.valid?
-        NotificationsMailer.new_message(message).deliver
+      if message.process
         flash[:success] = "Ok, we've got it!"
+        @message = Message.new
         format.html { redirect_to root_path }
+        format.js
       else
         format.html { render template: 'pages/home', layout: false }
+        format.js { render template: 'contact/create' }
       end
     end
   end

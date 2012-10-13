@@ -1,20 +1,22 @@
 class PagesController < HighVoltage::PagesController
   layout :layout_for_page
+  caches_page :show
 
   protected
 
   def layout_for_page
     case params[:id]
-    when 'coffee', 'home'
+    when 'home'
+      'home'
+    when 'coffee'
       nil
     else
       'application'
     end
   end
 
-  def message
-    Message.new(params[:message] || {})
-  end
+  # FIXME: Where does this belong?
+  def message; Message.new; end
   helper_method :message
 
   rescue_from ActionView::MissingTemplate do |exception|

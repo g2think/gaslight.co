@@ -18,6 +18,9 @@
 /bin/
 /vendor/ruby/
 
-/.env
+# Ignore precompiled assets, pages
+/public/assets
+/public/index.html
 
+/.env
 .DS_Store
