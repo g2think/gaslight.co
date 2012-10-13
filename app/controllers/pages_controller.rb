@@ -6,7 +6,9 @@ class PagesController < HighVoltage::PagesController
 
   def layout_for_page
     case params[:id]
-    when 'coffee', 'home'
+    when 'home'
+      'home'
+    when 'coffee'
       nil
     else
       'application'
