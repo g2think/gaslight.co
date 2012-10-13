@@ -18,6 +18,9 @@ class ContactController < ApplicationController
 
   def message
     @message ||= Message.new(params[:message] || {})
+    @message.remote_ip = request.remote_ip
+    @message.user_agent = request.user_agent
+    @message
   end
   helper_method :message
 
