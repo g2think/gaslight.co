@@ -1,54 +1,61 @@
-<div class="columns seven">
-  <div class="nine columns banner banner-left">
-    <h3>Now with 100% less software!</h3>
-  </div>
-  <div class="twelve columns" id="about">
-    <h4 class="brand1">Well, not really.</h4>
-    <p>
-      You may remember us as Gaslight Software, the premier
-      Ruby on Rails shop in Cincinnati. We're not doing less software development
-      these days, but we are doing more than software as well.
-    </p>
-    <p>
-      We've been refining
-      our Agile process, we've added designers to our team, and we've been working
-      on platforms other than the web. Rather than let 'Software' limit what we do
-      we've decided to let Gaslight stand alone as the source of innovation for your next project.
-    </p>
-    <h4 class="brand2">What We Do:</h4>
-    <ul class="skills">
-      <li><span>Ruby/Ruby on Rails</span></li>
-      <li><span>Backbone JS</span></li>
-      <li><span>iOS</span></li>
-      <li><span>Embedded Systems</span></li>
-    </ul>
-    <ul class="skills">
-      <li><span>Agile Process</span></li>
-      <li><span>Design</span></li>
-      <li><span>User Experience</span></li>
-      <li><span>Training</span></li>
-    </ul>
+<div class="row" id="header">
+  <div class="four columns centered">
+    <img class="logo" src="/assets/home/logo.png"/>
   </div>
 </div>
-<div class="columns four offset-by-one">
-  <div class="five columns banner banner-right offset-by-seven">
-    <h3>Want to Talk?</h3>
-  </div>
-
-  <div class="twelve columns" id="contact">
-    <%= render partial: 'contact/form' %>
-    <div class="socialMedia">
-      <ul class="icons">
-        <li>
-          <%= link_to("", "https://github.com/gaslight", class: "github") %>
-        </li>
-        <li>
-          <%= link_to("", "https://facebook.com/teamgaslight", class: "facebook") %>
-        </li>
-        <li>
-          <%= link_to("", "https://twitter.com/teamgaslight", class: "twitter") %>
-        </li>
+<div class="row main">
+  <div class="columns seven">
+    <div class="nine columns banner banner-left">
+      <h3>Now with 100% less software!</h3>
+    </div>
+    <div class="twelve columns" id="about">
+      <h4 class="brand1">Well, not really.</h4>
+      <p>
+        You may remember us as Gaslight Software, the premier
+        Ruby on Rails shop in Cincinnati. We're not doing less software development
+        these days, but we are doing more than software as well.
+      </p>
+      <p>
+        We've been refining
+        our Agile process, we've added designers to our team, and we've been working
+        on platforms other than the web. Rather than let 'Software' limit what we do
+        we've decided to let Gaslight stand alone as the source of innovation for your next project.
+      </p>
+      <h4 class="brand2">What We Do:</h4>
+      <ul class="skills">
+        <li><span>Ruby/Ruby on Rails</span></li>
+        <li><span>Backbone JS</span></li>
+        <li><span>iOS</span></li>
+        <li><span>Embedded Systems</span></li>
       </ul>
+      <ul class="skills">
+        <li><span>Agile Process</span></li>
+        <li><span>Design</span></li>
+        <li><span>User Experience</span></li>
+        <li><span>Training</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="columns four offset-by-one">
+    <div class="five columns banner banner-right offset-by-seven">
+      <h3>Want to Talk?</h3>
+    </div>
+
+    <div class="twelve columns" id="contact">
+      <%= render partial: 'contact/form' %>
+      <div class="socialMedia">
+        <ul class="icons">
+          <li>
+            <%= link_to("", "https://github.com/gaslight", class: "github") %>
+          </li>
+          <li>
+            <%= link_to("", "https://facebook.com/teamgaslight", class: "facebook") %>
+          </li>
+          <li>
+            <%= link_to("", "https://twitter.com/teamgaslight", class: "twitter") %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
