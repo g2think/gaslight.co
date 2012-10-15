@@ -19,14 +19,6 @@ body{
   min-height:100%;
 }
 
-#wrapper{
-  overflow: auto;
-  min-height: 100%;
-  background: rgb(255, 255, 255); /* The Fallback */
-  background: rgba(255, 255, 255, 0.5);
-  padding-bottom: 60px;
-}
-
 #header{
   text-align: center;
   margin: 60px 0;
@@ -338,6 +330,13 @@ body{
       font-size: 14px;
       line-height: 1.3em;
     }
+  }
+}
+
+.frames{
+  margin: 30px 0;
+  iframe{
+    margin-bottom: 20px;
   }
 }
 

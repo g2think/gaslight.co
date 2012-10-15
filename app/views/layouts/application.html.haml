@@ -1,22 +1,34 @@
-!!! 5
+<!doctype html>
 %html
   %head
-    %meta{charset: "utf-8"}
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
-    = stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Karla:400,700|Capriola|Nunito:400,300"
+    %title= content_for?(:title) ? content_for(:title) : "Gaslight: Ruby on Rails, iOS and JavaScript development"
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = javascript_include_tag "//use.typekit.net/ono5mit.js"
+    :javascript
+      try{Typekit.load();}catch(e){}  
   %body
-    #wrapper.container
-      %header.row
-        .columns.twelve
-          = link_to(root_path) do
-            = render "layouts/logo"
-      #main.row
-        .columns.twelve
-          = yield
-      %footer.row
-        .columns.twelve
-          %p &copy; #{Date.today.year} Gaslight Software LLC. All Rights Reserved.
+    %ul#bars
+      %li.brand1
+      %li.brand2
+      %li.brand3
+    .row.container
+      = yield
+    #footer
+      .row
+        .ten.columns.centered
+          .row
+            .three.columns.link
+              %span.diamond.email e
+              %a{:href => "mailto:hello@gaslight.co"} hello@gaslight.co
+            .three.columns.link
+              %span.diamond.phone> p
+              1-888-507-3430
+            .six.columns.link
+              %span.diamond.address> a
+              11126 Kenwood Rd Suite C, Cincinnati, OH 45242
+    = render partial: 'application/analytics'
