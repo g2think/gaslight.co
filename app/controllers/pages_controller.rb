@@ -19,7 +19,7 @@ class PagesController < HighVoltage::PagesController
 
   rescue_from ActionView::MissingTemplate do |exception|
     if exception.message =~ %r{Missing template #{content_path}}
-      render action: :home, status: 404, layout: false
+      render action: :home, status: 404
     else
       raise exception
     end
