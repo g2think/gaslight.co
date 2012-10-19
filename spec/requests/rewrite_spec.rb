@@ -16,6 +16,14 @@ describe "URL Rewriting" do
     end
   end
 
+  context "coffee.gaslightsoftware.com" do
+    it "rewrites old blog requests to the new page" do
+      get 'http://coffee.gaslightsoftware.com'
+      response.response_code.should == 301
+      response.location.should == 'http://gaslight.co/coffee'
+    end
+  end
+
   context "training.gaslightsoftware.com" do
     it "rewrites old training requests to the new subdomain" do
       get 'http://training.gaslightsoftware.com/post/12345'
