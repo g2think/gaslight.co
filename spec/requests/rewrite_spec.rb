@@ -42,18 +42,21 @@ describe "URL Rewriting" do
   # from happening in the future.
   it "doesn't redirect requests to gaslight.co to blog.gaslight.co" do
     get 'http://gaslight.co/'
-    response.should_not be_redirect
+    response.should be_redirect
+    response.location.should == 'http://gaslight.co/home'
   end
 
   context "local development" do
     it "doesn't redirect requests to gaslight.dev to gaslight.co" do
       get 'http://gaslight.dev/'
-      response.should_not be_redirect
+      response.should be_redirect
+      response.location.should == 'http://gaslight.dev/home'
     end
 
     it "doesn't redirect requests to localhost:3000 to gaslight.co" do
       get 'http://localhost:3000/'
-      response.should_not be_redirect
+      response.should be_redirect
+      response.location.should match(%r|http://localhost/home|)
     end
   end
 end

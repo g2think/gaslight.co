@@ -5,7 +5,7 @@ class ContactController < ApplicationController
       if message.process
         flash[:success] = "Ok, we've got it!"
         @message = Message.new
-        format.html { redirect_to root_path }
+        format.html { redirect_to home_path }
         format.js
       else
         format.html { render template: 'pages/home', layout: false }
