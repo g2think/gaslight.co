@@ -213,7 +213,7 @@ body{
       }
     }
     input[type=text], input[type=email], textarea {
-      font-size: 12px;
+      font-size: 80%;
       &:focus {
         border: 1px solid $blue;
         box-shadow: 0 0 5px $blue;
@@ -221,7 +221,6 @@ body{
     }
     textarea{
       height: 140px;
-      font-family: inherit;
     }
     .placeholder{
       color: #999;
