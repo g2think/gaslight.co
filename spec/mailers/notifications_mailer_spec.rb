@@ -24,5 +24,9 @@ describe NotificationsMailer do
   it 'sends to hello@gaslight.co' do
     mail.to.should include('chris@cdmwebs.com')
   end
+
+  it 'sets the IP' do
+    mail.body.should match('10.203.1.55')
+  end
 end
 
