@@ -4,10 +4,13 @@ class Message
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :body, :remote_ip, :user_agent
+  attr_accessor :name, :email, :body, :remote_ip, :user_agent, :human
 
   validates :name, :email, :body, presence: true
   validates :email, format: { with: %r{.+@.+\..+} }, allow_blank: true
+  validates :human,
+    format: { with: /ye[asp]/i, message: 'Just a "yes" will do.' },
+    allow_blank: false
 
   def initialize(attributes = {})
     attributes.each do |name, value|
