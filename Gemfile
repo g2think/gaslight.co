@@ -31,7 +31,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.9.0'
   gem 'dotenv'
-  gem 'jasminerice'
+  gem 'konacha'
 end
 
 group :test do

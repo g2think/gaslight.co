@@ -1,16 +1,14 @@
 class Gaslight.Routers.MainRouter extends Backbone.Router
-  
+
   initialize: ->
+    @mainEl = $('.container')
     @index()
 
   index: ->
-    # @colorbars = new Gaslight.Views.ColorbarView
-    #   el: $('#bars')
-    
-    #@taglines = new Gaslight.Views.TaglineView
-    #  el: $('#taglines')
+    @guidesCollection = new Gaslight.Collections.Guides(Gaslight.guideData)
 
-    #@taglines.on 'changeBrand', (activeBrand) =>
-    #  @colorbars.activate(activeBrand)
+    @svgView = new Gaslight.Views.SvgView
+      el: @mainEl
+      guides: @guidesCollection
 
-
+    @svgView.render()

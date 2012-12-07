@@ -10,7 +10,7 @@
     = csrf_meta_tags
     = javascript_include_tag "//use.typekit.net/ono5mit.js"
     :javascript
-      try{Typekit.load();}catch(e){}  
+      try{Typekit.load();}catch(e){}
   %body
     %ul#bars
       %li.brand1
@@ -32,3 +32,5 @@
               %span.diamond.address> a
               11126 Kenwood Rd Suite C, Cincinnati, OH 45242
     = render partial: 'application/analytics'
+
+  = content_for(:javascript)
