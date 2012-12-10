@@ -1,0 +1,19 @@
+%nav.top-bar.container
+  .row
+    .twelve.columns
+      %ul
+        %li.name
+          = image_tag("logo-small.png", class: "logo")
+          = link_to "Gaslight", page_path("home")
+        %li.toggle-topbar
+          %a
+
+      %ul.right
+        %li
+          = link_to "About", page_path("about")
+        %li
+          = link_to "Work", page_path("work")
+        %li
+          = link_to "Contact", page_path("contact")
+        %li
+          = link_to "Blog", page_path("blog")

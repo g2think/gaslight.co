@@ -11,6 +11,3 @@ window.Gaslight =
   Collections: {}
   Routers: {}
   Views: {}
-
-$ ->
-  new Gaslight.Routers.MainRouter()

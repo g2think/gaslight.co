@@ -8,29 +8,13 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    = javascript_include_tag "//use.typekit.net/ono5mit.js"
-    :javascript
-      try{Typekit.load();}catch(e){}
   %body
-    %ul#bars
-      %li.brand1
-      %li.brand2
-      %li.brand3
-    .row.container
-      = yield
-    #footer
-      .row
-        .ten.columns.centered
-          .row
-            .three.columns.link
-              %span.diamond.email e
-              %a{:href => "mailto:hello@gaslight.co"} hello@gaslight.co
-            .three.columns.link
-              %span.diamond.phone> p
-              1-888-507-3430
-            .six.columns.link
-              %span.diamond.address> a
-              11126 Kenwood Rd Suite C, Cincinnati, OH 45242
+    = render partial: 'application/top_bar'
+
+    = yield
+
+    = render partial: 'application/footer'
+    
     = render partial: 'application/analytics'
 
   = content_for(:javascript)
