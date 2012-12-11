@@ -1,0 +1,30 @@
+h2.title
+  text-align: center
+  border-top: 2px solid $headerFontColor
+  border-bottom: 2px solid $headerFontColor
+  margin: 30px 80px
+  padding: 20px 0 15px 0
+  &:before, &:after
+    @include icon-sprite(diamond-grey)
+    content: ""
+    display: inline-block
+    margin: 0 15px
+  &.brand1:before, &.brand1:after
+    @include icon-sprite(diamond-blue)
+  &.brand2:before, &.brand2:after
+    @include icon-sprite(diamond-yellow)
+  &.brand3:before, &.brand3:after
+    @include icon-sprite(diamond-red)
+
+.row.expertise
+  p
+    margin-bottom: 40px
+  .icons
+    text-align: center
+    margin-bottom: 50px
+    i
+      margin: 0 40px 15px 40px
+    strong
+      font-size: 20px
+  .button
+    float: right
