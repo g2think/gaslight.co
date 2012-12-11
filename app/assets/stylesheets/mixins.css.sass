@@ -1,5 +1,7 @@
 @mixin brandColors($property)
+  &.brandBase
+    #{$property}: $brandBase
   @for $i from 1 through length($brands)
     $color: nth($brands, $i)
-    .brand#{$i}
+    &.brand#{$i}
       #{$property}: $color
