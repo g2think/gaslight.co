@@ -6,31 +6,49 @@
 /     %i.icon-laptop.hide-for-small.four.columns
 
 
-#main.container
-  %header.row
-    .headline.brandBase.four.columns
-      %h1 Hi, we're <strong>Gaslight.</strong>
-      %h4 4 words | describe | section | Awesome
+#main.container.row
+  %header.row.brandBase
+    .headline.four.columns
+      %h1 <small>Let’s Light</small> Things Up
+      %h4 Process | Praise | Getting Started
     .intro.eight.columns
       %p
-        %em Overview of Gaslight area. vice messenger bag, keytar id chambray craft beer jean shorts sapiente street.
-      %p Lomo cillum ut pitchfork vice messenger bag, keytar id chambray craft beer jean shorts sapiente street art thundercats. Gentrify artisan keytar, chambray viral 3 wolf moon mustache thundercats before they sold out umami culpa.
+        %em You bring the idea. We bring the electricity. 
+      %p What’s our specialty? We light up the path that turns your best ideas into reality. Our custom software, web apps and mobile apps are about more than great code. They take your business new places.
+
   .row.expertise
     %section.ten.columns.centered
-      %h2.title.brand1 Expertise
-      %p
-        %em A brief overview of where our skills go ie: web and mobile apps. vice messenger bag, keytar id cham bray craft beer jean shorts sapiente street art thundercats. Gentrify artisan keytar. Chambray craft beer jean shorts. 
-      .row.icons
-        .three.columns
+      %h2.title.brand1 Our Process
+      %h3 Design + Development + Strategy
+      %p Sure, we love to code. But just throwing developers at a project isn’t our style. Instead we start with strategy. That means working together to clearly define your project’s goals and map out a picture for success. Then our team guides you through the design and development process. To create a tool that powers a core business function and improves your company’s bottom line.
+      .row
+        .three.columns.skillTile
           %i.icon-skills-backbone
           %strong Backbone
-        .three.columns
+        .three.columns.skillTile
           %i.icon-skills-rails
           %strong Ruby on Rails
-        .three.columns
+        .three.columns.skillTile
           %i.icon-skills-ios
           %strong iOS
-        .three.columns
+        .three.columns.skillTile
           %i.icon-skills-ux
           %strong User Experience
-      %a.button.brand1{href: "#somewhere"} More About <strong>Gaslight</strong>
+      %a.button.brand1.right{href: page_path("about")} Learn <strong>More</strong>
+  .row.testimonial
+    %section.ten.columns.centered
+      %h2.title.brand2 Testimonial
+      .flex-video.widescreen.vimeo
+        %iframe{src: "http://player.vimeo.com/video/49742517?title=0&amp;byline=0&amp;portrait=0", width: "800", height: "400", frameborder: "0"}
+      %a.button.brand2.right{href: page_path("work")} Read the <strong>Case Study</strong>
+  .row.contact
+    %section.ten.columns.centered
+      %hr.divider
+      .row
+        .nine.columns
+          %h3 Have a project in mind? 
+          %p We’d love to hear about it. To kick things off, start with our new project form. It’s short—we promise. Or head over to our Contact page to discover all the ways to begin a conversation with us. 
+
+        .three.columns
+          %a.button.brand3.right{href: page_path("contact")} Let’s <strong>Talk</strong>
+
