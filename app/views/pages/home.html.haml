@@ -1,12 +1,16 @@
-/ #landing.guides
-/   .intro
-/     %p.eight.columns
-/       Gaslight: A one-liner about us Street art gastropub vice, raw denim food truck mustache.
+- content_for :javascript do
+  :javascript
+    Gaslight.kickOff()
 
-/     %i.icon-laptop.hide-for-small.four.columns
+- content_for :top do 
+  #guides
+    .intro
+      %p.eight.columns
+        Gaslight is a design and development shop that builds custom software, web apps and mobile apps for entrepreneurs, business owners and visionaries.
 
+      %i.icon-laptop.hide-for-small.four.columns
 
-#main.container.row
+#main.row.dynamic
   %header.row.brandBase
     .headline.four.columns
       %h1 <small>Let’s Light</small> Things Up

@@ -1,7 +1,7 @@
 class Gaslight.Routers.MainRouter extends Backbone.Router
 
   initialize: ->
-    @mainEl = $('.container')
+    @mainEl = $('#guides')
     @index()
 
   index: ->
