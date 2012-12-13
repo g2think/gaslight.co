@@ -9,11 +9,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = render partial: 'application/top_bar'
+    = content_for(:top)
 
-    = yield
-
-    = render partial: 'application/footer'
+    #page
+      = render partial: 'application/nav'
+      = yield
+      = render partial: 'application/footer'
     
     = render partial: 'application/analytics'
 

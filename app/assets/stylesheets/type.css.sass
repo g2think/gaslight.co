@@ -58,7 +58,9 @@ h4
   font-size: ms(0)
   font-weight: bold
 h5  
-  font-size: ms(1) 
+  font-size: ms(0) * 1.5
+  font-weight: bolder
+  margin: 0
 h6  
   font-size: ms(0) 
 
@@ -133,14 +135,16 @@ blockquote, blockquote p
 
 blockquote 
   margin: 0 0 ms(1)
-  padding: 9px 20px 0 19px
-  border-#{$defaultFloat}: 1px solid #ddd
+  padding: 100px
+  font-size: ms(3)
+  color: #000
+  @include brandColors(background-color, 30%)
+  
   cite
+    font-style: normal
     display: block
-    font-size: ms(0) - 1
-    color: lighten($headerFontColor, 20%)
-    &:before
-      content: "\2014 \0020"
+    text-align: right
+    font-size: .8em
     a, a:visited
       color: lighten($headerFontColor, 20%)
   
