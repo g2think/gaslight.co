@@ -3,7 +3,7 @@
 
 // // Grid Settings
 
-// $rowWidth: 30000px;
+$rowWidth: 1024px;
 // $columnGutter: 30px;
 // $totalColumns: 12;
 // $mobileTotalColumns: 4;
@@ -107,7 +107,7 @@ $bodyFontFamily: "DINWeb", "Helvetica", Helvetica, Arial, sans-serif;
 $topBarBgColor: #000;
 $topBarHeight: 62px;
 $topBarHeightMobile: 45px;
-// $topBarBtmMargin: 30px;
+$topBarBtmMargin: 0px;
 // $topBarTitleWeight: bold;
 // $topBarTitleSize: 17px;
 // $topBarLinkColor: #fff;
