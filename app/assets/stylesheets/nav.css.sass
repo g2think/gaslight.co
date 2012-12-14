@@ -1,7 +1,18 @@
-#mainNav
+#nav
   @extend .top-bar
-  position: relative
+  position: fixed
+  top: 0
   z-index: 100
-  ul > li.name
+  .brand
     img, a
-      display: inline-block
+      float: left
+    img
+      margin: 8px 12px 0 0
+    a
+      color: #fff
+      font-size: 19px
+      font-weight: bold
+      margin-top: 3px
+      text-transform: uppercase
+      &:hover
+        color: darken($topBarLinkColor, 15%)
