@@ -8,7 +8,6 @@ Gaslight.guideData = [
     points: [
       {x: 200, y: 200}
       {x: 300, y: -300}
-      {x: 600, y: 600}
     ]
     dot: {
       size: 20
@@ -56,6 +55,26 @@ Gaslight.guideData = [
       fill: "#e53c2e"
       opacity: .5
       speed: 4000
+      easing: "<>"
+    }
+  }
+  {
+    color: "#333"
+    start: {
+      bottom: 200
+      left: 200
+    }
+    points: [
+      {x: 500, y: -500}
+      {x: 200, y: -200}
+      {x: 500, y: 500}
+    ]
+    dot: {
+      size: 40
+      position: .9
+      fill: "#e53c2e"
+      opacity: .5
+      speed: 8000
       easing: "<>"
     }
   }
