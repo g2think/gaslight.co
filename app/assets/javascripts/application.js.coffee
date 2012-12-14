@@ -12,7 +12,7 @@
 $ -> 
   $('input, textarea').placeholder()
   
-  $('#mainNav').foundationTopBar()
+  $('#nav').foundationTopBar()
   
   $('.slideshow .slides').orbit
     directionalNav: false
@@ -26,13 +26,23 @@ Gaslight.kickOff = ->
   @svgView.render()
   
   $('#page').css
-    top: $(window).height() - $('#mainNav').height()
-
-  $(window).on "scroll", (event) ->
-    if $(window).height() < $(window).scrollTop() + $('#mainNav').height()
-      $('#mainNav').css
+    top: $(window).height()
+  
+  positionNav = ->
+    if $(window).height() < $(window).scrollTop() + 62
+      $('#nav').css
         position: "fixed"
         top: 0
+        marginTop: 0
+
     else
-      $('#mainNav').css
+      $('#nav').css
         position: "relative"
+        marginTop: -62
+
+
+  positionNav()
+
+  $(window).on "scroll", (event) ->
+    positionNav()
+    
