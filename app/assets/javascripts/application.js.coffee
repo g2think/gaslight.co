@@ -40,7 +40,6 @@ Gaslight.kickOff = ->
         position: "relative"
         marginTop: -62
 
-
   positionNav()
 
   $(window).on "scroll", (event) ->

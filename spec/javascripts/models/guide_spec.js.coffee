@@ -4,6 +4,10 @@ describe "Guide", ->
   beforeEach ->
     @guide = new Gaslight.Models.Guide
       color: "red"
+      start: {
+        left: 100
+        bottom: 100
+      }
       points: [
         {x: 10, y: 20}
         {x: 30, y: 40}

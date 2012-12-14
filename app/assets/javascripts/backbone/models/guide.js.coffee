@@ -13,7 +13,7 @@ class Gaslight.Models.Guide extends Backbone.Model
   linePath: ->
     pathString = ""
     for point, i in @get('points')
-      pathString += "#{if i is 0 then "M" else "L" }#{point.x},#{point.y}"
+      pathString += "l#{point.x},#{point.y}"
     pathString
 
   dotPath: ->
