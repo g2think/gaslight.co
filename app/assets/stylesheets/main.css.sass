@@ -45,7 +45,21 @@
       background-image: image-url("header3.jpg") 
       border-color: $brand3
     .headline
-      padding: 80px 0
+      padding-top: 80px
+      .map
+        h3
+          width: 226px
+          height: 221px
+          margin: -15px 0 20px 44px
+          padding: 65px 42px
+          line-height: 1.1em
+          text-align: center
+          background: image-url("ohio.png") no-repeat
+          &:hover
+            color: $brand3
+        h4
+          &:hover
+            color: #000
       h1
         padding-left: 45px
       h4
@@ -54,6 +68,34 @@
         color: #fff
     .intro
       padding: 30px 55px
+    address
+      font-style: normal
+      .item
+        margin-bottom: 25px
+      h3
+        margin: 0
+      p
+        font-size: 1.25em
+        margin: 0
+      a
+        color: $brand3
+        font-size: 1.5em
+        font-weight: bold
+        &:hover
+          color: darken($brand3, 30%)
+    .social
+      margin-top: 15px
+      a
+        color: #fff
+        padding: 8px 14px
+        display: block
+        float: left
+        margin-right: 10px
+        background: #000
+        border: 2px solid
+        @include brandColors(border-color)
+        &:hover
+          @include brandColors(color, 20%)
 
 section.row .row
   margin-bottom: 60px
