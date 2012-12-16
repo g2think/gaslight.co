@@ -1,42 +1,26 @@
 class Gaslight.Views.GuideView extends Backbone.View
 
   constructor: (options = {})->
-
     super
     @paper = options.paper
+    @pathBuilder = new Gaslight.Helpers.PathBuilder
+      paper: @paper
+      model: @model
 
   render: ->
-    @buildStartPoint()
     @createLine()
     @createDot()
     @animateDot()
 
-  buildStartPoint: ->
-    point = @model.get('start')
-    if point.right?
-      x = @paper.width - point.right
-    if point.left?
-      x = point.left
-
-    if point.bottom?
-      y = @paper.height - point.bottom
-    if point.top?
-      y = point.top
-
-    @startPoint =
-      x: x
-      y: y
-
   createLine: ->
-    path = "M#{@startPoint.x},#{@startPoint.y}#{@model.linePath()}"
-    @line = @paper.path(path)
+    @line = @paper.path(@pathBuilder.linePath())
     @line.attr("stroke", @model.get("color"))
 
   createDot: ->
     options = _(@model.get('dot')).extend
       follow: @line
       along : 0
-    @dot = @paper.path(@model.dotPath())
+    @dot = @paper.path(@pathBuilder.dotPath())
     @dot.attr(options)
 
   animateDot: ->

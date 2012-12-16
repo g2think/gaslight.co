@@ -9,25 +9,23 @@
 
 #= require backbone/gaslight
 
-$ -> 
+$ ->
   $('input, textarea').placeholder()
-  
+
   $('#nav').foundationTopBar()
-  
+
   $('.slideshow .slides').orbit
     directionalNav: false
     bullets: true
-        
+
 Gaslight.kickOff = ->
   @svgView = new Gaslight.Views.SvgView
     el: $("#guides")
-    guides: new Gaslight.Collections.Guides(Gaslight.guideData)
-
   @svgView.render()
-  
+
   $('#page').css
     top: $(window).height()
-  
+
   positionNav = ->
     if $(window).height() < $(window).scrollTop() + 62
       $('#nav').css
@@ -44,4 +42,4 @@ Gaslight.kickOff = ->
 
   $(window).on "scroll", (event) ->
     positionNav()
-    
+

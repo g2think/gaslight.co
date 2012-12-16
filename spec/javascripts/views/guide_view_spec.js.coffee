@@ -8,7 +8,7 @@ describe "GuideView", ->
         right: 100
         bottom: 100
       points: [
-        {up: 200, left: 200}
+        {right: 200, left: 200}
       ]
     @guideView = new Gaslight.Views.GuideView
       paper: @paper
@@ -17,13 +17,6 @@ describe "GuideView", ->
   describe "constructor", ->
     it "has a paper", ->
       @guideView.paper.should.exist
-
-  describe "buildStartPoint", ->
-    beforeEach ->
-      @guideView.buildStartPoint()
-    it "should build a start point", ->
-      @guideView.startPoint.x.should.equal 900
-      @guideView.startPoint.y.should.equal 900
 
   describe "line", ->
     beforeEach ->

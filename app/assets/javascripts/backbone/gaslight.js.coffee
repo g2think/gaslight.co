@@ -5,8 +5,11 @@
 #= require_tree ./views
 #= require_tree ./routers
 #= require_tree ./data
+#= require_tree ./helpers
 
 window.Gaslight =
+  Data: {}
+  Helpers: {}
   Models: {}
   Collections: {}
   Routers: {}

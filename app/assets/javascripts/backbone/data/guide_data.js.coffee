@@ -1,11 +1,8 @@
-Gaslight.guideData = [
+Gaslight.data.guideData = [
   {
     color: "white"
-    start: {
-      right: 1000
-      bottom: 600
-    }
     points: [
+      {start: true, right: 1000, bottom: 600}
       {x: 200, y: 200}
       {x: 300, y: -300}
     ]
@@ -20,11 +17,8 @@ Gaslight.guideData = [
   }
   {
     color: "gray"
-    start: {
-      top: 400
-      left: 200
-    }
     points: [
+      {start: true, top: 400, left: 200}
       {x: -100, y: -100}
       {x: 200, y: -200}
       {x: 500, y: 500}
@@ -40,11 +34,8 @@ Gaslight.guideData = [
   }
   {
     color: "white"
-    start: {
-      right: 700
-      bottom: 200
-    }
     points: [
+      {start: true, right: 700, bottom: 200}
       {x: 400, y: -400}
       {x: 200, y: 200}
       {x: -500, y: 500}
@@ -60,11 +51,8 @@ Gaslight.guideData = [
   }
   {
     color: "#333"
-    start: {
-      bottom: 200
-      left: 200
-    }
     points: [
+      {start: true, bottom: 200, left: 200}
       {x: 500, y: -500}
       {x: 200, y: -200}
       {x: 500, y: 500}
