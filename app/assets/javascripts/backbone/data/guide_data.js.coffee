@@ -1,4 +1,4 @@
-Gaslight.data.guideData = [
+Gaslight.Data.guideData = [
   {
     color: "white"
     points: [

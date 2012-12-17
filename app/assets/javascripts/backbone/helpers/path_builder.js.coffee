@@ -32,3 +32,6 @@ class Gaslight.Helpers.PathBuilder
   dotPath: ->
     radius = @model.get('dot').size / 2
     "M#{-radius},0L0,#{radius}L#{radius},0L0,#{-radius}Z"
+
+  shapePath: ->
+    @linePath() + 'z'

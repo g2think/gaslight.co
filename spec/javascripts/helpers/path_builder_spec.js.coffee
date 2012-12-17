@@ -37,6 +37,10 @@ describe "PathBuilder", ->
     it "should return the line path string", ->
       @builder.linePath().should.equal "M900,800l10,20l30,40"
 
+  describe "shapePath", ->
+    it "should return the line path string", ->
+      @builder.shapePath().should.equal "M900,800l10,20l30,40z"
+
   describe "dotPath", ->
     it "should return the dot path string", ->
       @builder.dotPath().should.equal "M-10,0L0,10L10,0L0,-10Z"
