@@ -20,14 +20,16 @@
           %a.brand1{href: "http://twitter.com/teamgaslight"} Twitter
           %a.brand2{href: "http://facebook.com/teamgaslight"} Facebook
           %a.brand3{href: "http://github.com/gaslight"} Github
-  .row
-    %section.ten.columns.centered
+  
+  %section.row.contact
+    .ten.columns.centered
       %h2.title.brand3 Work With Us
+      %p.emphasize Have an idea that’s ready for design and development? Kick things off by filling out our new project form. It helps us get to know you and your idea a little better. We’ll follow-up within three business days to talk about how we might be able to help. 
+      = render partial: 'contact/form'
 
-  .row
-    %section.ten.columns.centered
+  %section.row
+    .ten.columns.centered
       %h2.title.brand3 Let’s Grow Together
-      %p
-        %em We’re active in the design, development and start-up communities in Cincinnati and across the country. It’s how we share knowledge and never stop learning. 
+      %p.emphasize We’re active in the design, development and start-up communities in Cincinnati and across the country. It’s how we share knowledge and never stop learning. 
 
         

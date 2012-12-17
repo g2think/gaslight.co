@@ -1,8 +1,0 @@
-<%= form_for(message, url: contact_path, remote: true) do |f| %>
-  <%= render 'application/flashes' %>
-  <%= f.text_field :name, placeholder: 'Name' %>
-  <%= f.text_field :email, type: :email, placeholder: 'Email' %>
-  <%= f.text_area :body, placeholder: 'How can we help you?' %>
-  <%= f.text_field :human, placeholder: 'Are you a human? Just say yes if so.' %>
-  <%= f.button 'Send it!', class: 'tiny secondary button', disable_with: 'Submitting...' %>
-<% end %>

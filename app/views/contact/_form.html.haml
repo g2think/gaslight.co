@@ -1,0 +1,10 @@
+= form_for(message, url: contact_path, remote: true) do |f|
+  = render 'application/flashes'
+  = f.text_field :name, placeholder: 'Name'
+  = f.text_field :email, type: :email, placeholder: 'Email'
+  = f.text_field :phone, type: :tel, placeholder: 'Phone'
+  = f.text_area :project, placeholder: 'Can you tell us a little bit about your business and project?'
+  = f.text_area :timeline, placeholder: 'Can you tell us a little bit about your business and project?'
+  = f.select(:budget, ['1 Instagram', '2 Instagrams', '3 Instagrams'], {include_blank: "What's your ballpark budget"})
+  = f.text_field :human, placeholder: 'Are you a human? Just say yes if so.'
+  = f.button 'Send it!', class: 'button brand3', disable_with: 'Submitting...'
