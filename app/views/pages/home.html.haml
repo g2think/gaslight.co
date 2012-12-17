@@ -23,12 +23,11 @@
       %h1 <small>Let’s Light</small> Things Up
       %h4 Process | Praise | Getting Started
     .intro.eight.columns
-      %p
-        %em You bring the idea. We bring the electricity. 
+      %p.emphasize You bring the idea. We bring the electricity. 
       %p What’s our specialty? We light up the path that turns your best ideas into reality. Our custom software, web apps and mobile apps are about more than great code. They take your business new places.
 
-  .row.expertise
-    %section.ten.columns.centered
+  %section.row.expertise
+    .ten.columns.centered
       %h2.title.brand1 Our Process
       %h3 Design + Development + Strategy
       %p Sure, we love to code. But just throwing developers at a project isn’t our style. Instead we start with strategy. That means working together to clearly define your project’s goals and map out a picture for success. Then our team guides you through the design and development process. To create a tool that powers a core business function and improves your company’s bottom line.
@@ -46,15 +45,17 @@
           %i.icon-skills-ux
           %strong User Experience
       %a.button.brand1.right{href: page_path("about")} Learn <strong>More</strong>
-  .row.testimonial
-    %section.ten.columns.centered
-      %h2.title.brand2 Testimonial
+  
+  %section.row.testimonial
+    .ten.columns.centered
+      %hr.divider.ten.columns.centered
       .flex-video.widescreen.vimeo
         %iframe{src: "http://player.vimeo.com/video/49742517?title=0&amp;byline=0&amp;portrait=0", width: "800", height: "400", frameborder: "0"}
       %a.button.brand2.right{href: page_path("work")} Read the <strong>Case Study</strong>
-  .row.contact
-    %section.ten.columns.centered
-      %hr.divider
+  
+  %section.row.contact
+    .ten.columns.centered
+      %hr.divider.ten.columns.centered
       .row
         .nine.columns
           %h3 Have a project in mind? 

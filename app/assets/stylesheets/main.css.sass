@@ -40,7 +40,7 @@
   box-shadow: 0 0 10px #ddd
   padding: 100px 50px
   > header
-    margin: 0px -75px 60px -75px
+    margin: 0px -75px $sectionMargin -75px
     height: 370px
     overflow: hidden
     background-repeat: no-repeat
@@ -107,9 +107,11 @@
         @include brandColors(border-color)
         &:hover
           @include brandColors(color, 20%)
+  section.row
+    margin-bottom: $sectionMargin
+    p.emphasize
+      margin-bottom: 40px
 
-section.row .row
-  margin-bottom: 60px
 
 h2.title
   text-align: center
@@ -130,7 +132,6 @@ h2.title
     @include icon-sprite(diamond-red)
 
 .row.expertise
-  margin-bottom: 60px
   p
     margin-bottom: 40px
   .verticalWrap
@@ -138,7 +139,9 @@ h2.title
 
 .iconTile
   text-align: center
-  margin-bottom: 50px
+  margin-bottom: 40px
+  &.last
+    margin-bottom: 0
   i
     clear: both
     margin-bottom: 15px
@@ -149,16 +152,15 @@ h2.title
 
 hr.divider
   border: 1px solid #c1c1c1
-  margin: 30px 20%
   text-align: center
+  &.columns
+    margin-top: 10px
+    margin-bottom: $sectionMargin
   &:before
     @include icon-sprite(diamond-grey)
     content: ""
     display: inline-block
     margin: -12px 15px 0 15px
-  &.narrow
-    margin-right: 10%
-    margin-left: 10%
 
 .flex-video
   margin-bottom: 30px
@@ -205,7 +207,18 @@ ul.photos li
       background: $brand1
       color: #fff
 
+.clients 
+  text-align: center
+  li
+    display: inline-block
+    width: 33%
+    height: 75px
+    list-style: none
+    a
+      max-width: 100%
+
 .slideshow
+  margin-bottom: $sectionMargin
   h3
     margin: 0
     background: #000
@@ -224,3 +237,6 @@ ul.photos li
   .content
     padding: 20px
     background: #f4f4f4
+
+.contact form label
+  display: none
