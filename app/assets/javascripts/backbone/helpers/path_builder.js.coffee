@@ -2,16 +2,18 @@ class Gaslight.Helpers.PathBuilder
 
   constructor: (options) ->
     @paper = options.paper
-    @model = options.model
 
-  linePath: ->
+  openPathForPoints: (points) ->
     pathString = ""
-    for point, i in @model.get('points')
+    for point, i in points
       pathString += @pathForPoint(point)
     pathString
 
+  closedPathForPoints: (points) ->
+    @openPathForPoints(points) + 'Z'
+
   pathForPoint: (point) ->
-    if @isAbsolute(point)
+    if @isAbsolutePoint(point)
       x = if point.right? then @paper.width - point.right else point.left
       y = if point.bottom? then @paper.height - point.bottom else point.top
     else
@@ -20,18 +22,15 @@ class Gaslight.Helpers.PathBuilder
     "#{@commandForPoint(point)}#{x},#{y}"
 
   commandForPoint: (point) ->
-    if @isAbsolute(point)
+    if @isAbsolutePoint(point)
       command = if point.start then "M" else "L"
     else
       command = if point.start then "m" else "l"
     command
 
-  isAbsolute: (point) ->
+  isAbsolutePoint: (point) ->
     point.left? or point.right? or point.top? or point.bottom?
 
-  dotPath: ->
-    radius = @model.get('dot').size / 2
-    "M#{-radius},0L0,#{radius}L#{radius},0L0,#{-radius}Z"
-
-  shapePath: ->
-    @linePath() + 'z'
+  diamondPath: (size = 20) ->
+    radius = size / 2
+    "M#{-radius},0l#{radius},#{radius}l#{radius},#{-radius}l#{-radius},#{-radius}Z"

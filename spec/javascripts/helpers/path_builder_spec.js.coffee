@@ -2,24 +2,14 @@
 
 describe "PathBuilder", ->
   beforeEach ->
-    @guide = new Gaslight.Models.Guide
-      color: "red"
-      points: [
+    @points = [
         {start: true, right: 100, bottom: 200}
         {x: 10, y: 20}
         {x: 30, y: 40}
       ]
-      dot:
-        size: 20
-        position: .1
-        fill: "blue"
-        opacity: .5
-        speed: 4000
-        easing: "<>"
     @paper = Raphael(0, 0, 1000, 1000)
     @builder = new Gaslight.Helpers.PathBuilder
       paper: @paper
-      model: @guide
 
   describe "pathForPoint", ->
     it "should return a relative path for x and y", ->
@@ -33,14 +23,18 @@ describe "PathBuilder", ->
     it "should return a beginning absolute path for left and top", ->
       @builder.pathForPoint(start: true, left: 10, top: 20).should.equal "M10,20"
 
-  describe "linePath", ->
+  describe "openPathForPoints", ->
     it "should return the line path string", ->
-      @builder.linePath().should.equal "M900,800l10,20l30,40"
+      @builder.openPathForPoints(@points).should.equal "M900,800l10,20l30,40"
 
-  describe "shapePath", ->
+  describe "closedPathForPoints", ->
     it "should return the line path string", ->
-      @builder.shapePath().should.equal "M900,800l10,20l30,40z"
+      @builder.closedPathForPoints(@points).should.equal "M900,800l10,20l30,40Z"
 
-  describe "dotPath", ->
-    it "should return the dot path string", ->
-      @builder.dotPath().should.equal "M-10,0L0,10L10,0L0,-10Z"
+  describe "diamondPath", ->
+    describe "default", ->
+      it "should return a 20px diamond path", ->
+        @builder.diamondPath().should.equal "M-10,0l10,10l10,-10l-10,-10Z"
+    describe "with a size", ->
+      it "should return a properly sized diamond path", ->
+        @builder.diamondPath(40).should.equal "M-20,0l20,20l20,-20l-20,-20Z"

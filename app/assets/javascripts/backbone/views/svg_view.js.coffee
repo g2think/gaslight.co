@@ -4,8 +4,8 @@ class Gaslight.Views.SvgView extends Backbone.View
     super
     @guides = new Gaslight.Collections.Guides(Gaslight.Data.guideData)
     @shapes = new Gaslight.Collections.Shapes(Gaslight.Data.shapeData)
-
     @paper = Raphael(@el, @$el.width(), @$el.height())
+
     @paper.customAttributes.follow = (element) ->
       follow: element
     @paper.customAttributes.along = (ratio) ->
@@ -19,7 +19,7 @@ class Gaslight.Views.SvgView extends Backbone.View
 
   addPaths: ->
     for guide in @guides.models
-      guideView = new Gaslight.Views.GuideView(paper: @paper, model: guide).render()
+      new Gaslight.Views.GuideView(paper: @paper, model: guide).render()
 
   addShapes: ->
     for shape in @shapes.models

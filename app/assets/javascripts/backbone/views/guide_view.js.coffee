@@ -13,14 +13,14 @@ class Gaslight.Views.GuideView extends Backbone.View
     @animateDot()
 
   createLine: ->
-    @line = @paper.path(@pathBuilder.linePath())
+    @line = @paper.path @pathBuilder.openPathForPoints @model.get('points')
     @line.attr("stroke", @model.get("color"))
 
   createDot: ->
     options = _(@model.get('dot')).extend
       follow: @line
       along : 0
-    @dot = @paper.path(@pathBuilder.dotPath())
+    @dot = @paper.path @pathBuilder.diamondPath @model.get('dot').size
     @dot.attr(options)
 
   animateDot: ->

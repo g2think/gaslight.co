@@ -11,7 +11,7 @@ class Gaslight.Views.ShapeView extends Backbone.View
     @createShape()
 
   createShape: ->
-    @shape = @paper.path(@pathBuilder.shapePath())
+    @shape = @paper.path @pathBuilder.closedPathForPoints @model.get('points')
     @shape.attr
       fill: @model.get("fill")
       "fill-opacity": @model.get("opacity")

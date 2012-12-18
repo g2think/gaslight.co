@@ -8,7 +8,6 @@ Gaslight.Data.guideData = [
     ]
     dot: {
       size: 20
-      position: .1
       fill: "#efc703"
       opacity: .5
       speed: 5000
@@ -25,7 +24,6 @@ Gaslight.Data.guideData = [
     ]
     dot: {
       size: 40
-      position: .9
       fill: "#57c0e8"
       opacity: .5
       speed: 3000
@@ -42,7 +40,6 @@ Gaslight.Data.guideData = [
     ]
     dot: {
       size: 30
-      position: .9
       fill: "#e53c2e"
       opacity: .5
       speed: 4000
@@ -59,7 +56,6 @@ Gaslight.Data.guideData = [
     ]
     dot: {
       size: 40
-      position: .9
       fill: "#e53c2e"
       opacity: .5
       speed: 8000
