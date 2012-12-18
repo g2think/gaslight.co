@@ -37,7 +37,7 @@
 #main
   position: relative
   background: #fff
-  box-shadow: 0 0 10px #ddd
+  @include box-shadow(0 10px 10px #ddd)
   padding: 100px 50px
   > header
     margin: 0px -75px $sectionMargin -75px
@@ -207,7 +207,7 @@ ul.photos li
       background: $brand1
       color: #fff
 
-.clients 
+.clients
   text-align: center
   li
     display: inline-block

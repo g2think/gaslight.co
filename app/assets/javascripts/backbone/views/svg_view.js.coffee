@@ -17,6 +17,11 @@ class Gaslight.Views.SvgView extends Backbone.View
     @addPaths()
     @addShapes()
 
+  reRender: ->
+    @paper.clear()
+    @paper.setSize(@$el.width(), @$el.height())
+    @render()
+
   addPaths: ->
     for guide in @guides.models
       new Gaslight.Views.GuideView(paper: @paper, model: guide).render()

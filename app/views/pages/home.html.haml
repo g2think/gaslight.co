@@ -1,8 +1,8 @@
 - content_for :javascript do
   :javascript
-    Gaslight.kickOff()
+    new Gaslight.HomepageApp()
 
-- content_for :top do 
+- content_for :top do
   #guides
     .intro
       %p.eight.columns
@@ -23,7 +23,7 @@
       %h1 <small>Let’s Light</small> Things Up
       %h4 Process | Praise | Getting Started
     .intro.eight.columns
-      %p.emphasize You bring the idea. We bring the electricity. 
+      %p.emphasize You bring the idea. We bring the electricity.
       %p What’s our specialty? We light up the path that turns your best ideas into reality. Our custom software, web apps and mobile apps are about more than great code. They take your business new places.
 
   %section.row.expertise
@@ -45,21 +45,21 @@
           %i.icon-skills-ux
           %strong User Experience
       %a.button.brand1.right{href: page_path("about")} Learn <strong>More</strong>
-  
+
   %section.row.testimonial
     .ten.columns.centered
       %hr.divider.ten.columns.centered
       .flex-video.widescreen.vimeo
         %iframe{src: "http://player.vimeo.com/video/49742517?title=0&amp;byline=0&amp;portrait=0", width: "800", height: "400", frameborder: "0"}
       %a.button.brand2.right{href: page_path("work")} Read the <strong>Case Study</strong>
-  
+
   %section.row.contact
     .ten.columns.centered
       %hr.divider.ten.columns.centered
       .row
         .nine.columns
           %h3 Have a project in mind? 
-          %p We’d love to hear about it. To kick things off, start with our new project form. It’s short—we promise. Or head over to our Contact page to discover all the ways to begin a conversation with us. 
+          %p We’d love to hear about it. To kick things off, start with our new project form. It’s short—we promise. Or head over to our Contact page to discover all the ways to begin a conversation with us.
 
         .three.columns
           %a.button.brand3.right{href: page_path("contact")} Let’s <strong>Talk</strong>

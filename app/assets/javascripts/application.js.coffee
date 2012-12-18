@@ -11,35 +11,44 @@
 
 $ ->
   $('input, textarea').placeholder()
-
   $('#nav').foundationTopBar()
-
   $('.slideshow .slides').orbit
     directionalNav: false
     bullets: true
 
-Gaslight.kickOff = ->
-  @svgView = new Gaslight.Views.SvgView
-    el: $("#guides")
-  @svgView.render()
+class Gaslight.HomepageApp
 
-  $('#page').css
-    top: $(window).height()
+  constructor: ->
+    @$nav = $('#nav')
+    @$page = $('#page')
+    @$window = $(window)
 
-  positionNav = ->
-    if $(window).height() < $(window).scrollTop() + 62
-      $('#nav').css
-        position: "fixed"
-        top: 0
-        marginTop: 0
+    @svgView = new Gaslight.Views.SvgView
+      el: $("#guides")
+    @svgView.render()
 
-    else
-      $('#nav').css
-        position: "relative"
-        marginTop: -62
+    @positionPage()
+    @positionNav()
 
-  positionNav()
+    @$window.on 'scroll', => @positionNav()
 
-  $(window).on "scroll", (event) ->
-    positionNav()
+    @$window.on 'resize', =>
+      @resize()
 
+  resize: ->
+    callback = =>
+      @svgView.reRender()
+      @positionPage()
+    clearTimeout(@timer)
+    @timer = setTimeout(callback, 200)
+
+  positionPage: ->
+    @$page.css
+      top: @$window.height() - @$nav.height()
+
+  positionNav: ->
+    @$nav.css
+      position: if @scrolledDown() then "fixed" else "absolute"
+
+  scrolledDown: ->
+    @$window.height() < @$window.scrollTop() + @$nav.height()
