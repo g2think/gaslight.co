@@ -12,16 +12,18 @@ describe "PathBuilder", ->
       paper: @paper
 
   describe "pathForPoint", ->
-    it "should return a relative path for x and y", ->
-      @builder.pathForPoint(x: 10, y: 20).should.equal "l10,20"
-    it "should return an absolute path for left and top", ->
-      @builder.pathForPoint(left: 100, top: 200).should.equal "L100,200"
-    it "should return an absolute path for right and bottom", ->
-      @builder.pathForPoint(right: 100, bottom: 200).should.equal "L900,800"
-    it "should return a beginning relative path for x and y", ->
-      @builder.pathForPoint(start: true, x: 10, y: 20).should.equal "m10,20"
-    it "should return a beginning absolute path for left and top", ->
-      @builder.pathForPoint(start: true, left: 10, top: 20).should.equal "M10,20"
+    describe "pixel based points", ->
+      it "should return a relative path for x and y", ->
+        @builder.pathForPoint(x: 10, y: 20).should.equal "l10,20"
+      it "should return an absolute path for left and top", ->
+        @builder.pathForPoint(left: 100, top: 200).should.equal "L100,200"
+      it "should return an absolute path for right and bottom", ->
+        @builder.pathForPoint(right: 100, bottom: 200).should.equal "L900,800"
+      it "should return a beginning relative path for x and y", ->
+        @builder.pathForPoint(start: true, x: 10, y: 20).should.equal "m10,20"
+      it "should return a beginning absolute path for left and top", ->
+        @builder.pathForPoint(start: true, left: 10, top: 20).should.equal "M10,20"
+    describe "percentage based points", ->
 
   describe "openPathForPoints", ->
     it "should return the line path string", ->

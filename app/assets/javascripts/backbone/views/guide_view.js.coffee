@@ -9,12 +9,15 @@ class Gaslight.Views.GuideView extends Backbone.View
 
   render: ->
     @createLine()
-    @createDot()
-    @animateDot()
+    if @model.get('dot')
+      @createDot()
+      @animateDot()
 
   createLine: ->
     @line = @paper.path @pathBuilder.openPathForPoints @model.get('points')
-    @line.attr("stroke", @model.get("color"))
+    @line.attr
+      'stroke': @model.get("color")
+      'stroke-width': @model.get("width")
 
   createDot: ->
     options = _(@model.get('dot')).extend

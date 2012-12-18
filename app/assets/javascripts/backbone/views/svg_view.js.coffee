@@ -14,8 +14,9 @@ class Gaslight.Views.SvgView extends Backbone.View
       transform: "t#{point.x} #{point.y}"
 
   render: ->
-    @addPaths()
     @addShapes()
+    @addPaths()
+    
 
   reRender: ->
     @paper.clear()

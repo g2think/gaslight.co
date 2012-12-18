@@ -19,18 +19,11 @@ $ ->
 class Gaslight.HomepageApp
 
   constructor: ->
-    @$nav = $('#nav')
-    @$page = $('#page')
     @$window = $(window)
 
     @svgView = new Gaslight.Views.SvgView
       el: $("#guides")
     @svgView.render()
-
-    @positionPage()
-    @positionNav()
-
-    @$window.on 'scroll', => @positionNav()
 
     @$window.on 'resize', =>
       @resize()
@@ -38,17 +31,5 @@ class Gaslight.HomepageApp
   resize: ->
     callback = =>
       @svgView.reRender()
-      @positionPage()
     clearTimeout(@timer)
     @timer = setTimeout(callback, 200)
-
-  positionPage: ->
-    @$page.css
-      top: @$window.height() - @$nav.height()
-
-  positionNav: ->
-    @$nav.css
-      position: if @scrolledDown() then "fixed" else "absolute"
-
-  scrolledDown: ->
-    @$window.height() < @$window.scrollTop() + @$nav.height()

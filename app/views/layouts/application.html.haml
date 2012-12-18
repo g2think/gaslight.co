@@ -9,13 +9,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = content_for(:top)
 
-    #page
-      = render partial: 'application/nav'
-      = yield
-      = render partial: 'application/footer'
-    
+    = yield
+  
     = render partial: 'application/analytics'
 
   = content_for(:javascript)

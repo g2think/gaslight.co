@@ -2,72 +2,19 @@
   :javascript
     new Gaslight.HomepageApp()
 
-- content_for :top do
-  #guides
-    .intro
-      %p.eight.columns
-        Gaslight is a design and development shop that builds custom software, web apps and mobile apps for entrepreneurs, business owners and visionaries.
+= render partial: 'application/nav'
 
-      .four.columns.hide-for-small
-        %a &#711;
-        %a &#711;
-        %a &#711;
+#guides
+  
+  %img.logo{src: image_path("logoLarge.png")}
 
-    %img.logo{src: image_path("logoLarge.png")}
+  .intro
+    %h3 We are Gaslight 
+    %p What’s our specialty? We light up the path that turns your best ideas into reality. Our custom software, web apps and mobile apps are about more than great code. They take your business new places.
+  
+  .links.hide-for-large
+    %a.button.brand1{href: page_path("about")} About
+    %a.button.brand2{href: page_path("work")} Work
+    %a.button.brand3{href: page_path("contact")} Contact
 
-    %h2 Let’s Build<br/> Great Things
-
-#main.row
-  %header.row.brandBase
-    .headline.four.columns
-      %h1 <small>Let’s Light</small> Things Up
-      %h4
-        %a.local{href: "#process"} Process
-        | 
-        %a.local{href: "#testimonial"} Praise
-        | 
-        %a.local{href: "#contact"} Getting Started
-    .intro.eight.columns
-      %p.lead You bring the idea. We bring the electricity.
-      %p What’s our specialty? We light up the path that turns your best ideas into reality. Our custom software, web apps and mobile apps are about more than great code. They take your business new places.
-
-  %section.row.process
-    %a.anchor{name:"process"}
-    .eleven.columns.centered
-      %h2.title.brand1 Our Process
-      %h3 Design + Development + Strategy
-      %p Sure, we love to code. But just throwing developers at a project isn’t our style. Instead we start with strategy. That means working together to clearly define your project’s goals and map out a picture for success. Then our team guides you through the design and development process. To create a tool that powers a core business function and improves your company’s bottom line.
-      .row
-        .three.columns.iconTile
-          %i.icon-skills-backbone
-          %strong Backbone
-        .three.columns.iconTile
-          %i.icon-skills-rails
-          %strong Ruby on Rails
-        .three.columns.iconTile
-          %i.icon-skills-ios
-          %strong iOS
-        .three.columns.iconTile
-          %i.icon-skills-ux
-          %strong User Experience
-      %a.button.brand1.right{href: page_path("about")} Learn <strong>More</strong>
-
-  %section.row.testimonial
-    %a.anchor{name:"testimonial"}
-    .eleven.columns.centered
-      %hr.divider.ten.columns.centered
-      .flex-video.widescreen.vimeo
-        %iframe{src: "http://player.vimeo.com/video/49742517?title=0&amp;byline=0&amp;portrait=0", width: "800", height: "400", frameborder: "0"}
-      %a.button.brand2.right{href: page_path("work")} Read the <strong>Case Study</strong>
-
-  %section.row.contact
-    %a.anchor{name:"contact"}
-    .eleven.columns.centered
-      %hr.divider.ten.columns.centered
-      .row
-        .nine.columns
-          %h3 Have a project in mind? 
-          %p We’d love to hear about it. To kick things off, start with our new project form. It’s short—we promise. Or head over to our Contact page to discover all the ways to begin a conversation with us.
-
-        .three.columns
-          %a.button.brand3.right{href: page_path("contact")} Let’s <strong>Talk</strong>
+  %h2 Let’s Build<br/> Great Things

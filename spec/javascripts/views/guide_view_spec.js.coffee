@@ -8,6 +8,12 @@ describe "GuideView", ->
         {start: true, top: 200, right: 200}
         {bottom: 200, left: 200}
       ]
+      dot: {
+        size: 20
+        fill: "#fff"
+        speed: 8000
+        easing: "<>"
+      }
     @guideView = new Gaslight.Views.GuideView
       paper: @paper
       model: @guide
@@ -24,8 +30,7 @@ describe "GuideView", ->
 
   describe "dot", ->
     beforeEach ->
-      @guideView.createLine()
-      @guideView.createDot()
+      @guideView.render()
     it "should create a dot", ->
       @guideView.dot.should.be.defined
     xit "should follow the line", ->
