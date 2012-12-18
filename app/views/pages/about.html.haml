@@ -2,13 +2,18 @@
   %header.row.brand1
     .headline.four.columns
       %h1 <small>We’re Better</small> Together
-      %h4 Expertise | The Team
+      %h4 
+        %a.local{href: "#expertise"} Expertise
+        | 
+        %a.local{href: "#team"} The Team
+        
     .intro.eight.columns
-      %p.emphasize We don’t dictate. We collaborate.
+      %p.lead We don’t dictate. We collaborate.
       %p The design and development process shouldn’t be a secret. At Gaslight, the whole team owns every project. And we consider our clients an integral part of that team. We cultivate deep partnerships to produce innovative results.
 
   %section.row.expertise
-    .ten.columns.centered
+    %a.anchor{name:"expertise"}
+    .eleven.columns.centered
       %h2.title.brand1 Our Expertise
       .row
         .two.columns.iconTile

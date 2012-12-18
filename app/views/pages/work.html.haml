@@ -2,15 +2,21 @@
   %header.row.brand2
     .headline.brandBase.four.columns
       %h1 We listen. Then We <strong>Innovate</strong>.
-      %h4 Project Teams | Clients | Featured Project
+      %h4
+        %a.local{href: "#team"} Project Teams
+        | 
+        %a.local{href: "#clients"} Clients
+        | 
+        %a.local{href: "#featured"} Featured Project
     .intro.eight.columns
-      %p.emphasize Let’s cast success in a new light. 
+      %p.lead Let’s cast success in a new light. 
       %p Our works starts and ends with listening. We want to understand your business. Then build something innovative to make your company better and more profitable. We build things with tangible business benefits.  
 
   %section.row.yourTeam
-    .ten.columns.centered
+    %a.anchor{name:"team"}
+    .eleven.columns.centered
       %h2.title.brand2 Your Project Team
-      %p.emphasize When you work with us, you’ll never be competing with other clients for our time or attention. We assign a dedicated team to every project that’s 100% focused on your goals. In fact, you can expect them to be in touch just about every day as they turn your ideas into a success story. 
+      %p.lead When you work with us, you’ll never be competing with other clients for our time or attention. We assign a dedicated team to every project that’s 100% focused on your goals. In fact, you can expect them to be in touch just about every day as they turn your ideas into a success story. 
       .row
         .three.columns.iconTile
           %i.icon-team-dev
@@ -30,10 +36,11 @@
         .nine.columns
           %p Think of it as someone who has been through the design and development process a hundred times. And can steer your project down the path to success. Isn’t that a project manager, you say? Nope. It’s something better. Read our mini manifesto: Why We Don’t Have Project Managers.
   
-  %section.row
-    .ten.columns.centered
+  %section.row.clients
+    %a.anchor{name:"clients"}
+    .eleven.columns.centered
       %h2.title.brand2 Our Clients
-      %p.emphasize We work with small- to medium-sized businesses, start-ups and visionaries across the country. Typically, we collaborate directly with the owner or another key stakeholder to create custom software and applications that play a central role in our clients’ companies. These businesses span a wide range of industries. 
+      %p.lead We work with small- to medium-sized businesses, start-ups and visionaries across the country. Typically, we collaborate directly with the owner or another key stakeholder to create custom software and applications that play a central role in our clients’ companies. These businesses span a wide range of industries. 
       %ul.clients.row
         %li
           %a.client-LocalizeIt
@@ -53,9 +60,10 @@
           %a.client-Lumbee
   
   %section.row.featuredProject
-    .ten.columns.centered    
+    %a.anchor{name:"featured"}
+    .eleven.columns.centered    
       %h2.title.brand2 Featured Project
-      %p.emphasize This company generates marketing leads for businesses through pay-per-click ads, organic search ranking, local listing optimization, social media and call tracking.
+      %p.lead This company generates marketing leads for businesses through pay-per-click ads, organic search ranking, local listing optimization, social media and call tracking.
       .slideshow
         %h3 LocalizeIt Online
         .slides
@@ -79,7 +87,7 @@
         %p  Ruby on Rails, Google’s AdWords API, Microsoft’s adCenter API, several other third-party APIs, Highcharts, Google Charts
 
   %section.row
-    .ten.columns.centered
+    .eleven.columns.centered
       %h2.title.brand2 Client Testimonials
 
       %blockquote.brand2

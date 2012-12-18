@@ -57,6 +57,10 @@
       border-color: $brand3
     .headline
       padding-top: 80px
+      a
+        color: #fff
+        &:hover
+          color: darken(#fff, 10)
       .map
         h3
           width: 226px
@@ -117,7 +121,7 @@ h2.title
   text-align: center
   border-top: 2px solid $headerFontColor
   border-bottom: 2px solid $headerFontColor
-  margin: 0 100px 60px 100px
+  margin: 0 100px $sectionMargin 100px
   padding: 20px 0 15px 0
   &:before, &:after
     @include icon-sprite(diamond-grey)
@@ -163,7 +167,7 @@ hr.divider
     margin: -12px 15px 0 15px
 
 .flex-video
-  margin-bottom: 30px
+  margin: 80px 0 30px 0
 
 .contact .button
   margin-top: 70px
@@ -243,6 +247,7 @@ ul.photos li
 .sidebar
   h5
     @include brandColors(background)
+    color: #fff
     margin: 0
     padding: 10px 0
     text-align: center
@@ -252,3 +257,8 @@ ul.photos li
 
 .contact form label
   display: none
+
+a.anchor
+  display: block
+  position: relative
+  top: -$topBarHeight - 10
