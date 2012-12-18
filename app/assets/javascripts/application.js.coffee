@@ -1,3 +1,4 @@
+#= require html5shiv
 #= require jquery
 #= require underscore
 #= require backbone
@@ -6,7 +7,6 @@
 #= require jquery.placeholder
 #= require foundation/jquery.foundation.topbar
 #= require foundation/jquery.foundation.orbit
-
 #= require backbone/gaslight
 
 $ ->
