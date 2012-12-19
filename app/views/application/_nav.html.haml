@@ -9,10 +9,10 @@
         %li.toggle-topbar
           %a
         %li
-          = link_to "About", page_path("about")
+          %a.brand1{href: page_path("about"), class: active_page_class(page_path("about"))} About
         %li
-          = link_to "Work", page_path("work")
+          %a.brand2{href: page_path("work"), class: active_page_class(page_path("work"))} Work
         %li
-          = link_to "Contact", page_path("contact")
+          %a.brand3{href: page_path("contact"), class: active_page_class(page_path("contact"))} Contact
         %li
-          = link_to "Blog", "http://blog.gaslight.co"
+          %a{href: "http://blog.gaslight.co"} Blog
