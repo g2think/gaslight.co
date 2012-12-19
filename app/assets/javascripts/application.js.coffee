@@ -4,13 +4,11 @@
 #= require backbone
 #= require raphael
 #= require jquery_ujs
-#= require jquery.placeholder
 #= require foundation/jquery.foundation.topbar
 #= require foundation/jquery.foundation.orbit
 #= require backbone/gaslight
 
 $ ->
-  $('input, textarea').placeholder()
   $('#nav').foundationTopBar()
   $('.slideshow .slides').orbit
     directionalNav: false
