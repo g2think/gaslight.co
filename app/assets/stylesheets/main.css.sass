@@ -82,34 +82,23 @@
         color: #fff
     .intro
       padding: 30px 55px
-    address
-      font-style: normal
-      .item
-        margin-bottom: 25px
+    .socialLinks
+      margin-top: 6px
+    .item
+      margin: 20px 0
       h3
         margin: 0
       p
         font-size: 1.25em
         margin: 0
-      a
+      address a
         color: $brand3
+        font-style: normal
         font-size: 1.5em
         font-weight: bold
         &:hover
           color: darken($brand3, 30%)
-    .social
-      margin-top: 15px
-      a
-        color: #fff
-        padding: 8px 14px
-        display: block
-        float: left
-        margin-right: 10px
-        background: #000
-        border: 2px solid
-        @include brandColors(border-color)
-        &:hover
-          @include brandColors(color, 20%)
+ 
   section.row
     margin-bottom: $sectionMargin
     p.emphasize
@@ -220,6 +209,25 @@ ul.photos li
     &:hover
       background: $brand1
       color: #fff
+
+.socialLinks
+  margin: 0
+  li
+    list-style: none
+    display: inline-block
+    a
+      background: #000
+      display: inline-block
+      text-align: center
+      padding: 5px 10px
+      margin: 0 20px 0 0
+      border: 3px solid blue
+      color: #fff
+      @include brandColors(border-color)
+      @include border-radius(5px)
+      &:hover
+        @include brandColors(color, 20%)
+
 
 .clients
   text-align: center

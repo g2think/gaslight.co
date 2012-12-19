@@ -1,22 +1,11 @@
 #footer
   background: #222
   @include background-image(radial-gradient(center center, #333 0%, #1a1a1a 100%))
-  overflow: auto
-  .links
-    @include clearfix()
-    max-width: 400px
-    margin: 10px auto
+  @include clearfix()
+  padding: 20px 0
+  text-align: center
+  ul.socialLinks
+    display: inline-block
     li
-      list-style: none
-      text-align: center
-      float: left
-      display: block
-      width: 33.333%
-      a
-        @include brandColors(border-color)
-        @include border-radius(5px)
-        display: block
-        padding: 10px
-        margin: 20px
-        border: 3px solid blue
-        color: #fff
+      background: transparent
+
