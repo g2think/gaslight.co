@@ -4,10 +4,5 @@ Gaslight::Application.routes.draw do
 
   # catch all the pages
   match '/:id', to: 'pages#show', as: :static
-  match '/pages/:id', to: 'pages#show', as: :static
   match '/', to: 'pages#show', id: 'home', as: :home
-
-  # redirect to /home. Lets the app rewrite requests
-  # and caches the page(s).
-  root to: 'pages#show', id: 'home', as: :home
 end
