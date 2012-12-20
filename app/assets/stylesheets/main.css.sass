@@ -55,11 +55,13 @@
     &.brand2
       background-image: image-url("header2.jpg")
       border-color: $brand2
+      .intro
+        padding-top: 50px
     &.brand3
       background-image: image-url("header3.jpg")
       border-color: $brand3
     .headline
-      padding-top: 96px
+      padding-top: 115px
       a
         color: #fff
         &:hover
@@ -87,7 +89,7 @@
       &.brandBase h1, h4
         color: #fff
     .intro
-      padding: 30px 55px
+      padding: 30px 45px 30px 55px
     .socialLinks
       margin-top: 6px
     .item
@@ -104,7 +106,7 @@
         font-weight: bold
         &:hover
           color: darken($brand3, 30%)
- 
+
   section.row
     margin-bottom: $sectionMargin
     p.emphasize
@@ -236,7 +238,7 @@ ul.photos li
         @include brandColors(color, 20%)
 
 
-.clients
+.clientsList
   text-align: center
   li
     display: inline-block
