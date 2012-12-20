@@ -26,24 +26,53 @@
 
   #guides
     .intro
+      max-width: 100%
+      position: relative
+      margin-top: 60px
       padding: 20px
-      top: 50px
-      margin-top: 0
-      h3
-        font-size: 22px
-        margin: 5px 0
-      p
-        font-size: 14px
-      
+      .lead
+        text-align: left
+        margin-bottom: 0
+
     .logo
       display: none
-
     h2
       display: none
 
+  .sidebar
+    margin-bottom: 40px
+  
+  .iconTile, .iconTile.last
+    margin-bottom: 20px
+
+  #slideshow
+    h3
+      font-size: 21px
+
+  p
+    font-size: 16px
+    &.lead
+      font-size: 19px
+  hr.divider
+    margin-bottom: 40px
   h2.title
     margin-right: 0
     margin-left: 0
+    margin-bottom: 30px
+    font-size: 24px
+    &:before, &:after
+      margin: 0 10px
+    &.brand1
+      &:before, &:after
+        @include icon-sprite(diamond-small-blue)
+    &.brand2
+      &:before, &:after
+        @include icon-sprite(diamond-small-yellow)
+    &.brand3
+      &:before, &:after
+        @include icon-sprite(diamond-small-red)
   
-  #main > header
-    display: none
+  #main 
+    padding: 75px 25px
+    > header
+      display: none

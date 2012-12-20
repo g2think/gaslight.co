@@ -12,7 +12,7 @@ $ ->
     event.preventDefault()
     $('#nav').toggleClass('expanded')
 
-  $('.slideshow .slides').orbit
+  $('#slideshow .slides').orbit
     directionalNav: false
     bullets: true
 
