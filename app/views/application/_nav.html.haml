@@ -4,9 +4,11 @@
       .brand
         %img.logo{src: image_path("logoSmall.png")}
         %a.name{href: page_path("home")} Gaslight
-      %ul.right
-        %li.toggle-topbar
-          %a
+        
+      %a.mobile.toggle-topbar.icon-menu
+      %a.mobile.mail.icon-mail{href: "mailto:hello@gaslight.co"}
+
+      %ul.right.links
         %li
           %a.brand1{href: page_path("about"), class: active_page_class(page_path("about"))} About
         %li

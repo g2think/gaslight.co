@@ -1,14 +1,30 @@
 @media only screen and (max-width: 768px)
   #nav
+    background: #000
     text-align: center
-    .brand 
+    .mobile
+      display: block
+    .brand
+      height: $topBarHeightMobile
+      text-align: center
       .logo
+        float: none
         width: 40px
         vertical-align: top
         margin-top: 6px
       .name
         display: none
+    ul.links > li a
+      text-align: left
+      height: 62px
+      line-height: 62px
+      border-top: none
+      border-bottom: 2px solid #fff
+      font-weight: lighter
+      font-size: 24px
 
   h2.title
     margin-right: 0
     margin-left: 0
+  #main > header
+    display: none
