@@ -4,12 +4,14 @@
 #= require backbone
 #= require raphael
 #= require jquery_ujs
-#= require foundation/jquery.foundation.topbar
 #= require foundation/jquery.foundation.orbit
 #= require backbone/gaslight
 
 $ ->
-  $('#nav').foundationTopBar()
+  $('#nav .toggle').on 'click touchstart', (event)->
+    event.preventDefault()
+    $('#nav').toggleClass('expanded')
+
   $('.slideshow .slides').orbit
     directionalNav: false
     bullets: true

@@ -2,12 +2,13 @@
   position: fixed
   top: 0
   z-index: 100
+  // @include transition(height 0.5s ease)
   .brand
     img, a
       float: left
     img
       margin: 8px 12px 0 0
-    a
+    .name
       color: #fff
       font-size: 19px
       font-weight: bold
@@ -26,7 +27,7 @@
     position: absolute
     top: 0
     margin: 10px
-    &.toggle-topbar
+    &.toggle
       left: 0
     &.mail
       right: 0

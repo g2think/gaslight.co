@@ -1,12 +1,9 @@
 #nav.top-bar
   .row
     %nav.twelve.columns
-      .brand
+      %a.brand{href: page_path("home")}
         %img.logo{src: image_path("logoSmall.png")}
-        %a.name{href: page_path("home")} Gaslight
-        
-      %a.mobile.toggle-topbar.icon-menu
-      %a.mobile.mail.icon-mail{href: "mailto:hello@gaslight.co"}
+        %span.name Gaslight
 
       %ul.right.links
         %li
@@ -17,3 +14,6 @@
           %a.brand3{href: page_path("contact"), class: active_page_class(page_path("contact"))} Contact
         %li
           %a{href: "http://blog.gaslight.co"} Blog
+
+      %a.mobile.toggle.icon-menu
+      %a.mobile.mail.icon-mail{href: "mailto:hello@gaslight.co"}
