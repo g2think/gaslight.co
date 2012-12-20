@@ -16,12 +16,19 @@
       text-transform: uppercase
       &:hover
         color: darken($topBarLinkColor, 15%)
+        
   ul.links > li a
+    color: $topBarLinkColor
+    display: block
+    font-size: $topBarLinkSize
+    font-weight: $topBarLinkWeight
+    padding: 0 $topBarHeight / 3
     height: $topBarHeight - 10px
     line-height: $topBarHeight - 10px
     border-top: 10px solid transparent
     &.active
       @include brandColors(border-color)
+
   .mobile
     display: none
     position: absolute
