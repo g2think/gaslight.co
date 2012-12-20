@@ -43,10 +43,11 @@
       margin-bottom: 20px
 
 #main
-  position: relative
   background: #fff
   @include box-shadow(0 -10px 10px #ddd)
-  padding: 100px 50px
+  padding: 100px 50px 100px + $footerHeight 50px
+  min-height: 100%
+  margin-bottom: - $footerHeight
   > header
     margin: 0px -75px $sectionMargin -75px
     height: 370px

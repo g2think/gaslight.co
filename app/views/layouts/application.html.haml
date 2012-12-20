@@ -7,6 +7,7 @@
     = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
+    = yield :head
     = csrf_meta_tags
   %body
 
@@ -14,4 +15,4 @@
 
     = render partial: 'application/analytics'
 
-  = content_for(:javascript)
+  = yield :javascript

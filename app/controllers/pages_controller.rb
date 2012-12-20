@@ -5,12 +5,7 @@ class PagesController < HighVoltage::PagesController
   protected
 
   def layout_for_page
-    case params[:id]
-    when 'coffee'
-      nil
-    else
-      'application'
-    end
+    'application'
   end
 
   # FIXME: Where does this belong?
