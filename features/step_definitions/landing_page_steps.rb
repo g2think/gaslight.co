@@ -1,11 +1,11 @@
-Given /^I am viewing the landing page$/ do
-  visit '/'
+Given /^I am viewing the contact page$/ do
+  visit '/contact'
 end
 
 When /^I submit the empty form$/ do
   fill_in 'Name', with: ''
   fill_in 'Email', with: ''
-  fill_in 'Body', with: ''
+  fill_in 'Can you tell us a little bit about your business and project?', with: ''
 
   # click_button 'Send it!'
   page.execute_script("document.forms[0].submit();")
@@ -14,8 +14,8 @@ end
 When /^I fill out the form$/ do
   fill_in 'Name', with: 'Chris Moore'
   fill_in 'Email', with: 'chris@cdmwebs.com'
-  fill_in 'Body', with: 'This is a comment. It might be a question, though.'
-  fill_in 'Human', with: 'Yeah'
+  fill_in 'Can you tell us a little bit about your business and project?', with: 'This is a comment. It might be a question, though.'
+  fill_in 'Are you a human? Just say yes if so.', with: 'Yeah'
 
   click_button 'Send it!'
 end

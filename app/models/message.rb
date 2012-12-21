@@ -6,7 +6,7 @@ class Message
 
   attr_accessor :name, :email, :phone, :project, :timeline, :budget, :remote_ip, :user_agent, :human
 
-  validates :name, :email, :phone, :project, :timeline, :budget, presence: true
+  validates :name, :email, presence: true
   validates :email, format: { with: %r{.+@.+\..+} }, allow_blank: true
   validates :human,
     format: { with: /ye[asp]/i, message: 'Just a "yes" will do.' },

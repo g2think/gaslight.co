@@ -5,7 +5,10 @@ class NotificationsMailer < ActionMailer::Base
   def new_message(message)
     @name = message.name
     @email = message.email
-    @body = message.body
+    @phone = message.phone
+    @timeline = message.timeline
+    @budget = message.budget
+    @project = message.project
     @ip_address = message.remote_ip
     @user_agent = message.user_agent
 

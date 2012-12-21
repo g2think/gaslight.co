@@ -6,7 +6,10 @@ describe NotificationsMailer do
                               email: 'chris@cdmwebs.com',
                               remote_ip: "10.203.1.55",
                               user_agent: "Mozilla",
-                              body: 'This is the body') }
+                              budget: '1 Instagram',
+                              timeline: 'Yesterday',
+                              phone: '555-1212',
+                              project: 'This is the body') }
   let(:mail) { NotificationsMailer.new_message(message) }
 
   it 'sets the from' do
@@ -17,7 +20,7 @@ describe NotificationsMailer do
     mail.subject.should match("Contact Form")
   end
 
-  it 'sets the body' do
+  it 'sets the email' do
     mail.body.should match('the body')
   end
 
