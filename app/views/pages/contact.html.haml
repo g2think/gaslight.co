@@ -3,7 +3,7 @@
 #main.container.row
   %header.row.brand3
     .headline.brandBase.four.columns
-      %a.map{target: "_blank", href: "http://goo.gl/maps/aNb8r"}
+      %a.map{target: "_blank", href: "http://goo.gl/maps/aNb8r", rel: "Contact Header Google Map"}
         %h3 We Call <strong>Cincinnati</strong> Home
         %h4 &#8599; Google Maps
     .intro.eight.columns
@@ -11,27 +11,27 @@
         %h5 Give Us A Ring 
         %p Want to talk with a real person? We’re ready to chat. 
         %address
-          %a{href: "tel:8885073430"} 1 (888) 507 3430
+          %a{href: "tel:8885073430", rel: "Contact Header"} 1 (888) 507 3430
       .item
         %h5 Send an Email 
         %p Need to ask a quick question? Interested in joining the Gaslight team? 
         %address
-          %a{href: "mailto:hello@gaslight.co"} hello@gaslight.co
+          %a{href: "mailto:hello@gaslight.co", rel: "Contact Header"} hello@gaslight.co
       .item
         %h5 Let’s Connect
         %p Here’s where we talk about design, development, start-ups and the latest Gaslight news. 
         %ul.socialLinks
           %li
-            %a.brand1{href: "http://twitter.com/teamgaslight"} Twitter
+            %a.brand1{href: "http://twitter.com/teamgaslight", rel: "Contact header social"} Twitter
           %li
-            %a.brand2{href: "http://facebook.com/teamgaslight"} Facebook
+            %a.brand2{href: "http://facebook.com/teamgaslight", rel: "Contact header social"} Facebook
           %li
-            %a.brand3{href: "http://github.com/gaslight"} Github
+            %a.brand3{href: "http://github.com/gaslight", rel: "Contact header social"} Github
 
   .buttonLinks.show-for-small
-    %a.button.brand3{href: "tel:8885073430"} Call
-    %a.button.brand3{href: "mailto:hello@gaslight.co"} Email
-    %a.button.brand3{href: "http://goo.gl/maps/aNb8r"} Maps
+    %a.button.brand3{href: "tel:8885073430", rel: "Mobile contact button"} Call
+    %a.button.brand3{href: "mailto:hello@gaslight.co", rel: "Mobile contact button"} Email
+    %a.button.brand3{href: "http://goo.gl/maps/aNb8r", rel: "Mobile contact button"} Maps
 
   %section.row.contact
     .eleven.columns.centered

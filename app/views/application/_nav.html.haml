@@ -1,19 +1,19 @@
 #nav.top-bar
   .row
     %nav.twelve.columns
-      %a.brand{href: page_path("home")}
+      %a.brand{href: page_path("home"), rel: "Main Navigation"}
         %img.logo{src: image_path("logoSmall.png")}
         %span.name Gaslight
 
       %ul.right.links
         %li
-          %a.brand1{href: page_path("about"), class: active_page_class(page_path("about"))} About
+          %a.brand1{href: page_path("about"), rel: "Main Navigation", class: active_page_class(page_path("about"))} About
         %li
-          %a.brand2{href: page_path("work"), class: active_page_class(page_path("work"))} Work
+          %a.brand2{href: page_path("work"), rel: "Main Navigation", class: active_page_class(page_path("work"))} Work
         %li
-          %a.brand3{href: page_path("contact"), class: active_page_class(page_path("contact"))} Contact
+          %a.brand3{href: page_path("contact"), rel: "Main Navigation", class: active_page_class(page_path("contact"))} Contact
         %li
-          %a{href: "http://blog.gaslight.co"} Blog
+          %a{href: "http://blog.gaslight.co", rel: "Main Navigation"} Blog
 
       %a.mobile.toggle.icon-menu
-      %a.mobile.mail.icon-mail{href: "mailto:hello@gaslight.co"}
+      %a.mobile.mail.icon-mail{href: "mailto:hello@gaslight.co", rel: "Main Navigation"}
