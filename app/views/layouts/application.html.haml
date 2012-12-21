@@ -1,5 +1,10 @@
-<!doctype html>
-%html
+!!! 5
+
+<!--[if lt IE 9]>    <html lang="en" class="ie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html{ :lang => "en" }
+  <!--<![endif]-->
+
   %head
     %title= content_for?(:title) ? content_for(:title) : "Gaslight: Ruby on Rails, iOS and JavaScript development"
     %meta{:charset => "utf-8"}/
