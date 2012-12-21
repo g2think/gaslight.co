@@ -2,6 +2,7 @@ class Gaslight.Views.SvgView extends Backbone.View
 
   constructor: (options = {})->
     super
+
     @guides = new Gaslight.Collections.Guides(Gaslight.Data.guideData)
     @shapes = new Gaslight.Collections.Shapes(Gaslight.Data.shapeData)
     @paper = Raphael(@el, @$el.width(), @$el.height())
@@ -13,10 +14,18 @@ class Gaslight.Views.SvgView extends Backbone.View
       point = guide.getPointAtLength(ratio * guide.getTotalLength())
       transform: "t#{point.x} #{point.y}"
 
+    $(window).on 'resize', =>
+      @resize()
+
+  resize: ->
+    callback = =>
+      @reRender()
+    clearTimeout(@timer)
+    @timer = setTimeout(callback, 200)
+
   render: ->
     @addShapes() if @paper.width > 767
     @addPaths()
-    
 
   reRender: ->
     @paper.clear()

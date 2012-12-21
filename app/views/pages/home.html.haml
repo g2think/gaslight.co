@@ -1,6 +1,6 @@
 - content_for :javascript do
   :javascript
-    new Gaslight.HomepageApp()
+    new Gaslight.Views.SvgView({el: "#guides"}).render()
 
 = render partial: 'application/nav'
 
@@ -11,7 +11,7 @@
   .intro
     %h3.hide-for-small Hi, We're Gaslight
     %p.hide-for-small As a design and development shop, we're passionate about building your best ideas. We partner with you to create custom software, web apps and mobile apps. Let’s work together to create something that takes your business new places.
-    
+
     %p.lead.show-for-small <strong>Hi, we're Gaslight.</strong> <br/> We create web and mobile apps for your business.
     %a.button.brand3.hide-for-small{href: page_path("contact")} Let's Talk
 
