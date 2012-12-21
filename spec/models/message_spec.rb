@@ -4,6 +4,10 @@ describe Message do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:body) }
+  it { should validate_presence_of(:phone) }
+  it { should validate_presence_of(:project) }
+  it { should validate_presence_of(:timeline) }
+  it { should validate_presence_of(:budget) }
 
   describe ".new" do
     let(:message) { Message.new(name: 'Chris Moore',
