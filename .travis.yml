@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "1.9.3"
+before_install: gem install bundler --pre
+bundler_args: --local --quiet --binstubs --path vendor --without production
+script:
+  - bin/rspec -fd spec
+  - bin/cucumber
+  - bin/rake konacha:run
+before_script:
+  - cp .env.sample .env.test
