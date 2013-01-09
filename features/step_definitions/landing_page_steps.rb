@@ -25,7 +25,7 @@ Then /^I should be notified that the contact has not been sent$/ do
 end
 
 Then /^I should be notified that the contact has been sent$/ do
-  page.current_path.should == '/home'
+  page.current_path.should == '/contact'
   page.should have_content("got it!")
 end
 

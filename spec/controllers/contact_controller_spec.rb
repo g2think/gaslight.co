@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ContactController do
-  describe "GET 'create'" do
+  describe "POST 'create'" do
     context "when valid" do
       before(:each) do
         post :create, message: { name: 'Chris Moore', email: 'chris@cdmwebs.com', project: 'This is the body', human: 'yes' }
@@ -17,7 +17,7 @@ describe ContactController do
       end
 
       it { should respond_with(:success) }
-      it { should render_template('pages/home') }
+      it { should render_template('pages/contact') }
       it { should_not render_with_layout }
       it { should assign_to(:message) }
       it { should_not set_the_flash }
