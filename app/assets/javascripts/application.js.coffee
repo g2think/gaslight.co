@@ -4,6 +4,7 @@
 #= require foundation/jquery.foundation.orbit
 #= require raphael
 #= require underscore
+#= require moment
 #= require backbone
 #= require backbone/gaslight
 

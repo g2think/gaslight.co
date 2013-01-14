@@ -1,0 +1,32 @@
+= render partial: 'application/nav'
+
+#main.container.row
+  %section.row.events
+    %a.anchor{name:"events"}
+    .eleven.columns.centered
+      %h2.title.brand1 Upcoming Events
+      #activities
+        .events.inactive
+        .spinner
+          %h4 Loading
+
+:plain
+  <script type="text/template" id="eventTemplate">
+    <div class="columns one">
+      <img src="<%- person.avatar %>" class="avatar" />
+    </div>
+    <div class="columns eleven">
+      <span class="person"><a href="https://twitter.com/<%- person.twitter %>"><%- person.firstName %></a></span>
+      is <%- verb %>
+      <span class="event"><a href="<%- url %>"><%- name %></a></span>
+      in <%- location %> on <%- occursOn %>.
+    </div>
+  </script>
+
+= render partial: 'application/footer'
+
+- content_for(:javascript) do
+  :javascript
+    $(function() {
+      activityView = new Gaslight.Views.ActivityView;
+    });
