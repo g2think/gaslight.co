@@ -27,7 +27,6 @@
 = render partial: 'application/footer'
 
 - content_for(:javascript) do
-  :javascript
-    $(function() {
-      activityView = new Gaslight.Views.ActivityView;
-    });
+  :coffeescript
+    jQuery -> activityView = new Gaslight.Views.ActivityView
+
