@@ -42,8 +42,6 @@
       %p.lead We work with businesses, start-ups and visionaries across the country. Typically, we collaborate directly with the owner or another key stakeholder to create custom software and applications that play a central role in our clients’ companies. These businesses span a wide range of industries.
       %ul.clientsList.row
         %li
-          %img{src: image_path('client/LocalizeIt.png')}
-        %li
           %img{src: image_path('client/PG.png')}
         %li
           %img{src: image_path('client/Outright.png')}
@@ -57,37 +55,5 @@
           %img{src: image_path('client/Apex.png')}
         %li
           %img{src: image_path('client/Lumbee.png')}
-
-  %section.row.featuredProject
-    %a.anchor{name:"featured"}
-    .eleven.columns.centered
-      %h2.title.brand2 Featured Project
-      %p.lead LocalizeIt Online generates marketing leads for businesses through pay-per-click ads, organic search ranking, local listing optimization, social media and call tracking.
-    #slideshow.ten.columns.centered
-      %h3 LocalizeIt Online
-      .slides
-        = image_tag("project/slide1.jpg")
-        = image_tag("project/slide2.jpg")
-        = image_tag("project/slide3.jpg")
-    .row
-      .four.columns.sidebar
-        %h5.brand2 The Big Payoff
-        .content
-          %p The online dashboard we created for Localizeit not only helped the company track success for clients—it created an unexpected new revenue stream.
-          %p Localizeit was able to sell this powerful Web-based application to marketing agencies.
-      .eight.columns
-        %h5 The Goal
-        %p Jeremy, CIO of LocalizeIt, wanted to collect statistics to track the ROI on his clients’ marketing dollars. In other words, what generated the most profitable leads for the money?
-
-        %h5 The Solution
-        %p We built Jeremy an online dashboard that pulls in data from multiple sources to track and report key performance indicators. This tool dynamically generates charts and reports that help his clients spend their marketing dollars more effectively.
-
-        %h5 The Technology
-        %p Ruby on Rails, Google’s AdWords, Microsoft’s adCenter, several third-party APIs, Highcharts, Google Charts
-   
-    .row
-      .ten.columns.centered
-        .flex-video.widescreen
-          %iframe{:width => "420", :height => "315", :frameborder => "0", :allowFullScreen => "",  :mozallowfullscreen => "",  :webkitAllowFullScreen => "", :src => "http://player.vimeo.com/video/56101815?title=0&byline=0&portrait=0&color=ffffff"}
 
 = render partial: 'application/footer'
