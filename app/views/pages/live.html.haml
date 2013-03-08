@@ -2,9 +2,6 @@
 
 #main.container.row
   .flex-video
-    %iframe{:frameborder => "0", :scrolling => "no", :src => "http://www.ustream.tv/embed/11921021"}
-  .flex-video
-    %iframe{:frameborder => "0", :scrolling => "no", :src => "http://www.ustream.tv/socialstream/11921021"}
-
+    %iframe{ id: "ytplayer", type: "text/html", src: "https://www.youtube.com/embed/?listType=user_uploads&list=gaslightlive&enablejsapi=1&fs=1&autohide=0", frameborder:"0", allowfullscreen: "allowfullscreen"}
 = render partial: 'application/footer'
 
