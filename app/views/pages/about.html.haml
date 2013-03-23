@@ -178,6 +178,12 @@
         .spinner
           %h4 Loading
 
+  %section.row.videos
+    %a.anchor{name:"videos"}
+    .eleven.columns.centered
+      %h2.title.brand1 Videos
+      = render partial: 'application/videos'
+
 = render partial: 'application/footer'
 
 :plain
