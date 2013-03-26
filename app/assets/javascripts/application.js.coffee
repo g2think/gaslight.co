@@ -3,6 +3,7 @@
 #= require jquery_ujs
 #= require foundation/jquery.foundation.orbit
 #= require raphael
+#= require vendor/hubspot.js
 #= require underscore
 #= require moment
 #= require backbone
