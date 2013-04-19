@@ -16,6 +16,7 @@ class NotificationsMailer < ActionMailer::Base
 
     mail(subject: "Fwd: Contact Form",
          bcc: ENV.fetch('HIGHRISE_DROPBOX'),
+         cc: 'hello@gaslight.co',
          to: @email_with_name)
   end
 end
