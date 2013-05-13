@@ -42,18 +42,25 @@
       %p.lead We work with businesses, start-ups and visionaries across the country. Typically, we collaborate directly with the owner or another key stakeholder to create custom software and applications that play a central role in our clients’ companies. These businesses span a wide range of industries.
       %ul.clientsList.row
         %li
-          %img{src: image_path('client/PG.png')}
+          = link_to('http://www.pg.com/en_US/') do
+            %img{src: image_path('client/PG.png')}
         %li
-          %img{src: image_path('client/Outright.png')}
+          = link_to('http://outright.com/') do
+            %img{src: image_path('client/Outright.png')}
         %li
-          %img{src: image_path('client/Sharethrough.png')}
+          = link_to('http://www.sharethrough.com/') do
+            %img{src: image_path('client/Sharethrough.png')}
         %li
-          %img{src: image_path('client/Agsync.png')}
+          = link_to('http://agrisiteipm.com/') do
+            %img{src: image_path('client/Agsync.png')}
         %li
-          %img{src: image_path('client/Roadtripper.png')}
+          = link_to('http://roadtrippers.com/') do
+            %img{src: image_path('client/Roadtripper.png')}
         %li
-          %img{src: image_path('client/Apex.png')}
+          = link_to('http://www.apexindustrial.com/') do
+            %img{src: image_path('client/Apex.png')}
         %li
-          %img{src: image_path('client/Lumbee.png')}
+          = link_to('http://www.lumbeena.com/') do
+            %img{src: image_path('client/Lumbee.png')}
 
 = render partial: 'application/footer'
