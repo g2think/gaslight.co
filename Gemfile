@@ -14,6 +14,9 @@ gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rail
 gem 'coffee-rails', '~> 3.2.1'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 
+gem 'redcarpet', require: false
+gem 'pygments.rb', require: false
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
