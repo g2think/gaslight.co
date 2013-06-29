@@ -76,8 +76,6 @@ module Gaslight
     config.assets.precompile += %w(coffee.css home.css home.js)
     config.assets.initialize_on_precompile = false
 
-    config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslight.co')
-
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       r301 %r{.*}, 'http://gaslight.co/coffee', if: Proc.new { |rack_env|
         rack_env['SERVER_NAME'] == 'coffee.gaslightsoftware.com'
