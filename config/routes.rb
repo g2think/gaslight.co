@@ -1,6 +1,7 @@
 Gaslight::Application.routes.draw do
 
   resource :contact, controller: :contact, only: :create
+  resources :posts, path: '/blog'
 
   # catch all the pages
   match '/:id', to: 'pages#show', as: :static

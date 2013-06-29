@@ -1,0 +1,84 @@
+@import tango.min
+
+body.posts
+  h1, h2, h3, h4, h5
+    color: #444
+    font-weight: bold
+  h1
+    font-size: 18pt
+  h2
+    font-size: 16pt
+  h3
+    font-size: 16pt
+  h4
+    font-size: 14pt
+  h5
+    font-size: 12pt
+
+  ul, ol
+    margin-left: 1em
+
+  a
+    &:visited
+      color: darken($brand1, 20)
+
+  blockquote
+    p:last-child
+      margin-bottom: 0
+    @include border-radius(5px)
+    background-color: #fafafa
+    padding: 0.25em 0.5em 0.25em 3em
+    background-image: url(image-path('bg-quote.png'))
+    background-repeat: no-repeat
+
+  #main
+    padding: 100px 30px 176px 30px
+
+  .post
+    img
+      float: left
+      padding-right: 0.5em
+      padding-bottom: 0.5em
+    p, li
+      color: #333
+      font-family: Helvetica, Arial, sans-serif
+      font-size: 12pt
+      line-height: 1.4em
+    code
+      background-color: #fff
+      color: #333
+    .highlight
+      @include border-radius(5px)
+      background-color: #fafafa
+      padding: 10px
+      font-size: 12px
+      line-height: 1.4em
+      overflow: scroll
+      margin-bottom: 1em
+
+  .sidebar
+    dl
+      dt, dd
+        display: inline-block
+        float: left
+      dt
+        width: 40%
+      dd
+        width: 60%
+
+  @media only screen and (max-width: 767px)
+    #main
+      padding: 50px 10px
+    h1
+      font-size: 16pt
+    h2
+      font-size: 14pt
+    h3
+      font-size: 12pt
+    h4
+      font-size: 10pt
+    h5
+      font-size: 8pt
+    ul, ol
+      margin-left: 1.5em
+

@@ -1,0 +1,33 @@
+- content_for(:title) { post.title }
+= render partial: 'application/nav'
+#main.container.row
+  .columns.eight.post
+    = raw(post.to_html)
+    #disqus_thread
+  .columns.three.prepend-1.sidebar
+    %h3 Sidebar
+    %dl
+      %dt Author
+      %dd
+        = image_tag(gravatar_url(post.author_email, "20"))
+        = post.author
+      %dt Posted On
+      %dd= l(post.posted_on, format: :nice)
+
+= render partial: 'application/footer'
+
+- content_for(:javascript) do
+  :javascript
+    var disqus_shortname = 'gaslightsoftwareblog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  %noscript
+    Please enable JavaScript to view the
+    %a{href: "http://disqus.com/?ref_noscript"} comments powered by Disqus
+  %a{href: "http://disqus.com", class: "dsq-brlink"}
+    comments powered by
+    %span{class: "logo-disqus"} Disqus
+  
