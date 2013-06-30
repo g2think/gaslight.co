@@ -11,4 +11,12 @@ module ApplicationHelper
   def viewing_blog?
     request.fullpath =~ /blog/
   end
+
+  def tag_list(tags)
+    tags.collect { |t| link_to(t, posts_path(tagged: t)) }.join(" ").html_safe
+  end
+
+  def popular_tags(tags)
+    tags.collect { |t| link_to(t.name, posts_path(tagged: t.name)) }.join(" ").html_safe
+  end
 end

@@ -15,7 +15,7 @@ ActiveAdmin.register Post do
       row :author
       row(:html) { raw post.html }
       row :slug
-      row :tags
+      row :tag_list
       row :published
       row :published_at
       row :created_at

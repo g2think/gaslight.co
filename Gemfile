@@ -9,15 +9,17 @@ gem 'high_voltage', '>= 1.2.0'
 gem 'rdiscount'
 gem 'rails-backbone'
 gem 'rack-rewrite'
-gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git'
 gem 'coffee-rails', '~> 3.2.1'
-gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 gem 'pg'
 gem 'activeadmin'
 
 gem 'tumblr_client', require: false
 gem 'redcarpet', require: false
 gem 'pygments.rb', require: false
+
+gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git'
+gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
+gem 'rocket_tag', github: 'bradphelan/rocket_tag'
 
 # Gems used only for assets and not required
 # in production environments by default.

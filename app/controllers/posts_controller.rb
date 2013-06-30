@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def recent
-    respond_with posts do |format|
+    respond_with(posts) do |format|
       format.html { render :index }
       format.rss { render template: 'posts/index', layout: false }
     end
@@ -16,7 +16,9 @@ class PostsController < ApplicationController
   protected
 
   def posts
-    recent? ? Post.recent : Post.published.by_publish_date
+    posts = recent? ? Post.recent : Post.published.by_publish_date
+    posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
+    posts
   end
   helper_method :posts
 
@@ -29,5 +31,9 @@ class PostsController < ApplicationController
     request.fullpath =~ /#{recent_posts_path}/
   end
   helper_method :recent?
+
+  def tagged
+    posts.tagged_with(params[:tagged])
+  end
 end
 
