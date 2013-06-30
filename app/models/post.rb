@@ -20,6 +20,10 @@ class Post < ActiveRecord::Base
     where('lower(posts.body) like lower(?)', "% #{query} %")
   end
 
+  def self.written_by(author)
+    where(author: author).by_publish_date
+  end
+
   validates_presence_of :title, :body
   validates_length_of :title, maximum: 255
 

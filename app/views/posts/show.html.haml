@@ -7,16 +7,12 @@
     = raw(post.html)
     #disqus_thread
   .columns.three.prepend-1.sidebar
-    %h3 Sidebar
-    %dl
-      %dt Author
-      %dd
-        = image_tag(gravatar_url(post.author.to_s, "20"))
-        = post.author
-      %dt Posted On
-      %dd= l(post.published_on, format: :nice)
-      %dt Tags
-      %dd= tag_list(post.tags)
+    %h3
+      = image_tag(gravatar_url(post.author.to_s, "20"))
+      = post.author
+    Posted on #{l(post.published_on, format: :nice)}
+    %h4 Tags
+    = tag_list(post.tags)
 
 = render partial: 'application/footer'
 

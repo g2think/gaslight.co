@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def posts
     posts ||= recent? ? Post.recent : Post.published.by_publish_date
+    posts = posts.written_by([params[:author]]) if params[:author]
     posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
     posts = posts.search(params[:q]) if params[:q].present?
     posts
@@ -37,8 +38,9 @@ class PostsController < ApplicationController
   end
   helper_method :recent?
 
-  def tagged
-    posts.tagged_with(params[:tagged])
+  def authors
+    Post.select('author, count(id) as post_count').group('author').order('post_count desc')
   end
+  helper_method :authors
 end
 

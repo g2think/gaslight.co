@@ -8,6 +8,8 @@
       %h1 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
     - elsif params[:q].present?
       %h1 #{pluralize(posts.count, 'post')} containing '#{params[:q]}'
+    - elsif params[:author].present?
+      %h1 #{pluralize(posts.count, 'post')} written by #{params[:author]}
     - else
       %h1
         = link_to_unless_current('Recent Posts', recent_posts_path)
@@ -22,4 +24,11 @@
       = text_field_tag :q, params[:q], placeholder: 'Search...'
     %h3 Tags
     = popular_tags(Post.popular_tags)
+    %h3 Authors
+    %ul
+      - authors.each do |post|
+        %li
+          = link_to(post.author || "Other", posts_path(author: post.author))
+          (#{pluralize(post.post_count, 'posts')})
+
 = render partial: 'application/footer'
