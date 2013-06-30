@@ -56,6 +56,14 @@ class Post < ActiveRecord::Base
     self.tags = list
   end
 
+  def next
+    Post.where("published_at > ?", published_at).order("published_at desc").first
+  end
+
+  def previous
+    Post.where("published_at < ?", published_at).order("published_at desc").first
+  end
+
   private
 
   def update_html
