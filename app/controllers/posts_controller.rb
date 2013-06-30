@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     respond_with posts
   end
 
+  def search
+    respond_with posts, template: 'posts/index'
+  end
+
   def recent
     respond_with(posts) do |format|
       format.html { render :index }
@@ -16,8 +20,9 @@ class PostsController < ApplicationController
   protected
 
   def posts
-    posts = recent? ? Post.recent : Post.published.by_publish_date
+    posts ||= recent? ? Post.recent : Post.published.by_publish_date
     posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
+    posts = posts.search(params[:q]) if params[:q].present?
     posts
   end
   helper_method :posts

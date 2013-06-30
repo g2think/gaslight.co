@@ -16,6 +16,10 @@ class Post < ActiveRecord::Base
     tag ? tagged_with(tag.split) : scoped
   end
 
+  def self.search(query)
+    where('lower(posts.body) like lower(?)', "% #{query} %")
+  end
+
   validates_presence_of :title, :body
   validates_length_of :title, maximum: 255
 

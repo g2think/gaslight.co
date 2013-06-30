@@ -5,7 +5,10 @@ Gaslight::Application.routes.draw do
 
   resource :contact, controller: :contact, only: :create
   resources :posts, path: '/blog' do
-    collection { get :recent }
+    collection do
+      get :recent
+      get :search
+    end
   end
 
   # catch all the pages
