@@ -1,3 +1,5 @@
+require 'tumblr_client'
+
 Tumblr.configure do |config|
   config.consumer_key = ENV.fetch('TUMBLR_KEY')
   config.consumer_secret = ENV.fetch('TUMBLR_SECRET')
