@@ -15,6 +15,8 @@
         = post.author
       %dt Posted On
       %dd= l(post.published_on, format: :nice)
+      %dt Tags
+      %dd= tag_list(post.tags)
 
 = render partial: 'application/footer'
 

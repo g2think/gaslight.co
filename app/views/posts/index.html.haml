@@ -4,13 +4,19 @@
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
-    %h1
-      = link_to_unless_current('All Posts', posts_path)
-      |
-      = link_to_unless_current('Recent Posts', recent_posts_path)
+    - if params[:tagged]
+      %h1 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
+    - else
+      %h1
+        = link_to_unless_current('Recent Posts', recent_posts_path)
+        |
+        = link_to_unless_current('All Posts', posts_path)
     %ul
       - posts.each do |post|
         %li= link_to(post.title, post)
   .columns.three.prepend-1.sidebar
     %h3 Sidebar
+    %dl
+      %dt Tags
+      %dd= popular_tags(Post.popular_tags)
 = render partial: 'application/footer'
