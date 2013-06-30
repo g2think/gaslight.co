@@ -13,18 +13,18 @@ class Post < ActiveRecord::Base
   end
 
   def self.tagged(tag)
-    tag ? tagged_with(tag.split) : scoped
+    tag ? published.tagged_with(tag.split) : scoped
   end
 
   def self.search(query)
-    where('lower(posts.body) like lower(?)', "% #{query} %")
+    published.where('lower(posts.body) like lower(?)', "% #{query} %")
   end
 
   def self.written_by(author)
-    where(author: author).by_publish_date
+    published.where(author: author).by_publish_date
   end
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :author
   validates_length_of :title, maximum: 255
 
   after_validation :update_html
@@ -40,7 +40,7 @@ class Post < ActiveRecord::Base
 
   def tag_list
     tags = self.tags
-    tags.empty? ? nil : tags.join(', ')
+    tags.empty? ? [] : tags.join(', ')
   end
 
   def tag_list=(list)
