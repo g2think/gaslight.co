@@ -4,6 +4,7 @@ Gaslight::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resource :contact, controller: :contact, only: :create
+  match "/blog/:year(/:month(/:day))" => "posts#index", constraints: { year: /\d{4}/, month: /\d{2}/, day: /\d{2}/ }
   resources :posts, path: '/blog' do
     collection do
       get :recent

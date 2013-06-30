@@ -24,6 +24,14 @@ class Post < ActiveRecord::Base
     published.where(author: author).by_publish_date
   end
 
+  def self.posted_on(year = nil, month = nil, day = nil)
+    posts = published
+    posts = posts.where('extract(year  from published_at) = ?', year) unless year.nil?
+    posts = posts.where('extract(month from published_at) = ?', month) unless month.nil?
+    posts = posts.where('extract(day   from published_at) = ?', day) unless day.nil?
+    posts
+  end
+
   validates_presence_of :title, :body, :author
   validates_length_of :title, maximum: 255
 

@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     posts ||= recent? ? Post.recent : Post.published.by_publish_date
     posts = posts.written_by([params[:author]]) if params[:author]
     posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
+    posts = posts.posted_on(params[:year], params[:month], params[:day])
     posts = posts.search(params[:q]) if params[:q].present?
     posts
   end
@@ -42,5 +43,13 @@ class PostsController < ApplicationController
     Post.select('author, count(id) as post_count').group('author').order('post_count desc')
   end
   helper_method :authors
+
+  def search_date
+    year = (params[:year] || Date.today.year).to_i
+    month = (params[:month] || Date.today.month).to_i
+    day = (params[:day] || Date.today.day).to_i
+    Date.new(year, month, day)
+  end
+  helper_method :search_date
 end
 

@@ -10,6 +10,18 @@
       %h1 #{pluralize(posts.count, 'post')} containing '#{params[:q]}'
     - elsif params[:author].present?
       %h1 #{pluralize(posts.count, 'post')} written by #{params[:author]}
+    - elsif params[:year].present?
+      %h1
+        #{pluralize(posts.count, 'post')} written
+        - if params[:day].present?
+          on
+          = l(search_date, format: :nice)
+        - elsif params[:month].present?
+          in
+          = l(search_date, format: :year_and_month)
+        - else
+          in
+          = l(search_date, format: :year)
     - else
       %h1
         = link_to_unless_current('Recent Posts', recent_posts_path)
