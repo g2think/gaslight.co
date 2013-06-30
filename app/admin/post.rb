@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
     column :id
     column :title
     column :published
-    column(:published_at) { |p| l(p.published_at, format: :nice) }
+    column(:published_at, sortable: :published_at) { |p| l(p.published_at, format: :nice) }
     default_actions
   end
 
