@@ -2,7 +2,7 @@
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
-    = link_to('Back', posts_path)
+    = link_to('&laquo; Back'.html_safe, posts_path)
     %h1= post.title
     = raw(post.html)
     #disqus_thread
