@@ -4,8 +4,12 @@ class Post < ActiveRecord::Base
     where(published: true)
   end
 
+  def self.by_publish_date
+    order('published_at desc')
+  end
+
   def self.recent(max = 5)
-    published.order('published_at desc').limit(max)
+    published.by_publish_date.limit(max)
   end
 
   validates_presence_of :title, :body

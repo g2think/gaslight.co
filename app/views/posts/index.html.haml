@@ -1,7 +1,13 @@
-- content_for(:title) { "Gaslight Blog" }
+- content_for(:list_type) { recent? ? 'Recent Posts' : 'All Posts' }
+- content_for(:title) { "Gaslight Blog: #{yield(:list_type)}" }
+
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
+    %h1
+      = link_to_unless_current('All Posts', posts_path)
+      |
+      = link_to_unless_current('Recent Posts', recent_posts_path)
     %ul
       - posts.each do |post|
         %li= link_to(post.title, post)
