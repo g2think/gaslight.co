@@ -1,8 +1,11 @@
 ActiveAdmin.register Post do
+  config.sort_order = 'published_at_desc'
+
   index do
     selectable_column
     column :id
-    column :title
+    column(:title) { |p| link_to(p.title, p) }
+    column :author
     column :published
     column(:published_at, sortable: :published_at) { |p| l(p.published_at, format: :nice) }
     default_actions
