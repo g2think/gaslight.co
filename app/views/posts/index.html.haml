@@ -3,17 +3,8 @@
 #main.container.row
   .columns.eight.post
     %ul
-      - posts.each do |post_path|
-        - post = Post.new(post_path)
-        %li= link_to(post.title.titleize, post_path(post.slug))
-        = raw(post.to_html)
+      - posts.each do |post|
+        %li= link_to(post.title, post)
   .columns.three.prepend-1.sidebar
     %h3 Sidebar
-    %dl
-      %dt Author
-      %dd
-        = image_tag(gravatar_url(post.author_email, "20"))
-        = post.author
-      %dt Posted On
-      %dd= l(post.posted_on, format: :nice)
 = render partial: 'application/footer'

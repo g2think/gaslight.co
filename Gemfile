@@ -12,7 +12,10 @@ gem 'rack-rewrite'
 gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
+gem 'pg'
+gem 'activeadmin'
 
+gem 'tumblr_client', require: false
 gem 'redcarpet', require: false
 gem 'pygments.rb', require: false
 
@@ -25,11 +28,6 @@ group :assets do
   gem 'zurb-foundation'
 end
 
-group :development do
-  gem 'heroku'
-  gem 'foreman'
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 2.9.0'
   gem 'dotenv'
@@ -40,7 +38,6 @@ group :test do
   gem 'cucumber-rails', '1.3.0', :require => false
   gem 'poltergeist'
   gem 'factory_girl_rails'
-  #gem 'database_cleaner'
   gem 'timecop'
   gem 'shoulda-matchers'
   gem 'launchy'

@@ -3,13 +3,12 @@ class PostsController < ApplicationController
   protected
 
   def posts
-    Post.recent.reverse
+    params[:all].present? ? Post.published.recent(999) : Post.recent
   end
   helper_method :posts
 
   def post
-    post_path = params[:id]
-    Post.find(post_path)
+    Post.published.find(params[:id])
   end
   helper_method :post
 end

@@ -6,3 +6,6 @@ en:
   date:
     formats:
       nice: "%B %e, %Y"
+  time:
+    formats:
+      nice: "%B %e, %Y %l:%M%p"

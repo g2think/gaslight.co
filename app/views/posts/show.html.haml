@@ -1,18 +1,20 @@
-- content_for(:title) { post.title }
+- content_for(:title) { post.title.titleize }
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
-    = raw(post.to_html)
+    = link_to('Back', posts_path)
+    %h1= post.title
+    = raw(post.html)
     #disqus_thread
   .columns.three.prepend-1.sidebar
     %h3 Sidebar
     %dl
       %dt Author
       %dd
-        = image_tag(gravatar_url(post.author_email, "20"))
+        = image_tag(gravatar_url(post.author.to_s, "20"))
         = post.author
       %dt Posted On
-      %dd= l(post.posted_on, format: :nice)
+      %dd= l(post.published_on, format: :nice)
 
 = render partial: 'application/footer'
 

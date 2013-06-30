@@ -1,0 +1,14 @@
+= semantic_form_for([:admin, @post]) do |f|
+  = f.inputs do
+    = f.input :author
+    = f.input :title
+    = f.input :body, as: :hidden
+    %li.text.input.required
+      %label.label Body
+      #editor
+    = f.input :slug
+    = f.input :tags
+    = f.input :published
+    = f.input :published_at
+  = f.actions do
+    = f.action :submit

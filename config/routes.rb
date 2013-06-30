@@ -1,5 +1,8 @@
 Gaslight::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resource :contact, controller: :contact, only: :create
   resources :posts, path: '/blog'
 
