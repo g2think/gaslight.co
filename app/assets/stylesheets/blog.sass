@@ -85,14 +85,16 @@ body.posts
       dd
         width: 60%
     a.tag
-      padding: 4px
-      background-color: #eee
+      padding: 4px 8px
+      font-size: 12px
+      background-color: #ddd
       display: inline-block
       margin: 2px 0
-      @include border-radius(5px)
+      @include border-radius(15px)
       &:hover
-        background-color: #ccc
-        -webkit-transition: background-color 0.5s
+        background-color: #eee
+        @include transition-property(background-color)
+        @include transition-duration(0.5s)
 
   @media only screen and (max-width: 767px)
     #main

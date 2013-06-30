@@ -34,7 +34,7 @@
     = form_tag(search_posts_path, method: :get) do
       = text_field_tag :q, params[:q], placeholder: 'Search...'
     %h3 Tags
-    = popular_tags(Post.popular_tags)
+    = popular_tags(Post.popular_tags.limit(20))
     %h3 Authors
     %ul
       - authors.each do |post|
