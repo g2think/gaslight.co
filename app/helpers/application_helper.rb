@@ -13,7 +13,9 @@ module ApplicationHelper
   end
 
   def tag_list(tags)
-    tags.collect { |t| link_to(t, posts_path(tagged: t)) }.join(" ").html_safe
+    tags.collect do |t|
+      link_to(t, posts_path(tagged: t), class: 'tag')
+    end.join(" ").html_safe
   end
 
   def popular_tags(tags)
