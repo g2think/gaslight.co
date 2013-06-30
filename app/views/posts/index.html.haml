@@ -19,7 +19,6 @@
       - posts.each do |post|
         %li= link_to(post.title, post)
   .columns.three.prepend-1.sidebar
-    %h3 Search
     = form_tag(search_posts_path, method: :get) do
       = text_field_tag :q, params[:q], placeholder: 'Search...'
     %h3 Tags
