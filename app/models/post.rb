@@ -57,7 +57,7 @@ class Post < ActiveRecord::Base
   end
 
   def next
-    Post.where("published_at > ?", published_at).order("published_at desc").first
+    Post.where("published_at > ?", published_at).order("published_at asc").first
   end
 
   def previous
