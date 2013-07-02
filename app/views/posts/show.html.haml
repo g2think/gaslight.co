@@ -1,4 +1,4 @@
-- content_for(:title) { post.title.titleize }
+- content_for(:title) { post.title }
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
@@ -11,7 +11,6 @@
       = raw(post.html)
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
-    %h3
     %h4 Tags
     = tag_list(post.tags)
     %h3 More
