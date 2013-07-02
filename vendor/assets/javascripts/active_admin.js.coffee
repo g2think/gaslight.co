@@ -7,5 +7,6 @@ $ ->
       container: 'editor'
       textarea: 'post_body'
       basePath: '/assets/epiceditor'
+      clientSideStorage: false
 
     editor = new EpicEditor(opts).load()
