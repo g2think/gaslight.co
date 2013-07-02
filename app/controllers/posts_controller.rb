@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   respond_to :html, :rss, :json
+  caches_page :show
 
   def index
     respond_with posts
