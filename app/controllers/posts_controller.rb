@@ -3,6 +3,10 @@ class PostsController < ApplicationController
   respond_to :html, :rss, :json
   caches_page :show
 
+  def show
+    @canonical_url = post_url(Post.find(params[:id]))
+  end
+
   def index
     respond_with posts
   end

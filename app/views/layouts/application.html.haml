@@ -10,6 +10,7 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     = auto_discovery_link_tag(:rss, "http://gaslight.dev/blog")
+    = canonical_link_tag
     = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
