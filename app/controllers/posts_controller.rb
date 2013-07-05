@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   caches_page :show
 
   def show
-    @canonical_url = post_url(Post.find(params[:id]))
+    @canonical_url = post_url(Post.find_by_slug(params[:slug]))
   end
 
   def index
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   helper_method :posts
 
   def post
-    Post.published.find(params[:id])
+    Post.published.find_by_slug(params[:slug])
   end
   helper_method :post
 

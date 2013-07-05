@@ -22,6 +22,7 @@ gem 'pygments.rb', require: false
 gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 gem 'rocket_tag', github: 'bradphelan/rocket_tag'
+gem 'stringex'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +34,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails', '~> 2.9.0'
   gem 'dotenv'
   gem 'konacha'
