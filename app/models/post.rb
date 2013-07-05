@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  acts_as_url :slug
+  acts_as_url :title, url_attribute: :slug, sync_url: true
 
   def to_param
     slug 
