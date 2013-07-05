@@ -1,5 +1,11 @@
 class Post < ActiveRecord::Base
 
+  acts_as_url :slug
+
+  def to_param
+    slug 
+  end
+
   def self.published
     where(published: true)
   end

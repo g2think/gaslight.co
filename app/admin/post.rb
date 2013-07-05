@@ -1,6 +1,10 @@
 ActiveAdmin.register Post do
   config.sort_order = 'published_at_desc'
 
+  controller do
+    defaults finder: :find_by_slug
+  end
+
   index do
     selectable_column
     column :id

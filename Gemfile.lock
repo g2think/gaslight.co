@@ -291,6 +291,7 @@ GEM
       activerecord (~> 3.0)
       activesupport (~> 3.0)
       polyamorous (~> 0.5.0)
+    stringex (2.0.3)
     thin (1.4.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -355,6 +356,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sentry-raven!
   shoulda-matchers
+  stringex
   thin
   timecop
   tumblr_client
