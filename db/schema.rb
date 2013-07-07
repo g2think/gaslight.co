@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(:version => 20130707135636) do
     t.text     "html"
     t.boolean  "published"
     t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "tumblr_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "tumblr_id",    :limit => 8
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"
