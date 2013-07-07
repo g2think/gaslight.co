@@ -34,6 +34,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :body, :author
   validates_length_of :title, maximum: 255
+  validates_uniqueness_of :tumblr_id
 
   after_validation :update_html
   attr_taggable :tags
