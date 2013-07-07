@@ -1,11 +1,5 @@
 class Post < ActiveRecord::Base
 
-  acts_as_url :title, url_attribute: :slug, sync_url: true
-
-  def to_param
-    slug 
-  end
-
   def self.published
     where(published: true)
   end
@@ -43,6 +37,12 @@ class Post < ActiveRecord::Base
 
   after_validation :update_html
   attr_taggable :tags
+
+  acts_as_url :title, url_attribute: :slug, sync_url: true
+
+  def to_param
+    slug
+  end
 
   def published_on
     (published_at || Time.now).to_date
