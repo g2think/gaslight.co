@@ -71,9 +71,11 @@ module Gaslight
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += %w[ coffee.js coffee.css home.css home.js ]
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    config.assets.precompile += %w(coffee.css home.css home.js)
     config.assets.initialize_on_precompile = false
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
