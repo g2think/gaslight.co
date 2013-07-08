@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - "1.9.3"
-before_install: gem install bundler --pre
 bundler_args: --local --quiet --binstubs --path vendor --without production
 script:
   - bin/rspec -fd spec
@@ -9,3 +8,4 @@ script:
   - bin/rake konacha:run
 before_script:
   - cp .env.sample .env.test
+  - cp config/database.sample.yml config/database.yml
