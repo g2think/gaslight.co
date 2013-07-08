@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130707135636) do
+ActiveRecord::Schema.define(:version => 20130708034843) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,13 +63,11 @@ ActiveRecord::Schema.define(:version => 20130707135636) do
     t.text     "html"
     t.boolean  "published"
     t.datetime "published_at"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "tumblr_id",    :limit => 8
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"
-  add_index "posts", ["tumblr_id"], :name => "index_posts_on_tumblr_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

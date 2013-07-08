@@ -4,8 +4,10 @@ Gaslight::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resource :contact, controller: :contact, only: :create
+
   match "/blog/:year(/:month(/:day))" => "posts#index", constraints: { year: /\d{4}/, month: /\d{2}/, day: /\d{2}/ }
   get 'blog/:slug', to: 'posts#show'
+  get 'post/:id(/:slug)', to: 'posts#show' # handle old tumblr urls
   resources :posts, path: '/blog', except: :show do
     collection do
       get :recent

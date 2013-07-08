@@ -1,4 +1,20 @@
 namespace :blog do
+  desc 'Collect old IDs for redirect'
+  task :ids => :environment do
+    tumblr = Tumblr::Client.new
+
+    ids = {}
+
+    6.times do |n|
+      offset = n * 20
+      puts "First #{offset}"
+      posts = tumblr.posts('teamgaslight.tumblr.com', offset: offset)['posts']
+      posts.each { |post| ids[post['id']] = { old: post['post_url'], new: '' } }
+    end
+
+    pp ids
+  end
+
   desc 'Import markdown files in to database'
   task :import => :environment do
     tumblr = Tumblr::Client.new

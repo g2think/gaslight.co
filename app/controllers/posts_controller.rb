@@ -1,5 +1,8 @@
+require 'rewrite'
+
 class PostsController < ApplicationController
 
+  before_filter :redirect_if_old_post
   respond_to :html, :rss, :json
   caches_page :show
 
@@ -56,5 +59,12 @@ class PostsController < ApplicationController
     Date.new(year, month, day)
   end
   helper_method :search_date
+
+  private
+
+  def redirect_if_old_post
+    new_slug = Rewrite.new_post_url(request.fullpath)
+    redirect_to(post_url(new_slug, host: Rails.env.development? ? 'gaslight.dev' : 'gaslight.co'), status: 301) if new_slug.present?
+  end
 end
 

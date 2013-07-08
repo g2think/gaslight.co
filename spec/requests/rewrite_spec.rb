@@ -8,16 +8,62 @@ describe "URL Rewriting" do
     end
   end
 
-  context "blog.gaslightsoftware.com" do
-    it "rewrites old blog requests to the new subdomain" do
-      get 'http://blog.gaslightsoftware.com/post/12345'
-      response.response_code.should == 301
-      response.location.should match('blog.gaslight.co')
+  context "old blogs" do
+    context 'blog.gaslight.co' do
+      let(:host) { 'blog.gaslight.co' }
+
+      it "rewrites root requests to the new blog" do
+        get "http://#{host}"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog')
+
+        get "http://#{host}/"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog')
+      end
+
+      it "rewrites old blog article requests to the new blog" do
+        get "http://#{host}/post/50698505607"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog/qcmerge-chris-glass')
+      end
+
+      it 'redirects old tumblr posts to the new blog' do
+        get "http://#{host}/post/54512786990/intermediate-ember-controller-concepts"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog/intermediate-ember-controller-concepts')
+      end
+    end
+
+    context 'blog.gaslightsoftware.com' do
+      let(:host) { 'blog.gaslightsoftware.com' }
+
+      it "rewrites old blog root requests to the new blog" do
+        get "http://#{host}"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog')
+
+        get "http://#{host}/"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog')
+      end
+
+      it "rewrites old blog article requests to the new blog" do
+        get "http://#{host}/post/50698505607"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog/qcmerge-chris-glass')
+      end
+
+      it 'redirects old tumblr posts to the new blog' do
+        get "http://#{host}/post/54512786990/intermediate-ember-controller-concepts"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog/intermediate-ember-controller-concepts')
+      end
     end
   end
 
   context "coffee.gaslightsoftware.com" do
-    it "rewrites old blog requests to the new page" do
+    it "rewrites old coffee requests to the new page" do
       get 'http://coffee.gaslightsoftware.com'
       response.response_code.should == 301
       response.location.should == 'http://gaslight.co/coffee'

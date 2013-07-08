@@ -87,13 +87,21 @@ module Gaslight
         rack_env['SERVER_NAME'] == 'training.gaslightsoftware.com'
       }
 
-      r301 %r{.*}, 'http://blog.gaslight.co$&', if: Proc.new { |rack_env|
-        rack_env['SERVER_NAME'] == 'blog.gaslightsoftware.com'
-      }
-
       r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env|
         rack_env['SERVER_NAME'] =~ /^(www.)?gaslightsoftware.com/
       }
+
+      blog_domains = %w[ blog.gaslightsoftware.com blog.gaslight.co ]
+
+      r301 %r{.*}, 'http://gaslight.co/blog', if: Proc.new { |rack_env|
+        blog_domains.include?(rack_env['SERVER_NAME']) &&
+          (rack_env['REQUEST_URI'] == '/' || rack_env['REQUEST_URI'].blank?)
+      }
+
+      rewrite %r{.*}, '$&', if: Proc.new { |rack_env|
+        blog_domains.include?(rack_env['SERVER_NAME'])
+      }
+
     end
   end
 end
