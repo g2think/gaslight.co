@@ -47,6 +47,7 @@ group :test do
   gem 'timecop'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :staging, :production do
