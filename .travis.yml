@@ -13,5 +13,8 @@ before_script:
   - cp config/database.sample.yml config/database.yml
   - psql -c 'create database gaslight_test;' -U postgres
 notifications:
-  campfire:
-    - secure: ! 'eXXKH72Dqc0sC0WPG/YEJzdjZq/U/qMG39CcDku95H5FoGqdxsxW9ZA+I6myELreqfR9lOvWkLngL4Wzjbz2CttL61qbeN1PE/yNGFM/xZPo3ZfxuQSlaBCqXFj0EQHqwCuS1mapN6NIfXwdMuYNI6eD9k3UwiuWwmcKIAzNcAs='
+  email:
+    - chrism@gaslight.co
+    - joel@gaslight.co
+  # campfire:
+  #   - secure: ! 'eXXKH72Dqc0sC0WPG/YEJzdjZq/U/qMG39CcDku95H5FoGqdxsxW9ZA+I6myELreqfR9lOvWkLngL4Wzjbz2CttL61qbeN1PE/yNGFM/xZPo3ZfxuQSlaBCqXFj0EQHqwCuS1mapN6NIfXwdMuYNI6eD9k3UwiuWwmcKIAzNcAs='
