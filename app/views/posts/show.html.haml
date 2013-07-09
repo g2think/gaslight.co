@@ -1,10 +1,17 @@
-
 - content_for(:title) { post.title }
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
     .header
-      = render partial: 'post', locals: { post: post }
+      %h1
+        = post.title
+      by #{link_to(post.author, posts_path(author: post.author))}
+      %time{pubdate: true}= l(post.published_on, format: :nice)
+      %div
+        = render partial: 'tweet'
+        = render partial: 'share'
+    .body
+      = raw(post.html)
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
     %h4 Tags
@@ -30,4 +37,4 @@
   %a{href: "http://disqus.com", class: "dsq-brlink"}
     comments powered by
     %span{class: "logo-disqus"} Disqus
-  
+
