@@ -1,0 +1,9 @@
+%h1
+  = post.title
+by #{link_to(post.author, posts_path(author: post.author))}
+%time{pubdate: true}= l(post.published_on, format: :nice)
+%div 
+  = render partial: 'tweet', locals: { post: post }
+  = render partial: 'share', locals: { post: post }
+.body
+  = raw(post.html)

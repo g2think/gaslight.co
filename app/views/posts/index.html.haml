@@ -26,15 +26,7 @@
       - Post.recent.limit(3).each_with_index do |post,index|
         .row
           .panel.bordered
-            %h1
-              = post.title
-            by #{link_to(post.author, posts_path(author: post.author))}
-            %time{pubdate: true}= l(post.published_on, format: :nice)
-            %div 
-              = render partial: 'tweet', locals: { post: post }
-              = render partial: 'share', locals: { post: post }
-            .body
-              = raw(post.html)
+            = render partial: 'post', locals: { post: post }
   .columns.three.prepend-1.sidebar
     = form_tag(search_posts_path, method: :get) do
       = text_field_tag :q, params[:q], placeholder: 'Search...'
