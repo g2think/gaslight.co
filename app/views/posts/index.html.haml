@@ -27,10 +27,11 @@
           = l(search_date, format: :year)
       = render partial: 'post_list', locals: { posts: posts }
     - else
-      - Post.recent.limit(3).each_with_index do |post,index|
+      - posts.each_with_index do |post,index|
         .row
           .panel.bordered
             = render partial: 'post', locals: { post: post }
+      = paginate posts
   .columns.three.prepend-1.sidebar
     = form_tag(search_posts_path, method: :get) do
       = text_field_tag :q, params[:q], placeholder: 'Search...'

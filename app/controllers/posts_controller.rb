@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
   def posts
     posts ||= recent? ? Post.recent : Post.published.by_publish_date
+    posts = posts.page(params[:page]).per(3) if index?
     posts = posts.written_by([params[:author]]) if params[:author]
     posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
     posts = posts.posted_on(params[:year], params[:month], params[:day])
@@ -46,6 +47,14 @@ class PostsController < ApplicationController
     request.fullpath =~ /#{recent_posts_path}/
   end
   helper_method :recent?
+
+  def index?
+    !params[:q].present? && 
+    !params[:tagged].present? &&
+    !params[:author].present? &&
+    !params[:year].present?
+  end
+  helper_method :index?
 
   def authors
     Post.select('author, count(id) as post_count').group('author').order('post_count desc')
