@@ -1,5 +1,5 @@
 %h1
-  = post.title
+  = link_to post.title, post_path(post)
 by #{link_to(post.author, posts_path(author: post.author))}
 %time{pubdate: true}= l(post.published_on, format: :nice)
 %div 

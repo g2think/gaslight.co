@@ -6,10 +6,13 @@
   .columns.eight.post
     - if params[:tagged].present?
       %h1 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
+      = render partial: 'post_list', locals: { posts: posts }
     - elsif params[:q].present?
       %h1 #{pluralize(posts.count, 'post')} containing '#{params[:q]}'
+      = render partial: 'post_list', locals: { posts: posts }
     - elsif params[:author].present?
       %h1 #{pluralize(posts.count, 'post')} written by #{params[:author]}
+      = render partial: 'post_list', locals: { posts: posts }
     - elsif params[:year].present?
       %h1
         #{pluralize(posts.count, 'post')} written
@@ -22,6 +25,7 @@
         - else
           in
           = l(search_date, format: :year)
+      = render partial: 'post_list', locals: { posts: posts }
     - else
       - Post.recent.limit(3).each_with_index do |post,index|
         .row
