@@ -13,13 +13,10 @@
     = canonical_link_tag
     = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application"
     = yield :head
     = csrf_meta_tags
   %body{class: "#{controller.controller_name} #{controller.action_name}"}
-
     = yield
-
+    = javascript_include_tag "application"
+    = yield :javascript
     = render partial: 'application/analytics'
-
-  = yield :javascript
