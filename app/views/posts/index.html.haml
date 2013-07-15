@@ -1,5 +1,4 @@
-- content_for(:list_type) { all? ? 'All Posts' : 'Recent Posts' }
-- content_for(:title) { "Gaslight Blog: #{yield(:list_type)}" }
+- content_for(:title) { "Gaslight Blog" }
 
 = render partial: 'application/nav'
 #main.container.row
@@ -13,33 +12,7 @@
     - elsif params[:author].present?
       %h1 #{pluralize(posts.count, 'post')} written by #{params[:author]}
       = render partial: 'post_list', locals: { posts: posts }
-    - elsif params[:year].present?
-      %h1
-        #{pluralize(posts.count, 'post')} written
-        - if params[:day].present?
-          on
-          = l(search_date, format: :nice)
-        - elsif params[:month].present?
-          in
-          = l(search_date, format: :year_and_month)
-        - else
-          in
-          = l(search_date, format: :year)
-    = render posts
-  .columns.three.prepend-1.sidebar
-    = form_tag(search_posts_path, method: :get) do
-      = text_field_tag :q, params[:q], placeholder: 'Search...'
-    %h1 Posts
-    = link_to_unless_current('Recent Posts', recent_posts_path)
-    |
-    = link_to_unless_current('All Posts', posts_path)
-    %h3 Tags
-    = popular_tags(Post.popular_tags.limit(20))
-    %h3 Authors
-    %ul
-      - authors.each do |post|
-        %li
-          = link_to(post.author || "Other", posts_path(author: post.author))
-          (#{pluralize(post.post_count, 'posts')})
-
+    - else
+      = render posts
+  = render partial: 'index_sidebar'
 = render partial: 'application/footer'
