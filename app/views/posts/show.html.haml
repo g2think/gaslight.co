@@ -2,16 +2,7 @@
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight.post
-    .header
-      %h1
-        = post.title
-      by #{link_to(post.author, posts_path(author: post.author))}
-      %time{pubdate: true}= l(post.published_on, format: :nice)
-      %div
-        = render partial: 'tweet'
-        = render partial: 'share'
-    .body
-      = raw(post.html)
+    = render post
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
     %h4 Tags
