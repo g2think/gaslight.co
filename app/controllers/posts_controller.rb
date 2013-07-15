@@ -8,10 +8,7 @@ class PostsController < ApplicationController
 
   expose(:posts) { Post.published }
   expose(:post) { Post.published.find_by_slug(params[:slug]) }
-  expose(:authors) do
-    Post.select('author, count(id) as post_count').
-      group('author').order('post_count desc')
-  end
+  expose(:authors) { Post.authors }
 
   def index
     self.posts = self.posts.written_by([params[:author]]) if params[:author]

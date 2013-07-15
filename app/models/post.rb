@@ -32,6 +32,10 @@ class Post < ActiveRecord::Base
     posts
   end
 
+  def self.authors
+    published.select('author, count(id) as post_count').group('author').order('post_count desc')
+  end
+
   validates_presence_of :title, :body, :author
   validates_length_of :title, maximum: 255
 
