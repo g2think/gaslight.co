@@ -31,6 +31,13 @@ bundle install --binstubs --local --path vendor --quiet
 echo "  + Creating .env"
 cp .env.sample .env
 
+#
+# Set up the database
+#
+cp config/database.sample.yml config/database.yml
+bundle exec rake db:setup
+bundle exec rake db:migrate
+
 echo "Ok, setup complete. Run"
 echo "  foreman start"
 echo "to start the application."
