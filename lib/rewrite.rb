@@ -1,6 +1,10 @@
 module Rewrite
   def tumblr_posts_hash
     {
+      "/post/55526274501/style-guides-or-how-i-learned-to-stop-worrying-and" => "style-guides-or-how-i-learned-to-stop-worrying-and-love-the-grid",
+      "/post/55260419788/how-we-handled-the-problem-of-js-date-time-equality" => "how-we-handled-the-problem-of-js-date-slash-time-equality",
+      "/post/55084304510/announcing-web-school-cincy" => "announcing-web-school-cincy",
+      "/post/54926190510/encouraging-gender-diversity-3-reasons-why-qcmerge" => "encouraging-gender-diversity-3-reasons-why-qcmerge-attracts-a-different-audience",
       "/post/54512786990/intermediate-ember-controller-concepts" => "intermediate-ember-controller-concepts",
       "/post/54341910311/chaminade-julienne-summer-stemm-camp" => "chaminade-julienne-summer-stemm-camp",
       "/post/54111288998/why-i-chose-angularjs" => "why-i-chose-angularjs",
