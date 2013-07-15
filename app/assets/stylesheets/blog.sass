@@ -1,4 +1,5 @@
 @import tango.min
+@import jPlayer/skin/blue.monday/jplayer.blue.monday
 
 body.posts
   h1, h2, h3, h4, h5
@@ -42,7 +43,13 @@ body.posts
   #main
     padding: 100px 30px 176px 30px
 
+  .audio
+    margin-bottom: 1em
+    *, *:before, *:after
+      box-sizing: content-box
+
   .post
+    margin-bottom: 2em
     .header
       margin-bottom: 1em
       h1
@@ -50,39 +57,40 @@ body.posts
       time
         &:before
           content: "  \2022  "
-    img
-      float: left
-      padding-right: 0.5em
-      padding-bottom: 0.5em
-      &.small
-        max-width: 35%
-      &.right
-        float: right
-      &.wide
+    .body
+      img
+        float: left
+        padding-right: 0.5em
+        padding-bottom: 0.5em
+        &.small
+          max-width: 35%
+        &.right
+          float: right
+        &.wide
+          clear: both
+          width: 100%
+          margin-bottom: 1em
+      li
         clear: both
-        width: 100%
-        margin-bottom: 1em
-    li
-      clear: both
-    p, li
-      color: #333
-      font-family: Helvetica, Arial, sans-serif
-      font-size: 12pt
-      line-height: 1.4em
-      code
-        padding: 3px 5px
-        font-size: 10pt
+      p, li
         color: #333
-        background-color: #fafafa
+        font-family: Helvetica, Arial, sans-serif
+        font-size: 12pt
+        line-height: 1.4em
+        code
+          padding: 3px 5px
+          font-size: 10pt
+          color: #333
+          background-color: #fafafa
+          @include border-radius(5px)
+      .highlight
         @include border-radius(5px)
-    .highlight
-      @include border-radius(5px)
-      background-color: #fafafa
-      padding: 10px
-      font-size: 10px
-      line-height: 1.8em
-      overflow: scroll
-      margin-bottom: 1em
+        background-color: #fafafa
+        padding: 10px
+        font-size: 10px
+        line-height: 1.8em
+        overflow: scroll
+        margin-bottom: 1em
 
   .sidebar
     dl

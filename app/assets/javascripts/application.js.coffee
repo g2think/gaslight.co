@@ -1,11 +1,11 @@
 #= require html5shiv
 #= require jquery
 #= require jquery_ujs
-#= require foundation/jquery.foundation.orbit
 #= require raphael
 #= require vendor/hubspot.js
 #= require underscore
 #= require moment
+#= require blog
 #= require backbone
 #= require backbone/gaslight
 
@@ -19,10 +19,6 @@ $ ->
     track("Mobile Navigation", "Open")
     $('#nav').toggleClass('expanded')
 
-  $('#slideshow .slides').orbit
-    directionalNav: false
-    bullets: true
-  
   $('a[rel]').on 'click', (event) ->
     link = $(event.currentTarget)
     track('Links', link.attr('rel'), link.attr('href'))

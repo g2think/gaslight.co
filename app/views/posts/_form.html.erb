@@ -8,11 +8,11 @@
         <div id="editor"></div>
       </label>
     </li>
+    <%= f.input :audio_url %>
     <%= f.input :slug %>
     <%= f.input :tag_list %>
     <%= f.input :published %>
     <%= f.input :published_at, as: :datetime %>
-    <%= f.input :tumblr_id, label: 'tumblr ID' %>
   <% end %>
   <%= f.actions do %>
     <%= f.action :submit %>
