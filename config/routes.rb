@@ -7,9 +7,9 @@ Gaslight::Application.routes.draw do
 
   resources :posts, path: '/blog', except: :show do
     collection do
-      get "/:year(/:month(/:day))" => "posts#index", constraints: { year: /\d{4}/, month: /\d{2}/, day: /\d{2}/ }
-      get :recent
+      get "/:year(/:month(/:day))" => "posts#for_date", constraints: { year: /\d{4}/, month: /\d{2}/, day: /\d{2}/ }
       get :search
+      get :archive
     end
   end
 

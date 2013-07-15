@@ -6,59 +6,48 @@ class PostsController < ApplicationController
   respond_to :html, :rss, :json
   caches_page :show
 
+  expose(:posts) { Post.published }
+  expose(:post) { Post.published.find_by_slug(params[:slug]) }
+  expose(:authors) { Post.authors }
+
+  def index
+    self.posts = self.posts.written_by([params[:author]]) if params[:author]
+    self.posts = self.posts.tagged_with([params[:tagged]]) if params[:tagged]
+    self.posts = self.posts.recent(3) if index?
+    respond_with posts
+  end
+
+  def for_date
+    self.posts = Post.posted_on(params[:year], params[:month], params[:day])
+    @total = Post.published.count
+    respond_with self.posts
+  end
+
+  def archive
+    posts = Post.published.by_publish_date
+    self.posts = posts.group_by { |post| post.published_at.beginning_of_month }
+    @total = Post.published.count
+    respond_with self.posts
+  end
+
+  def search
+    self.posts = Post.search(params[:q])
+    respond_with posts, template: 'posts/index'
+  end
+
   def show
     @canonical_url = post_url(Post.find_by_slug(params[:slug]))
   end
 
-  def index
-    respond_with posts
-  end
-
-  def search
-    respond_with posts, template: 'posts/index'
-  end
-
-  def recent
-    respond_with(posts) do |format|
-      format.html { render :index }
-      format.rss { render template: 'posts/index', layout: false }
-    end
-  end
-
   protected
 
-  def posts
-    posts ||= all? ? Post.published.by_publish_date : Post.recent(3)
-    posts = posts.written_by([params[:author]]) if params[:author]
-    posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
-    posts = posts.posted_on(params[:year], params[:month], params[:day])
-    posts = posts.search(params[:q]) if params[:q].present?
-    posts
-  end
-  helper_method :posts
-
-  def post
-    Post.published.find_by_slug(params[:slug])
-  end
-  helper_method :post
-
-  def all?
-    request.fullpath =~ /recent/
-  end
-  helper_method :all?
-
   def index?
-    !params[:q].present? && 
+    !params[:q].present? &&
     !params[:tagged].present? &&
     !params[:author].present? &&
     !params[:year].present?
   end
   helper_method :index?
-
-  def authors
-    Post.select('author, count(id) as post_count').group('author').order('post_count desc')
-  end
-  helper_method :authors
 
   def search_date
     year = (params[:year] || Date.today.year).to_i

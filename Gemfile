@@ -14,6 +14,7 @@ gem 'rack-rewrite'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'pg'
 gem 'activeadmin'
+gem 'decent_exposure'
 
 gem 'tumblr_client', require: false
 gem 'redcarpet', require: false
