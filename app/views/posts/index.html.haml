@@ -1,9 +1,9 @@
-- content_for(:list_type) { recent? ? 'Recent Posts' : 'All Posts' }
+- content_for(:list_type) { all? ? 'All Posts' : 'Recent Posts' }
 - content_for(:title) { "Gaslight Blog: #{yield(:list_type)}" }
 
 = render partial: 'application/nav'
 #main.container.row
-  .columns.eight.post
+  .columns.eight
     - if params[:tagged].present?
       %h1 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
       = render partial: 'post_list', locals: { posts: posts }
@@ -25,16 +25,14 @@
         - else
           in
           = l(search_date, format: :year)
-      = render partial: 'post_list', locals: { posts: posts }
-    - else
-      - posts.each_with_index do |post,index|
-        .row
-          .panel.bordered
-            = render partial: 'post', locals: { post: post }
-      = paginate posts
+    = render posts
   .columns.three.prepend-1.sidebar
     = form_tag(search_posts_path, method: :get) do
       = text_field_tag :q, params[:q], placeholder: 'Search...'
+    %h1 Posts
+    = link_to_unless_current('Recent Posts', recent_posts_path)
+    |
+    = link_to_unless_current('All Posts', posts_path)
     %h3 Tags
     = popular_tags(Post.popular_tags.limit(20))
     %h3 Authors

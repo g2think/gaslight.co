@@ -28,8 +28,7 @@ class PostsController < ApplicationController
   protected
 
   def posts
-    posts ||= recent? ? Post.recent : Post.published.by_publish_date
-    posts = posts.page(params[:page]).per(3) if index?
+    posts ||= all? ? Post.published.by_publish_date : Post.recent(3)
     posts = posts.written_by([params[:author]]) if params[:author]
     posts = posts.tagged_with([params[:tagged]]) if params[:tagged]
     posts = posts.posted_on(params[:year], params[:month], params[:day])
@@ -43,10 +42,10 @@ class PostsController < ApplicationController
   end
   helper_method :post
 
-  def recent?
-    request.fullpath =~ /#{recent_posts_path}/
+  def all?
+    request.fullpath =~ /recent/
   end
-  helper_method :recent?
+  helper_method :all?
 
   def index?
     !params[:q].present? && 

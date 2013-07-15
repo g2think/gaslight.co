@@ -5,6 +5,9 @@
     = render post
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
+    %h4 Social
+    = render 'tweet'
+    = render 'share'
     %h4 Tags
     = tag_list(post.tags)
     %h3 More
@@ -13,7 +16,6 @@
     - if post.next
       Next: #{link_to(post.next.title, post.next)}
 = render partial: 'application/footer'
-
 - content_for(:javascript) do
   :javascript
     var disqus_shortname = 'gaslightsoftwareblog';
