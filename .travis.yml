@@ -1,11 +1,19 @@
 language: ruby
 rvm:
   - "1.9.3"
-before_install: gem install bundler --pre
-bundler_args: --local --quiet --binstubs --path vendor --without production
+bundler_args: --local --without production
 script:
-  - bin/rspec -fd spec
-  - bin/cucumber
-  - bin/rake konacha:run
+  - bundle exec rake db:setup
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec -fd spec
+  - bundle exec rake konacha:run
 before_script:
   - cp .env.sample .env.test
+  - cp config/database.sample.yml config/database.yml
+  - psql -c 'create database gaslight_test;' -U postgres
+notifications:
+  email:
+    - chrism@gaslight.co
+    - joel@gaslight.co
+  # campfire:
+  #   - secure: ! 'eXXKH72Dqc0sC0WPG/YEJzdjZq/U/qMG39CcDku95H5FoGqdxsxW9ZA+I6myELreqfR9lOvWkLngL4Wzjbz2CttL61qbeN1PE/yNGFM/xZPo3ZfxuQSlaBCqXFj0EQHqwCuS1mapN6NIfXwdMuYNI6eD9k3UwiuWwmcKIAzNcAs='

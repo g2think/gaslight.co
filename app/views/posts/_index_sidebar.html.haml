@@ -1,0 +1,15 @@
+.columns.three.prepend-1.sidebar
+  = form_tag(search_posts_path, method: :get) do
+    = text_field_tag :q, params[:q], placeholder: 'Search...', class: 'search-bar'
+  %h2 Posts
+  = link_to_unless_current('Recent Posts', posts_path)
+  |
+  = link_to_unless_current('Archive', archive_posts_path)
+  %h3 Tags
+  = popular_tags(Post.popular_tags.limit(20))
+  %h3 Authors
+  %ul
+    - authors.each do |post|
+      %li
+        = link_to(post.author || "Other", posts_path(author: post.author))
+        (#{pluralize(post.post_count, 'posts')})

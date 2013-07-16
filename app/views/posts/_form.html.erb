@@ -1,0 +1,20 @@
+<%= semantic_form_for [:admin, @post] do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :author %>
+    <%= f.input :title %>
+    <%= f.input :body, as: :hidden %>
+    <li class="text input required">
+      <label class="label">Body</label>
+        <div id="editor"></div>
+      </label>
+    </li>
+    <%= f.input :audio_url %>
+    <%= f.input :slug %>
+    <%= f.input :tag_list %>
+    <%= f.input :published %>
+    <%= f.input :published_at, as: :datetime %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.action :submit %>
+  <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+dropdb gaslight_dev
+createdb gaslight_dev
+
+heroku pgbackups:capture --expire --app gaslight
+curl -Lo latest.dump `heroku pgbackups:url --app gaslight`
+pg_restore --verbose --no-acl --no-owner -d gaslight_dev latest.dump
+

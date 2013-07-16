@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-#require "active_record/railtie"
+require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 #require "active_resource/railtie"
@@ -42,7 +42,7 @@ module Gaslight
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Eastern Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -71,12 +71,12 @@ module Gaslight
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += %w[ coffee.js coffee.css home.css home.js ]
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    config.assets.precompile += %w(coffee.css home.css home.js)
     config.assets.initialize_on_precompile = false
-
-    config.middleware.insert_after(Rack::Lock, Rack::Tumblr::ReverseProxy, prefix: '/blog', domain: 'blog.gaslight.co')
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       r301 %r{.*}, 'http://gaslight.co/coffee', if: Proc.new { |rack_env|
@@ -87,13 +87,21 @@ module Gaslight
         rack_env['SERVER_NAME'] == 'training.gaslightsoftware.com'
       }
 
-      r301 %r{.*}, 'http://blog.gaslight.co$&', if: Proc.new { |rack_env|
-        rack_env['SERVER_NAME'] == 'blog.gaslightsoftware.com'
-      }
-
       r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env|
         rack_env['SERVER_NAME'] =~ /^(www.)?gaslightsoftware.com/
       }
+
+      blog_domains = %w[ blog.gaslightsoftware.com blog.gaslight.co ]
+
+      r301 %r{.*}, 'http://gaslight.co/blog', if: Proc.new { |rack_env|
+        blog_domains.include?(rack_env['SERVER_NAME']) &&
+          (rack_env['REQUEST_URI'] == '/' || rack_env['REQUEST_URI'].blank?)
+      }
+
+      rewrite %r{.*}, '$&', if: Proc.new { |rack_env|
+        blog_domains.include?(rack_env['SERVER_NAME'])
+      }
+
     end
   end
 end

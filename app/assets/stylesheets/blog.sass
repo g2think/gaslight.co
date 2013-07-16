@@ -1,0 +1,86 @@
+@import tango.min
+@import jPlayer/skin/blue.monday/jplayer.blue.monday
+
+.tag
+  padding: 4px 8px
+  font-size: 12px
+  background-color: #ddd
+  display: inline-block
+  margin: 2px 0
+  @include border-radius(15px)
+  &:hover
+    background-color: #eee
+    @include transition-property(background-color)
+    @include transition-duration(0.5s)
+
+.sidebar
+  border-left: 1px solid #eee
+  dl
+    dt, dd
+      display: inline-block
+      float: left
+    dt
+      width: 40%
+    dd
+      width: 60%
+.sidebar__nav
+  font-size: 14px
+
+.post
+  .post__header
+    margin-bottom: 1em
+  .post__author
+
+  .post__title
+    margin-bottom: 0
+  .post__time
+    &:before
+      content: "  \2022  "
+  .post__body
+    font-family: Helvetica, Arial, sans-serif
+    color: #333
+    margin-bottom: 4em
+    h1
+      font-size: $blog-mobile-heading-font-size
+      font-weight: bold
+      color: #333
+    h2
+      font-size: $blog-mobile-heading-font-size * .875
+    h3
+      font-size: $blog-mobile-heading-font-size * .75
+    h4
+      font-size: $blog-mobile-heading-font-size * .625
+    h5
+      font-size: $blog-mobile-heading-font-size * .5
+    h6
+      font-size: $blog-mobile-heading-font-size * .4
+  ul, ol
+    margin-left: 20px
+  pre
+    @include border-radius(5px)
+    background-color: #fafafa
+    padding: 10px
+    line-height: 1.8em
+    overflow: scroll
+    margin-bottom: 1em
+  img
+    padding-right: 0.5em
+    padding-bottom: 0.5em
+    &.small
+      max-width: 35%
+    &.wide
+      clear: both
+      width: 100%
+      margin-bottom: 1em 
+  blockquote
+    clear: both
+    min-height: 75px
+    @include border-radius(5px)
+    background-color: #fafafa
+    padding: 0.25em 0.5em 0.25em 3em
+    background-image: url(image-path('bg-quote.png'))
+    background-repeat: no-repeat
+    p:last-child
+      margin-bottom: 0
+    cite:before
+      content: "\2014"
