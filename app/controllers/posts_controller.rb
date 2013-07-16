@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   respond_to :html, :rss, :json
   caches_page :show
 
-  expose(:posts) { Post.published }
+  expose(:posts) { Post.published.by_publish_date }
   expose(:post) { Post.published.find_by_slug(params[:slug]) }
   expose(:authors) { Post.authors }
 
@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   end
 
   def archive
-    posts = Post.published.by_publish_date
     self.posts = posts.group_by { |post| post.published_at.beginning_of_month }
     @total = Post.published.count
     respond_with self.posts
