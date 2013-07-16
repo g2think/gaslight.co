@@ -16,6 +16,8 @@ Gaslight::Application.routes.draw do
   get 'blog/:slug', to: 'posts#show'
   get 'post/:id(/:slug)', to: 'posts#show' # handle old tumblr urls
 
+  get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
+
   # catch all the pages
   match '/:id', to: 'pages#show', as: :static
   match '/home', to: 'pages#show', id: 'home', as: :home
