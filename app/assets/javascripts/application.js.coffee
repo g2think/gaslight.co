@@ -5,7 +5,6 @@
 #= require vendor/hubspot.js
 #= require underscore
 #= require moment
-#= require blog
 #= require backbone
 #= require backbone/gaslight
 
