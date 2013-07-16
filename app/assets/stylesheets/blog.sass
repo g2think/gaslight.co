@@ -1,5 +1,7 @@
 @import tango.min
 
+$avitar-size: 70px
+
 .container
   ul li
     list-style: none
@@ -51,6 +53,7 @@
   .post__author
 
   .post__title
+    position: relative
     margin-top: 0px
     margin-bottom: .25em
     text-transform: capitalize
@@ -70,6 +73,16 @@
   .post__time
     &:before
       content: "  \2022  "
+  .post__avitar
+    padding: 0px
+    position: absolute
+    left: 0
+    top: 50%
+    margin-top: - ($avitar-size / 2)
+    margin-left: - ($avitar-size / 2)
+    +border-radius($avitar-size)
+    width: $avitar-size
+    height: $avitar-size
   .post__player
     margin-bottom: 20px
   .post__body
