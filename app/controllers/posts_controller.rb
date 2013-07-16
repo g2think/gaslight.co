@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def index
     self.posts = self.posts.written_by([params[:author]]) if params[:author]
     self.posts = self.posts.tagged_with([params[:tagged]]) if params[:tagged]
-    self.posts = self.posts.recent(3) if index?
+    self.posts = self.posts.page(params[:page]).per(3) if index?
     respond_with posts
   end
 

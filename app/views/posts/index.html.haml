@@ -14,5 +14,6 @@
       = render partial: 'post_list', locals: { posts: posts }
     - else
       = render posts
+      = paginate posts
   = render partial: 'posts/index_sidebar'
 = render partial: 'application/footer'
