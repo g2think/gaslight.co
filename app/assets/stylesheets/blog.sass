@@ -1,33 +1,66 @@
 @import tango.min
 @import jPlayer/skin/blue.monday/jplayer.blue.monday
 
-body.posts
-  h1, h2, h3, h4, h5
-    color: #444
-    font-weight: bold
-    display: block
-    clear: left
-    span
-      color: lighten(#444, 15)
-      font-size: 60%
-  h1
-    font-size: 18pt
-  h2
-    font-size: 16pt
-  h3
-    font-size: 16pt
-  h4
-    font-size: 14pt
-  h5
+.tag
+  padding: 4px 8px
+  font-size: 12px
+  background-color: #ddd
+  display: inline-block
+  margin: 2px 0
+  @include border-radius(15px)
+  &:hover
+    background-color: #eee
+    @include transition-property(background-color)
+    @include transition-duration(0.5s)
+
+.sidebar
+  border-left: 1px solid #eee
+  dl
+    dt, dd
+      display: inline-block
+      float: left
+    dt
+      width: 40%
+    dd
+      width: 60%
+.sidebar__nav
+  font-size: 14px
+
+.post
+  padding: 1em
+  .post__header
+    margin-bottom: 1em
+  .post__author
+
+  .post__title
+    margin-bottom: 0
+  .post__time
+    &:before
+      content: "  \2022  "
+  .post__body
+    font-family: Helvetica, Arial, sans-serif
+    color: #333
     font-size: 12pt
-
-  ul, ol
-    margin-left: 1em
-
-  a
-    &:visited
-      color: darken($brand1, 20)
-
+    line-height: 1.4em
+    margin-bottom: 4em
+  li
+    list-style: none
+  pre
+    @include border-radius(5px)
+    background-color: #fafafa
+    padding: 10px
+    line-height: 1.8em
+    overflow: scroll
+    margin-bottom: 1em
+  img
+    padding-right: 0.5em
+    padding-bottom: 0.5em
+    &.small
+      max-width: 35%
+    &.wide
+      clear: both
+      width: 100%
+      margin-bottom: 1em 
   blockquote
     clear: both
     min-height: 75px
@@ -42,99 +75,3 @@ body.posts
         margin-bottom: 0
     cite:before
       content: "\2014"
-
-  #main
-    padding: 100px 30px 176px 30px
-
-  .audio
-    margin-bottom: 1em
-    *, *:before, *:after
-      box-sizing: content-box
-
-  &.index .post
-    padding: 1em
-    border: 1px solid #ccc
-
-  .post
-    margin-bottom: 4em
-    .header
-      margin-bottom: 1em
-      h1
-        margin-bottom: 0
-      time
-        &:before
-          content: "  \2022  "
-    .body
-      img
-        padding-right: 0.5em
-        padding-bottom: 0.5em
-        &.small
-          max-width: 35%
-        &.right
-          float: right
-        &.wide
-          clear: both
-          width: 100%
-          margin-bottom: 1em
-      li
-        clear: both
-      p, li
-        color: #333
-        font-family: Helvetica, Arial, sans-serif
-        font-size: 12pt
-        line-height: 1.4em
-        code
-          padding: 3px 5px
-          font-size: 10pt
-          color: #333
-          background-color: #fafafa
-          @include border-radius(5px)
-      .highlight
-        @include border-radius(5px)
-        background-color: #fafafa
-        padding: 10px
-        font-size: 10px
-        line-height: 1.8em
-        overflow: scroll
-        margin-bottom: 1em
-
-  .sidebar
-    dl
-      dt, dd
-        display: inline-block
-        float: left
-      dt
-        width: 40%
-      dd
-        width: 60%
-    a.tag
-      padding: 4px 8px
-      font-size: 12px
-      background-color: #ddd
-      display: inline-block
-      margin: 2px 0
-      @include border-radius(15px)
-      &:hover
-        background-color: #eee
-        @include transition-property(background-color)
-        @include transition-duration(0.5s)
-
-  @media only screen and (max-width: 767px)
-    #main
-      padding: 50px 10px
-    h1
-      font-size: 16pt
-    h2
-      font-size: 14pt
-    h3
-      font-size: 12pt
-    h4
-      font-size: 10pt
-    h5
-      font-size: 8pt
-    ul, ol
-      margin-left: 1.5em
-
-.panel.bordered
-  background: white
-

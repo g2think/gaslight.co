@@ -1,7 +1,7 @@
 - content_for(:title) { post.title }
 = render partial: 'application/nav'
 #main.container.row
-  .columns.eight.post
+  .columns.eight
     = render post
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
@@ -12,9 +12,9 @@
     = tag_list(post.tags)
     %h3 More
     - if post.previous
-      Previous: #{link_to(post.previous.title, post.previous)}
+      %p.sidebar__nav Previous: #{link_to(post.previous.title, post.previous)}
     - if post.next
-      Next: #{link_to(post.next.title, post.next)}
+      %p.sidebar__nav Next: #{link_to(post.next.title, post.next)}
 = render partial: 'application/footer'
 - content_for(:javascript) do
   :javascript

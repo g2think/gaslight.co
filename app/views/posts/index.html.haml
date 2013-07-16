@@ -4,13 +4,13 @@
 #main.container.row
   .columns.eight
     - if params[:tagged].present?
-      %h1 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
+      %h2 #{pluralize(posts.count, 'post')} tagged with #{params[:tagged]}
       = render partial: 'post_list', locals: { posts: posts }
     - elsif params[:q].present?
-      %h1 #{pluralize(posts.count, 'post')} containing '#{params[:q]}'
+      %h2 #{pluralize(posts.count, 'post')} containing '#{params[:q]}'
       = render partial: 'post_list', locals: { posts: posts }
     - elsif params[:author].present?
-      %h1 #{pluralize(posts.count, 'post')} written by #{params[:author]}
+      %h2 #{pluralize(posts.count, 'post')} written by #{params[:author]}
       = render partial: 'post_list', locals: { posts: posts }
     - else
       = render posts
