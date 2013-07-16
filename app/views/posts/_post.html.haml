@@ -3,7 +3,7 @@
     %h2.post__title= link_to_unless_current(post.title, post)
     %span.post__author by #{link_to(post.author, posts_path(author: post.author))}
     %time.post__time{pubdate: true}= l(post.published_on, format: :nice)
-  - if post.audio_url.present?
-    = render(partial: 'player', locals: { post: post })
-  .post__body= raw(post.html)
+  .post__body
+    = render(partial: 'player', locals: { post: post }) if post.audio_url.present?
+    = raw(post.html)
   %hr.divider
