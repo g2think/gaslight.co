@@ -26,7 +26,7 @@ class Author
           "name": "Chris Nelson",
           "first_name": "Chris",
           "github": "superchris",
-          "github": "mysterycoder",
+          "tumblr": "superchris",
           "twitter": "superchris",
           "avatar": "http://gaslight.co/assets/team/chris_n.jpg",
           "email": "chris@gaslight.co"
@@ -96,7 +96,7 @@ class Author
           "name": "Tammy Gambrel",
           "first_name": "Tammy",
           "github": "TammyGambrel",
-          "tumblr": "TammyGambrel",
+          "tumblr": "tammygambrel",
           "twitter": "SilversunTammy",
           "avatar": "http://gaslight.co/assets/team/tammy.jpg",
           "email": "tammygambrel@gmail.com"
@@ -160,6 +160,15 @@ class Author
           "avatar": "",
           "tumblr": "heflinao",
           "email": "alex@gaslight.co"
+        },
+        {
+          "id": 29,
+          "name": "Laurel Nock",
+          "first_name": "Laurel",
+          "twitter": "",
+          "avatar": "",
+          "tumblr": "nockitoff",
+          "email": "nockll@ucmail.uc.edu"
         }
       ]
     }').with_indifferent_access
