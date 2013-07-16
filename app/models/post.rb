@@ -83,6 +83,19 @@ class Post < ActiveRecord::Base
     tagged_similar.limit(limit)
   end
 
+  def author_info
+    @a ||= Author.find_by_tumblr(self.author)
+    @a ||= {}
+  end
+
+  def author_name
+    author_info[:name]
+  end
+
+  def author_email
+    author_info[:email]
+  end
+
   private
 
   def update_html
