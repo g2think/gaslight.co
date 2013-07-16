@@ -1,208 +1,210 @@
 - content_for(:title) { "Developer's Guide to Managing Software Projects" }
-:markdown
-  This is a summary of how we actually work projects. It's intended for
-  new developers, to demonstrate our philosophy on engaing clients and
-  managing projects.
+= render partial: 'application/nav'
+#main.container.row
+  :markdown
+    This is a summary of how we actually work projects. It's intended for
+    new developers, to demonstrate our philosophy on engaing clients and
+    managing projects.
 
-  ## Controlling the Unpredictable
+    ## Controlling the Unpredictable
 
-  My own thinking is heavily based on Martin Fowler's [New Methodology
-  Needed](http://martinfowler.com/articles/newMethodology.html) article.
-  Most of the software we write is unpredictable. The goal is to control
-  the unpredictable process.
+    My own thinking is heavily based on Martin Fowler's [New Methodology
+    Needed](http://martinfowler.com/articles/newMethodology.html) article.
+    Most of the software we write is unpredictable. The goal is to control
+    the unpredictable process.
 
-  We have two tools to help us meet this goal:
+    We have two tools to help us meet this goal:
 
-  * To communicate and know accurately where we are on the project at all times
-  * To frequently produce working versions of the final system
+    * To communicate and know accurately where we are on the project at all times
+    * To frequently produce working versions of the final system
 
-  ### Communication
+    ### Communication
 
-  The more you can speak to the client, the better. It works out the
-  best for us if we speak to the client daily, in the form of a
-  stand-up. Clients are busy. Sometimes they are resistant to this level
-  of engagement.
+    The more you can speak to the client, the better. It works out the
+    best for us if we speak to the client daily, in the form of a
+    stand-up. Clients are busy. Sometimes they are resistant to this level
+    of engagement.
 
-  Pivotal Tracker is the tool we use to communicate project status. It
-  is the centerpiece of every stand-up. The M.O. is for the client and
-  the developers to look at the tracker together. The goal is to know
-  what has been accomplished, what is in progress, and what needs doing
-  next.
+    Pivotal Tracker is the tool we use to communicate project status. It
+    is the centerpiece of every stand-up. The M.O. is for the client and
+    the developers to look at the tracker together. The goal is to know
+    what has been accomplished, what is in progress, and what needs doing
+    next.
 
-  Additionally, we'd like the client and to attend a weekly review, in
-  which we invite all other involved associates. Often what happens is
-  early in the project clients are a bit stand-off-ish. As their budget
-  begins to run out, they become more anxious about getting the value
-  out of their overall project and become more engaged. Often our
-  experience is that the last couple of weeks on a project are often the
-  best for us, due to the level of client engagement.
+    Additionally, we'd like the client and to attend a weekly review, in
+    which we invite all other involved associates. Often what happens is
+    early in the project clients are a bit stand-off-ish. As their budget
+    begins to run out, they become more anxious about getting the value
+    out of their overall project and become more engaged. Often our
+    experience is that the last couple of weeks on a project are often the
+    best for us, due to the level of client engagement.
 
-  ### The Stand-Up
+    ### The Stand-Up
 
-  The rule of three for the daily standup is: 
+    The rule of three for the daily standup is: 
 
-  1. What did you accomplish yesterday?
-  1. What are you doing today?
-  1. What problems are you having?
+    1. What did you accomplish yesterday?
+    1. What are you doing today?
+    1. What problems are you having?
 
-  That's pretty standard Scrum Daily Standup. However, the trick is that
-  each of these things needs to be tied to a story in Tracker.
+    That's pretty standard Scrum Daily Standup. However, the trick is that
+    each of these things needs to be tied to a story in Tracker.
 
-  #### Are you doing the right thing?
+    #### Are you doing the right thing?
 
-  It's kind of pedantic, but accurately communicating the state of the
-  project between developers and the product owner is the number one
-  indicator of project success. To this end, everything must be in
-  Pivotal to the appropriate level of detail.
+    It's kind of pedantic, but accurately communicating the state of the
+    project between developers and the product owner is the number one
+    indicator of project success. To this end, everything must be in
+    Pivotal to the appropriate level of detail.
 
-  That means if you're doing something and there's not a corresponding
-  story in Pivotal, you're doing the wrong thing. If you're doing
-  something and you haven't clicked "Start", then you're not really
-  doing anything. If you're already doing something, don't click "Start"
-  on anything else until you finish that story.
+    That means if you're doing something and there's not a corresponding
+    story in Pivotal, you're doing the wrong thing. If you're doing
+    something and you haven't clicked "Start", then you're not really
+    doing anything. If you're already doing something, don't click "Start"
+    on anything else until you finish that story.
 
-  Here's the takeaway:
+    Here's the takeaway:
 
-  1. Always be working on a story in Pivotal.
-  1. Always make sure you've started the story you're working on.
-  1. Only work on one thing at a time.
+    1. Always be working on a story in Pivotal.
+    1. Always make sure you've started the story you're working on.
+    1. Only work on one thing at a time.
 
-  #### Are you done yet?
+    #### Are you done yet?
 
-  So one day you come into standup and say, "Today I'm going to work on
-  Story Foo". There should be a card in pivotal called "Foo". Ideally
-  you finish the story that day. The next day you come to standup and
-  say, "Yesterday I finished Foo and today I'm going to do Story Bar."
+    So one day you come into standup and say, "Today I'm going to work on
+    Story Foo". There should be a card in pivotal called "Foo". Ideally
+    you finish the story that day. The next day you come to standup and
+    say, "Yesterday I finished Foo and today I'm going to do Story Bar."
 
-  However, not everything is honky-dory all the time. Sometimes you have
-  problems and can't finish story Foo in one day. So you come into
-  standup and say, "Yesterday I worked on story Foo, but didn't finish
-  it. I had these problems and I will get it finished today."
+    However, not everything is honky-dory all the time. Sometimes you have
+    problems and can't finish story Foo in one day. So you come into
+    standup and say, "Yesterday I worked on story Foo, but didn't finish
+    it. I had these problems and I will get it finished today."
 
-  Now what happens all too often is someone comes into standup on the
-  third day and says, "I'm still working on story Foo". In fact, it's
-  not uncommon to have developers show up with a somewhat resigned
-  attitude of repeating the mantra, "yesterday I worked on foo and I'm
-  still working on it today." That happens day after day.
+    Now what happens all too often is someone comes into standup on the
+    third day and says, "I'm still working on story Foo". In fact, it's
+    not uncommon to have developers show up with a somewhat resigned
+    attitude of repeating the mantra, "yesterday I worked on foo and I'm
+    still working on it today." That happens day after day.
 
-  There's clearly a problem at that point. When you write stories, write
-  them intentionally, such that you think you can finish them in one
-  day. That requires you to understand the story well enough to know if
-  you can get it done in a day. If you aren't pretty confident you can
-  do the story in a day, re-define it. Be careful about the urge to
-  break up stories though, I'll talk more about that later.
+    There's clearly a problem at that point. When you write stories, write
+    them intentionally, such that you think you can finish them in one
+    day. That requires you to understand the story well enough to know if
+    you can get it done in a day. If you aren't pretty confident you can
+    do the story in a day, re-define it. Be careful about the urge to
+    break up stories though, I'll talk more about that later.
 
-  Here's the takeaway:
+    Here's the takeaway:
 
-  1. Write stories that you're confident you can accomplish in a day, or less than a day
-  1. It's ok if a story takes two days
-  1. On the third day there's a problem that needs talked about.
+    1. Write stories that you're confident you can accomplish in a day, or less than a day
+    1. It's ok if a story takes two days
+    1. On the third day there's a problem that needs talked about.
 
-  #### Estimating
+    #### Estimating
 
-  Only estimate stories to the degree that you're pretty sure you can
-  get the story done in one day.
+    Only estimate stories to the degree that you're pretty sure you can
+    get the story done in one day.
 
-  I've always been bad at estimating. I thought that over time I'd get
-  better. Do more estimating, track the results better, you're bound to
-  get more accurate right? The truth is I've never really gotten much
-  better at estimating. Reading Fowler's article it makes me think it's
-  not my fault. Software is unpredictable.
+    I've always been bad at estimating. I thought that over time I'd get
+    better. Do more estimating, track the results better, you're bound to
+    get more accurate right? The truth is I've never really gotten much
+    better at estimating. Reading Fowler's article it makes me think it's
+    not my fault. Software is unpredictable.
 
-  "Uncle" Bob Martin has an article on [Why is Estimating so
-  Hard?](http://blog.8thlight.com/uncle-bob/2012/04/20/Why-Is-Estimating-So-Hard.html).
-  He doesn't come out and say you can't estimate. Nor does he say you
-  shouldn't estimate. He just explains that humans think about processes
-  differently than computers. Things that are easy for humans are
-  complex for machine procedures.
+    "Uncle" Bob Martin has an article on [Why is Estimating so
+    Hard?](http://blog.8thlight.com/uncle-bob/2012/04/20/Why-Is-Estimating-So-Hard.html).
+    He doesn't come out and say you can't estimate. Nor does he say you
+    shouldn't estimate. He just explains that humans think about processes
+    differently than computers. Things that are easy for humans are
+    complex for machine procedures.
 
-  Besides being bad at it, I don't like what clients do with estimates.
-  When they ask for an estimate, they always say they understand it's an
-  estimate and "I won't hold you to it." But inevitably whatever
-  estimate you give will come back to haunt you.
+    Besides being bad at it, I don't like what clients do with estimates.
+    When they ask for an estimate, they always say they understand it's an
+    estimate and "I won't hold you to it." But inevitably whatever
+    estimate you give will come back to haunt you.
 
-  I've found that all stories can be estimated into three categories:
+    I've found that all stories can be estimated into three categories:
 
-  1. This story is really simple and I know exactly what to do.
-  1. This story is "normal". I have a good idea how to do it.
-  1. This story is big. I don't have a good feel for how I'm going to do it.
+    1. This story is really simple and I know exactly what to do.
+    1. This story is "normal". I have a good idea how to do it.
+    1. This story is big. I don't have a good feel for how I'm going to do it.
 
-  The estimate really isn't based on how much time it will take to do
-  it, but rather in your confidence in understanding the problem and
-  envisioning the solution. As mentioned earlier though, the goal is for
-  each story to take a no more than a day to complete.
+    The estimate really isn't based on how much time it will take to do
+    it, but rather in your confidence in understanding the problem and
+    envisioning the solution. As mentioned earlier though, the goal is for
+    each story to take a no more than a day to complete.
 
-  ### Working Software
+    ### Working Software
 
-  One of the harder aspects of working this way is always building
-  features that deliver value. That's particularly tricky if you're only
-  doing day-long stories. The temptation is to take big stories and just
-  break them up in to step-wise stories. The problem is that the
-  individual stories in this break- down aren't providing value
-  individually. Each story must work end-to-end to provide production
-  quality features that are valuable.
+    One of the harder aspects of working this way is always building
+    features that deliver value. That's particularly tricky if you're only
+    doing day-long stories. The temptation is to take big stories and just
+    break them up in to step-wise stories. The problem is that the
+    individual stories in this break- down aren't providing value
+    individually. Each story must work end-to-end to provide production
+    quality features that are valuable.
 
-  This is hard for customers too. It's easy to say, "I need all these
-  features to go live." But we should be able to go live at any point in
-  the development process. Maybe all the functionality isn't there, but
-  at least the feature works end-to-end.
+    This is hard for customers too. It's easy to say, "I need all these
+    features to go live." But we should be able to go live at any point in
+    the development process. Maybe all the functionality isn't there, but
+    at least the feature works end-to-end.
 
-  #### Oops, we missed the point
+    #### Oops, we missed the point
 
-  Here's an example from a recent project. We built an application that
-  allowed a certain group of users to collect data in the field, and
-  another group of users to generate reports on that data. We broke this
-  down into the "minimum viable product", to collect data from the field
-  really well. We iterated and iterated on the data collection making it
-  really seamless and beautiful. After several weeks of the this our
-  client said that work was fine but wasn't worth anything without the
-  ability to generate the reports.
+    Here's an example from a recent project. We built an application that
+    allowed a certain group of users to collect data in the field, and
+    another group of users to generate reports on that data. We broke this
+    down into the "minimum viable product", to collect data from the field
+    really well. We iterated and iterated on the data collection making it
+    really seamless and beautiful. After several weeks of the this our
+    client said that work was fine but wasn't worth anything without the
+    ability to generate the reports.
 
-  We were caught a little flat-footed because we didn't understand the
-  entire value story. In retrospect, the MVP should have been to do less
-  polish on collecting data and delivering a minimal reporting
-  functionality in the first iteration. Then we could have continued to
-  refine both collection and reporting until our client was satisfied.
+    We were caught a little flat-footed because we didn't understand the
+    entire value story. In retrospect, the MVP should have been to do less
+    polish on collecting data and delivering a minimal reporting
+    functionality in the first iteration. Then we could have continued to
+    refine both collection and reporting until our client was satisfied.
 
-  The value of one feature shouldn't be tied to the existence of another
-  feature. We don't want to get caught in a situation where the client
-  says, "this is worhtless without that." There is one small feature
-  that has portions of both that would deliver the real value.
+    The value of one feature shouldn't be tied to the existence of another
+    feature. We don't want to get caught in a situation where the client
+    says, "this is worhtless without that." There is one small feature
+    that has portions of both that would deliver the real value.
 
-  Writing stories using a BDD testing framework like Cucumber is a good
-  way to stay focused the value proposition. The feature block of a
-  Cucumber story is where the value of the feature is communicated. It
-  is the first thing that is written. It states in a few lines what we
-  expect the application to do, but more importantly, why we want the
-  application to do it.
+    Writing stories using a BDD testing framework like Cucumber is a good
+    way to stay focused the value proposition. The feature block of a
+    Cucumber story is where the value of the feature is communicated. It
+    is the first thing that is written. It states in a few lines what we
+    expect the application to do, but more importantly, why we want the
+    application to do it.
 
-  The value proposition can take different forms, but usually reads
-  something like:
+    The value proposition can take different forms, but usually reads
+    something like:
 
-      In order to [realize a named business value]
-      I want to to [do some function]
-      As a [particular type of user]
+        In order to [realize a named business value]
+        I want to to [do some function]
+        As a [particular type of user]
 
-  or 
-      So that I can [realize a named business value]
-      I want to to [do some function]
-      As a [particular type of user]
+    or 
+        So that I can [realize a named business value]
+        I want to to [do some function]
+        As a [particular type of user]
 
-  It's arguably the most important line of any feature, and can be the
-  hardest thing to write. The value delivered is not always obvious, but
-  it gives the project it's purpose, and the exercise of uncovering it
-  gives the project it's focus.
+    It's arguably the most important line of any feature, and can be the
+    hardest thing to write. The value delivered is not always obvious, but
+    it gives the project it's purpose, and the exercise of uncovering it
+    gives the project it's focus.
 
-  Here's the takeaway:
+    Here's the takeaway:
 
-  1. Make sure you understand the value each feature is to provide
-  1. Always be delivering end-to-end value
+    1. Make sure you understand the value each feature is to provide
+    1. Always be delivering end-to-end value
 
-  ### Conclusion
+    ### Conclusion
 
-  Communicate daily.
+    Communicate daily.
 
-  Write stories in an intentional way. 
+    Write stories in an intentional way. 
 
-  Stay focused on value.
+    Stay focused on value.
 
