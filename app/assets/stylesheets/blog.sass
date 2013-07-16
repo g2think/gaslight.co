@@ -51,8 +51,12 @@ body.posts
     *, *:before, *:after
       box-sizing: content-box
 
+  &.index .post
+    padding: 1em
+    border: 1px solid #ccc
+
   .post
-    margin-bottom: 2em
+    margin-bottom: 4em
     .header
       margin-bottom: 1em
       h1
@@ -62,7 +66,6 @@ body.posts
           content: "  \2022  "
     .body
       img
-        float: left
         padding-right: 0.5em
         padding-bottom: 0.5em
         &.small
