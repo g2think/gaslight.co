@@ -3,6 +3,7 @@
 #main.container.row
   .columns.eight
     = render post
+    = render(partial: 'meta')
     .comments#disqus_thread
   .columns.three.prepend-1.sidebar
     %h4 Social

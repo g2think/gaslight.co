@@ -74,6 +74,11 @@ class Post < ActiveRecord::Base
     Post.where("published_at < ?", published_at).order("published_at desc").first
   end
 
+  def type
+    return "audio" if audio_url.present?
+    "article"
+  end
+
   private
 
   def update_html

@@ -1,0 +1,13 @@
+- content_for :head do
+  %meta{property: "og:title", content: post.title}
+  %meta{property: "og:article:published_time", content: post.published_at.iso8601}
+  %meta{property: "og:site_title", content: "Gaslight Blog"}
+  %meta{property: "og:url", content: post_url(post)}
+  %meta{property: "og:publisher", content: "http://www.facebook.com/teamgaslight"}
+
+  - post.tags.each do |tag|
+    %meta{property: "og:article:tag", content: tag}
+
+  - if post.audio_url.present?
+    %meta{property: "og:audio", content: post.audio_url}
+    %meta{property: "og:audio:type", content: "audio/mp3"}

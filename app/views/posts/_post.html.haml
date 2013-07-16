@@ -2,7 +2,7 @@
   .post__header.instapaper_title
     %h2.post__title= link_to_unless_current(post.title, post)
     %span.post__author by #{link_to(post.author, posts_path(author: post.author), rel: "author")}
-    %time.post__time{pubdate: true, datetime: post.published_on}= l(post.published_on, format: :nice)
+    %time.post__time{pubdate: true, datetime: post.published_at.iso8601}= l(post.published_on, format: :nice)
   .post__body.instapaper_body
     = render(partial: 'player', locals: { post: post })
     = raw(post.html)

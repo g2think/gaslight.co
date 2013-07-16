@@ -24,9 +24,24 @@ describe Post do
     its(:html) { should == test_html }
   end
 
+  describe "type" do
+    context "default" do
+      let(:post) { FactoryGirl.build(:post) }
+      it "is an article type" do
+        post.type.should == "article"
+      end
+    end
+    context "podcast" do
+      let(:podcast) { FactoryGirl.build(:post, audio_url: "something.mp3") }
+      it "is a naudio type" do
+        podcast.type.should == "audio"
+      end
+    end
+  end
+
   describe 'class methods' do
     # TODO: do a bunch of crazy setup and testing
- 
+
     it 'returns published posts' do
       Post.published.should be_empty
     end
