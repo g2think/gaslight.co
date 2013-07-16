@@ -1,22 +1,15 @@
 - content_for(:title) { post.title }
+= render(partial: 'meta')
+
 = render partial: 'application/nav'
 #main.container.row
   .columns.eight
     = render post
-    = render(partial: 'meta')
     .comments#disqus_thread
-  .columns.three.prepend-1.sidebar
-    %h4 Social
-    = render 'tweet'
-    = render 'share'
-    %h4 Tags
-    = tag_list(post.tags)
-    %h3 More
-    - if post.previous
-      %p.sidebar__nav Previous: #{link_to(post.previous.title, post.previous)}
-    - if post.next
-      %p.sidebar__nav Next: #{link_to(post.next.title, post.next)}
+  = render partial: 'posts/show_sidebar'
+
 = render partial: 'application/footer'
+
 - content_for(:javascript) do
   :javascript
     var disqus_shortname = '#{ENV.fetch('DISQUS_SHORTNAME')}';

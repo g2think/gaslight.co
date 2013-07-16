@@ -79,6 +79,10 @@ class Post < ActiveRecord::Base
     "article"
   end
 
+  def related(limit = 10)
+    tagged_similar.limit(limit)
+  end
+
   private
 
   def update_html

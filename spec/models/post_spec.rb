@@ -39,6 +39,19 @@ describe Post do
     end
   end
 
+  describe "related" do
+    let(:post) { FactoryGirl.create(:post, tags: ["cincinnati", "qcmerge", "culture"]) }
+    let(:similar_post) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
+    let!(:similar_post2) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
+    let!(:similar_post3) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
+    it "returns similar posts" do
+      post.related.should include similar_post
+    end
+    it "returns limit to x number of similar posts" do
+      post.related(2).count.should == 2
+    end
+  end
+
   describe 'class methods' do
     # TODO: do a bunch of crazy setup and testing
 
