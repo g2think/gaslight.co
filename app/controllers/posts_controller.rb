@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   expose(:posts) { Post.published.by_publish_date }
   expose(:post) { Post.published.find_by_slug(params[:slug]) }
   expose(:authors) { Post.authors }
+  expose(:author) { Author.find_by_tumblr(params[:author]) }
 
   def index
     self.posts = self.posts.written_by([params[:author]]) if params[:author]

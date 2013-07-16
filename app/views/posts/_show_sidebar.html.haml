@@ -9,7 +9,8 @@
     %p.sidebar__nav Previous: #{link_to(post.previous.title, post.previous)}
   - if post.next
     %p.sidebar__nav Next: #{link_to(post.next.title, post.next)}
-  %h3 Related
-  %ul
-    - post.related.each do |post|
-      %li= link_to(post.title, post)
+  - if post.related.any?
+    %h3 Related
+    %ul
+      - post.related.each do |post|
+        %li= link_to(post.title, post)
