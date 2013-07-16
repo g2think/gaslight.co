@@ -1,11 +1,21 @@
 @import tango.min
 
+.container
+  ul li
+    list-style: none
+    line-height: 2.2em
+  a
+    font-weight: 600
+  h2
+    text-transform: capitalize
+
 .tag
   padding: 4px 8px
   font-size: 12px
   background-color: #ddd
   display: inline-block
   margin: 2px 0
+  font-weight: 600
   @include border-radius(15px)
   &:hover
     background-color: #eee
@@ -22,16 +32,35 @@
       width: 40%
     dd
       width: 60%
+  ul, ol
+    list-style-position: inside
+    li
+      line-height: 1.9em
+
 .sidebar__nav
   font-size: 14px
 
 .post
+  margin-top: 4em
+  &:first-child
+    margin-top: 0
   .post__header
     margin-bottom: 1em
   .post__author
 
   .post__title
-    margin-bottom: 0
+    margin-top: 0px
+    margin-bottom: .25em
+    text-transform: capitalize
+    background: #57c0e8
+    padding: 10px
+    margin-left: -11.25%
+    width: 111%
+    padding-left: 60px
+    a
+      color: #fff
+
+
   .post__time
     &:before
       content: "  \2022  "
@@ -55,7 +84,7 @@
       font-size: $blog-mobile-heading-font-size * .5
     h6
       font-size: $blog-mobile-heading-font-size * .4
-  ul, ol
+  ul, ol,
     margin-left: 20px
   pre
     @include border-radius(5px)
