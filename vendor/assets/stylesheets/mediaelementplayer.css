@@ -1,10 +1,11 @@
 .mejs-container {
 	position: relative;
-	background: #000;
+	background: #444;
 	font-family: Helvetica, Arial;
 	text-align: left;
 	vertical-align: top;
 	text-indent: 0;
+	border-radius: 3px;
 }
 
 .me-plugin {
@@ -145,6 +146,7 @@
 	background: linear-gradient(rgba(50,50,50,0.7), rgba(0,0,0,0.7)); 	
 	height: 30px;
 	width: 100%;
+	border-radius: 3px;
 }
 .mejs-container .mejs-controls  div {
 	list-style-type: none;
@@ -283,12 +285,12 @@
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
 	background: #3caac8;
 	background: rgba(60,170,200,0.8);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(44,124,145,0.8)), to(rgba(78,183,212,0.8))); 
-	background: -webkit-linear-gradient(top, rgba(44,124,145,0.8), rgba(78,183,212,0.8));
-	background: -moz-linear-gradient(top, rgba(44,124,145,0.8), rgba(78,183,212,0.8));
-	background: -o-linear-gradient(top, rgba(44,124,145,0.8), rgba(78,183,212,0.8));
-	background: -ms-linear-gradient(top, rgba(44,124,145,0.8), rgba(78,183,212,0.8));
-	background: linear-gradient(rgba(44,124,145,0.8), rgba(78,183,212,0.8));
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(29,163,213, 0.8)), to(rgba(87,192,232, 0.8))); 
+	background: -webkit-linear-gradient(top, rgba(29,163,213, 0.8), rgba(87,192,232, 0.8));
+	background: -moz-linear-gradient(top, rgba(29,163,213, 0.8), rgba(87,192,232, 0.8));
+	background: -o-linear-gradient(top, rgba(29,163,213, 0.8), rgba(87,192,232, 0.8));
+	background: -ms-linear-gradient(top, rgba(29,163,213, 0.8), rgba(87,192,232, 0.8));
+	background: linear-gradient(rgba(29,163,213, 0.8), rgba(87,192,232, 0.8));
 	width: 0;
 }
 
