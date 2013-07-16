@@ -2,6 +2,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require raphael
+#= require mediaelement-and-player
 #= require vendor/hubspot.js
 #= require underscore
 #= require moment
@@ -24,6 +25,7 @@ $ ->
     if not ((event.metaKey or event.ctrlKey) or link.attr('target') is "_blank")
       event.preventDefault()
       setTimeout("document.location = '#{link.attr('href')}'", 100)
-      
 
-    
+  $('audio').mediaelementplayer
+    pluginPath: '/assets/'
+    audioWidth: '100%'
