@@ -36,3 +36,21 @@
       To play the media you will need to either update your browser to a recent version or update your
       = succeed "." do
         %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
+
+- content_for(:javascript) do
+  :javascript
+    $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function (event) {
+          $(this).jPlayer("setMedia", {
+            mp3: "#{post.audio_url}",
+          });
+        },
+        swfPath: "/assets/jPlayer",
+        supplied: "mp3",
+        wmode: "window",
+        smoothPlayBar: true,
+        keyEnabled: true
+      });
+    });
+
