@@ -27,7 +27,6 @@
   font-size: 14px
 
 .post
-  padding: 1em
   .post__header
     margin-bottom: 1em
   .post__author
@@ -40,11 +39,23 @@
   .post__body
     font-family: Helvetica, Arial, sans-serif
     color: #333
-    font-size: 12pt
-    line-height: 1.4em
     margin-bottom: 4em
-  li
-    list-style: none
+    h1
+      font-size: $blog-mobile-heading-font-size
+      font-weight: bold
+      color: #333
+    h2
+      font-size: $blog-mobile-heading-font-size * .875
+    h3
+      font-size: $blog-mobile-heading-font-size * .75
+    h4
+      font-size: $blog-mobile-heading-font-size * .625
+    h5
+      font-size: $blog-mobile-heading-font-size * .5
+    h6
+      font-size: $blog-mobile-heading-font-size * .4
+  ul, ol
+    margin-left: 20px
   pre
     @include border-radius(5px)
     background-color: #fafafa
@@ -69,9 +80,7 @@
     padding: 0.25em 0.5em 0.25em 3em
     background-image: url(image-path('bg-quote.png'))
     background-repeat: no-repeat
-    p
-      font-size: 200%
-      &:last-child
-        margin-bottom: 0
+    p:last-child
+      margin-bottom: 0
     cite:before
       content: "\2014"
