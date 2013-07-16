@@ -1,9 +1,9 @@
 .post
-  .post__header
+  .post__header.instapaper_title
     %h2.post__title= link_to_unless_current(post.title, post)
     %span.post__author by #{link_to(post.author, posts_path(author: post.author))}
     %time.post__time{pubdate: true}= l(post.published_on, format: :nice)
-  .post__body
+  .post__body.instapaper_body
     = render(partial: 'player', locals: { post: post }) if post.audio_url.present?
     = raw(post.html)
   %hr.divider
