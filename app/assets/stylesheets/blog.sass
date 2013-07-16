@@ -17,6 +17,8 @@
   margin: 2px 0
   font-weight: 600
   @include border-radius(15px)
+  @include transition-property(background-color)
+  @include transition-duration(0.5s)
   &:hover
     background-color: #eee
     @include transition-property(background-color)
@@ -59,8 +61,12 @@
     padding-left: 60px
     a
       color: #fff
-
-
+      @include transition-property(color)
+      @include transition-duration(0.5s)
+      &:hover
+        color: #9ad9f1
+        @include transition-property(color)
+        @include transition-duration(0.5s)
   .post__time
     &:before
       content: "  \2022  "
