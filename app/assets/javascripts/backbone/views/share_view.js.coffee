@@ -1,10 +1,8 @@
 class Gaslight.Views.ShareView extends Backbone.View
   className: "share"
-
   template: JST["backbone/templates/share"]
-
   active: true
-
+  mobileWidth: 768
   targetScrollRatio: 0.5
 
   events:
@@ -24,7 +22,11 @@ class Gaslight.Views.ShareView extends Backbone.View
   currentScrollRatio: ->
     (@viewportEl.scrollTop() + @viewportEl.height()) / @targetEl.height()
 
+  mobile: ->
+    @viewportEl.width() < @mobileWidth
+
   handleScroll: ->
+    return @deactivate() if @mobile()
     if @currentScrollRatio() >= @targetScrollRatio
       @show()
     else

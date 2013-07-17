@@ -28,8 +28,16 @@ describe "ShareView", ->
       beforeEach ->
         @body.scrollTop(400)
         @body.trigger "scroll"
-      it.only "doesn't shows the shareView", ->
+      it "doesn't shows the shareView", ->
         expect(@shareView.$el.attr("class")).to.match /active/
+
+    describe "on mobile", ->
+      beforeEach ->
+        @body.width(300)
+        @body.scrollTop(400)
+        @body.trigger "scroll"
+      it "doesn't show", ->
+        expect(@shareView.$el.attr("class")).to.not.match /active/
 
   describe "shareUrl",  ->
     it "is the encoded options.shareUrl", ->
