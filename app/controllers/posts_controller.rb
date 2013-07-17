@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def index
     self.posts = self.posts.written_by([params[:author]]) if params[:author]
     self.posts = self.posts.tagged_with([params[:tagged]]) if params[:tagged]
-    self.posts = self.posts.page(params[:page]).per(3) if index?
+    self.posts = self.posts.page(params[:page]).per(3)
     respond_with posts
   end
 
@@ -40,14 +40,6 @@ class PostsController < ApplicationController
   end
 
   protected
-
-  def index?
-    !params[:q].present? &&
-    !params[:tagged].present? &&
-    !params[:author].present? &&
-    !params[:year].present?
-  end
-  helper_method :index?
 
   def search_date
     year = (params[:year] || Date.today.year).to_i
