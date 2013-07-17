@@ -1,7 +1,5 @@
 .columns.three.prepend-1.sidebar
-  = form_tag(search_posts_path, method: :get) do
-    = text_field_tag :q, params[:q], placeholder: 'Search...', class: 'search-bar'
-  %h3 Posts
+  = render partial: 'search_form'
   = link_to_unless_current('Recent Posts', posts_path)
   |
   = link_to_unless_current('Archive', archive_posts_path)
