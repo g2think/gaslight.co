@@ -23,8 +23,6 @@ $avitar-size: 70px
   @include transition-duration(0.5s)
   &:hover
     background-color: #eee
-    @include transition-property(background-color)
-    @include transition-duration(0.5s)
 
 .sidebar
   border-left: 1px solid #eee
@@ -45,13 +43,11 @@ $avitar-size: 70px
   font-size: 14px
 
 .post
-  margin-top: 4em
-  &:first-child
-    margin-top: 0
+  margin-bottom: 4em
+  &:last-of-type
+    margin-bottom: 0
   .post__header
     margin-bottom: 1em
-  .post__author
-
   .post__title
     position: relative
     margin-top: 0px
@@ -59,17 +55,14 @@ $avitar-size: 70px
     text-transform: capitalize
     background: #57c0e8
     padding: 10px
-    margin-left: -11.25%
-    width: 111%
-    padding-left: 60px
+    margin-left: -65px
+    padding-left: 65px
     a
       color: #fff
       @include transition-property(color)
       @include transition-duration(0.5s)
       &:hover
         color: #9ad9f1
-        @include transition-property(color)
-        @include transition-duration(0.5s)
   .post__time
     &:before
       content: "  \2022  "
@@ -83,12 +76,23 @@ $avitar-size: 70px
     +border-radius($avitar-size)
     width: $avitar-size
     height: $avitar-size
+
   .post__player
     margin-bottom: 20px
+
   .post__body
     font-family: Helvetica, Arial, sans-serif
     color: #333
     margin-bottom: 4em
+    img
+      padding-right: 0.5em
+      padding-bottom: 0.5em
+      &.small
+        max-width: 35%
+      &.wide
+        clear: both
+        width: 100%
+        margin-bottom: 1em
     h1
       font-size: $blog-mobile-heading-font-size
       font-weight: bold
@@ -112,15 +116,6 @@ $avitar-size: 70px
     line-height: 1.8em
     overflow: scroll
     margin-bottom: 1em
-  img
-    padding-right: 0.5em
-    padding-bottom: 0.5em
-    &.small
-      max-width: 35%
-    &.wide
-      clear: both
-      width: 100%
-      margin-bottom: 1em
   blockquote
     clear: both
     min-height: 75px
