@@ -1,8 +1,5 @@
 .columns.three.prepend-1.sidebar
-  %h3 Social
-  = render 'tweet'
-  = render 'share'
-  %h3 Tags
+  %h4 Tags
   = tag_list(post.tags)
   %h3 More
   - if post.previous
