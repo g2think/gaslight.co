@@ -35,10 +35,6 @@ class PostsController < ApplicationController
     respond_with posts, template: 'posts/index'
   end
 
-  def show
-    @canonical_url = post_url(Post.find_by_slug(params[:slug]))
-  end
-
   protected
 
   def search_date
