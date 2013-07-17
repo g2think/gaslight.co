@@ -15,6 +15,13 @@ class Gaslight.Views.ShareView extends Backbone.View
     @viewportEl.on 'scroll', => @handleScroll()
     super
 
+  handleScroll: ->
+    return @deactivate() if @mobile()
+    if @currentScrollRatio() >= @targetScrollRatio
+      @show()
+    else
+      @hide()
+
   render: ->
     @$el.html @template(@)
     @
@@ -24,13 +31,6 @@ class Gaslight.Views.ShareView extends Backbone.View
 
   mobile: ->
     @viewportEl.width() < @mobileWidth
-
-  handleScroll: ->
-    return @deactivate() if @mobile()
-    if @currentScrollRatio() >= @targetScrollRatio
-      @show()
-    else
-      @hide()
 
   show: ->
     return unless @active == true
