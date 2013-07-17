@@ -9,14 +9,3 @@
     = render(partial: 'player', locals: { post: post })
     = raw(post.html)
   %hr.divider
-
-- content_for :javascript do
-  :javascript
-    $(window).load(function(){
-      shareView = new Gaslight.Views.ShareView({
-        shareUrl: window.location,
-        targetEl: $('.post'),
-        viewportEl: $(window)
-      });
-      $('body').append(shareView.render().el)
-    });
