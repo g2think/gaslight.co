@@ -12,4 +12,4 @@
     - authors.each do |post|
       %li
         = link_to(post.author_name || "Other", posts_path(author: post.author))
-        (#{pluralize(post.post_count, 'posts')})
+        (#{pluralize(post.post_count, 'post')})
