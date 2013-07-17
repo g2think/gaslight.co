@@ -2,7 +2,6 @@ require 'rewrite'
 
 class PostsController < ApplicationController
 
-  before_filter :redirect_if_old_post
   respond_to :html, :rss, :json
   caches_page :show
 
@@ -35,6 +34,13 @@ class PostsController < ApplicationController
     respond_with posts, template: 'posts/index'
   end
 
+  def old
+    new_host = Rails.env.development? ? 'gaslight.dev' : 'gaslight.co'
+    new_slug = Rewrite.new_post_url(request.fullpath)
+    new_url = new_slug ? post_url(new_slug, host: new_host) : posts_url(host: new_host)
+    redirect_to new_url, status: 301
+  end
+
   protected
 
   def search_date
@@ -47,15 +53,6 @@ class PostsController < ApplicationController
 
   def items_per_page
     request.format == 'rss' ? 10 : 3
-  end
-
-  private
-
-  def redirect_if_old_post
-    new_host = Rails.env.development? ? 'gaslight.dev' : 'gaslight.co'
-    new_slug = Rewrite.new_post_url(request.fullpath)
-    new_url = new_slug ? post_url(new_slug, host: new_host) : posts_url(host: new_host)
-    redirect_to new_url, status: 301
   end
 end
 

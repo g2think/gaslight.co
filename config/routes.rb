@@ -14,7 +14,7 @@ Gaslight::Application.routes.draw do
   end
 
   get 'blog/:slug', to: 'posts#show'
-  get 'post/:id(/:slug)', to: 'posts#show' # handle old tumblr urls
+  get 'post/:id(/:slug)', to: 'posts#old' # handle old tumblr urls
 
   get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
 
