@@ -52,8 +52,10 @@ class PostsController < ApplicationController
   private
 
   def redirect_if_old_post
+    new_host = Rails.env.development? ? 'gaslight.dev' : 'gaslight.co'
     new_slug = Rewrite.new_post_url(request.fullpath)
-    redirect_to(post_url(new_slug, host: Rails.env.development? ? 'gaslight.dev' : 'gaslight.co'), status: 301) if new_slug.present?
+    new_url = new_slug ? post_url(new_slug, host: new_host) : posts_url(host: new_host)
+    redirect_to new_url, status: 301
   end
 end
 

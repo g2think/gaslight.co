@@ -12,6 +12,12 @@ describe "URL Rewriting" do
     context 'blog.gaslight.co' do
       let(:host) { 'blog.gaslight.co' }
 
+      it "redirects unknown posts to /blog" do
+        get "http://#{host}/post/i-made-this-up"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog')
+      end
+
       it "rewrites root requests to the new blog" do
         get "http://#{host}"
         response.response_code.should == 301
@@ -30,6 +36,12 @@ describe "URL Rewriting" do
 
       it 'redirects old tumblr posts to the new blog' do
         get "http://#{host}/post/54512786990/intermediate-ember-controller-concepts"
+        response.response_code.should == 301
+        response.location.should eq('http://gaslight.co/blog/intermediate-ember-controller-concepts')
+      end
+
+      it 'redirects old tumblr posts with params to the new blog' do
+        get "http://#{host}/post/54512786990?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+GaslightSoftwareBlog+%28Gaslight+Blog%29"
         response.response_code.should == 301
         response.location.should eq('http://gaslight.co/blog/intermediate-ember-controller-concepts')
       end
