@@ -9,7 +9,7 @@
     %title= content_for?(:title) ? content_for(:title) : "Gaslight: Ruby on Rails, iOS and JavaScript development"
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
-    = auto_discovery_link_tag(:rss, "http://gaslight.dev/blog")
+    = auto_discovery_link_tag(:rss, posts_url(format: :rss))
     = canonical_link_tag
     = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag "application"
