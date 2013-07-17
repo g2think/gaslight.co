@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def index
     self.posts = self.posts.written_by([params[:author]]) if params[:author]
     self.posts = self.posts.tagged_with([params[:tagged]]) if params[:tagged]
-    self.posts = self.posts.page(params[:page]).per(3)
+    self.posts = self.posts.page(params[:page]).per(items_per_page)
     respond_with posts
   end
 
@@ -48,6 +48,10 @@ class PostsController < ApplicationController
     Date.new(year, month, day)
   end
   helper_method :search_date
+
+  def items_per_page
+    request.format == 'rss' ? 10 : 3
+  end
 
   private
 
