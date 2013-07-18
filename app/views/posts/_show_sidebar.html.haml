@@ -1,14 +1,14 @@
 .columns.three.prepend-1.sidebar
   = render partial: 'search_form'
-  %h3 Tags
+  %h3.sidebar__heading Tags
   = tag_list(post.tags)
-  %h3 More
+  %h3.sidebar__heading More
   - if post.previous
     %p.sidebar__nav Previous: #{link_to(post.previous.title, post.previous)}
   - if post.next
     %p.sidebar__nav Next: #{link_to(post.next.title, post.next)}
   - if post.related.any?
-    %h4 More Like This
+    %h3.sidebar__heading More Like This
     %ul
       - post.related.each do |post|
         %li= link_to(post.title, post)
