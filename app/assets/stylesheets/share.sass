@@ -4,8 +4,13 @@
   right: 20px
   border: 1px solid #ddd
   overflow: hidden
+  opacity: 0
   @include transition(all 0.3s)
   @include border-radius(5px)
+
+.share--active
+  bottom: 20px
+  opacity: 1
 
 .share__header
   position: relative
@@ -36,9 +41,6 @@
 .share__body
   background: #fff
   padding: 20px
-
-.share--active
-  bottom: 20px
 
 %share__frame
   width: 300px
