@@ -23,8 +23,8 @@ Gaslight::Application.routes.draw do
   get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
 
   # catch all the pages
-  match '/:id', to: 'pages#show', as: :static
-  match '/home', to: 'pages#show', id: 'home', as: :home
+  get '/:id', to: 'pages#show', as: :static
+  get '/home', to: 'pages#show', id: 'home', as: :home
 
   # redirect to /home. Lets the app rewrite requests
   # and caches the page(s).
