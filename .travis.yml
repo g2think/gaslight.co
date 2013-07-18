@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - "1.9.3"
+  - "2.0.0"
 bundler_args: --local --without production
 script:
   - bundle exec rake assets:precompile
