@@ -17,7 +17,6 @@
 /tmp
 
 # Vendor Everything
-/bin/
 /vendor/ruby/
 
 # Ignore precompiled assets, pages
