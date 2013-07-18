@@ -86,6 +86,8 @@
     // less padding on blog posts
     #main
       padding: 50px 10px
+  .post__title
+    font-size: 20px
   .post__body
     h1
       font-size: $blog-mobile-heading-font-size
@@ -99,25 +101,6 @@
       font-size: $blog-mobile-heading-font-size * .5
     ul, ol
       margin-left: 1.5em
-  .post__title
-    width: 121%
-    padding-left: 20%
-    padding-right: 10%
-    padding-top: 20px
-  .post__avatar
-    position: relative
-    display: block
-    float: left
-    margin: 3px 0px 0px 0px
-    height: 35px
-    width: 35px
-  .post__author
-    margin-left: 1em
-    margin-top: 12px
-    display: inline-block
-  .post__body
-    margin-top: 20px
-
   .clientsList li
     display: block
     width: 100%
@@ -125,31 +108,13 @@
     height: 100%
     margin-bottom: 25px
 
-
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation: portrait)
-  .post
-    .post__title
-      width: 118.5%
-
-@media only screen and (min-width : 768px) and (max-width : 1279px)
-  .post
-    .post__title
-      padding-left: 15%
-      font-size: 30px
-    .post__avatar
-      position: relative 
-      float: left
-      margin-bottom: 10px
-    .post__author
-      margin-left: 1em
-      margin-top: 2em
-      display: inline-block
-
-@media only screen and (min-width : 1280px)
-
-  .post
-    .post__avatar
-      padding: 0px
-      position: absolute
-      left: 0
-      top: 50%
+@media only screen and (max-width : 1024px)
+  .post__avatar
+    top: auto
+    bottom: -50px
+    margin-left: 65px
+    height: 35px
+    width: 35px
+  .post__author
+    margin-top: 18px
+    margin-left: 45px 
