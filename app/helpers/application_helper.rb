@@ -25,4 +25,8 @@ module ApplicationHelper
       link_to(t.name, posts_path(tagged: t.name), class: 'tag')
     end.join(" ").html_safe
   end
+
+  def player_iframe(source)
+    %Q{<iframe src="#{source}" frameborder="0" allowtransparency="true" scrolling="no" width="500" height="30"></iframe>}
+  end
 end

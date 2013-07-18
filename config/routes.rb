@@ -11,6 +11,10 @@ Gaslight::Application.routes.draw do
       get :search
       get :archive
     end
+
+    member do
+      get :podcast_iframe
+    end
   end
 
   get 'blog/:slug', to: 'posts#show'

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   caches_page :show
 
   expose(:posts) { Post.published.by_publish_date }
-  expose(:post) { Post.published.find_by_slug(params[:slug]) }
+  expose(:post) { Post.published.find_by_slug(params[:slug] || params[:id]) }
   expose(:authors) { Post.authors }
   expose(:author) { Author.find_by_tumblr(params[:author]) }
 
@@ -39,6 +39,10 @@ class PostsController < ApplicationController
     new_slug = Rewrite.new_post_url(request.fullpath)
     new_url = new_slug ? post_url(new_slug, host: new_host) : posts_url(host: new_host)
     redirect_to new_url, status: 301
+  end
+
+  def podcast_iframe
+    respond_with post, layout: false
   end
 
   protected
