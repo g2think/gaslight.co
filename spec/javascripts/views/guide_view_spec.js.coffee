@@ -33,5 +33,3 @@ describe "GuideView", ->
       @guideView.render()
     it "should create a dot", ->
       @guideView.dot.should.be.defined
-    xit "should follow the line", ->
-      @guideView.dot.attr('follow').should.equal @guideView.line
