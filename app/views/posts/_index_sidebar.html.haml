@@ -3,9 +3,9 @@
   = link_to_unless_current('Recent Posts', posts_path)
   |
   = link_to_unless_current('Archive', archive_posts_path)
-  %h3 Tags
+  %h3.sidebar__header Tags
   = popular_tags(Post.popular_tags.limit(20))
-  %h3 Authors
+  %h3.sidebar__header Authors
   %ul
     - authors.each do |post|
       %li
