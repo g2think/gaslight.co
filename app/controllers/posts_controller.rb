@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
   expose(:posts) { Post.published.by_publish_date }
   expose(:post) { Post.published.find_by_slug(params[:slug] || params[:id]) }
+  expose(:post) { Post.published.find_by_slug(params[:slug]) }
+  expose(:popular_tags) { Post.tag_counts_on(:tags).limit(20) }
   expose(:authors) { Post.authors }
   expose(:author) { Author.find_by_tumblr(params[:author]) }
 

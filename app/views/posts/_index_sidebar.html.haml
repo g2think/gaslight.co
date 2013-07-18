@@ -4,7 +4,7 @@
   |
   = link_to_unless_current('Archive', archive_posts_path)
   %h3.sidebar__heading Tags
-  = popular_tags(Post.popular_tags.limit(20))
+  = popular_tag_links(popular_tags)
   %h3.sidebar__heading Authors
   %ul
     - authors.each do |post|

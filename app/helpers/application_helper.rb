@@ -16,11 +16,11 @@ module ApplicationHelper
 
   def tag_list(tags)
     tags.collect do |t|
-      link_to(t, posts_path(tagged: t), class: 'tag')
+      link_to(t, posts_path(tagged: t.name), class: 'tag')
     end.join(" ").html_safe
   end
 
-  def popular_tags(tags)
+  def popular_tag_links(tags)
     tags.collect do |t|
       link_to(t.name, posts_path(tagged: t.name), class: 'tag')
     end.join(" ").html_safe
