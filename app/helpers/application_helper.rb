@@ -22,7 +22,7 @@ module ApplicationHelper
 
   def popular_tag_links(tags)
     tags.collect do |t|
-      link_to(t.name, posts_path(tagged: t.name), class: 'tag')
+      link_to(t.name, posts_path(tagged: t.name), class: 'tag', data:{ count: t.count })
     end.join(" ").html_safe
   end
 

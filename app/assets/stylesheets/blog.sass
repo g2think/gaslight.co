@@ -1,6 +1,7 @@
 @import tango.min
 
 .tag
+  position: relative
   padding: 4px 8px
   font-size: 12px
   background-color: #eee
@@ -11,8 +12,25 @@
   @include border-radius(4px)
   @include transition-property(background-color)
   @include transition-duration(0.5s)
+  &[data-count]:after
+    position: absolute
+    content: attr(data-count)
+    text-align: center
+    color: #000
+    top: 0
+    right: 0
+    width: 0px
+    height: 100%
+    padding: 4px 0
+    background: #ccc
+    z-index: 1
+    overflow: hidden
+    @include transition(all 0.5s)
   &:hover
     background-color: #ddd
+    &[data-count]:after
+      width: 20px
+      right: -20px
 
 .sidebar
   border-left: 1px solid #eee
