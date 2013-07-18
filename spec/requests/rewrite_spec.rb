@@ -22,10 +22,6 @@ describe "URL Rewriting" do
         get "http://#{host}"
         response.response_code.should == 301
         response.location.should eq('http://gaslight.co/blog')
-
-        get "http://#{host}/"
-        response.response_code.should == 301
-        response.location.should eq('http://gaslight.co/blog')
       end
 
       it "rewrites old blog article requests to the new blog" do
@@ -84,7 +80,7 @@ describe "URL Rewriting" do
 
   context "training.gaslightsoftware.com" do
     it "rewrites old training requests to the new subdomain" do
-      get 'http://training.gaslightsoftware.com/post/12345'
+      get 'http://training.gaslightsoftware.com/workshop/12345'
       response.response_code.should == 301
       response.location.should match('training.gaslight.co')
     end
@@ -122,7 +118,7 @@ describe "URL Rewriting" do
     it "doesn't redirect requests to localhost:3000 to gaslight.co" do
       get 'http://localhost:3000/'
       response.should be_redirect
-      response.location.should match(%r|http://localhost/home|)
+      response.location.should match(%r|http://localhost:3000/home|)
     end
   end
 end
