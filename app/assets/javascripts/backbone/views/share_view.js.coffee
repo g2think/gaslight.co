@@ -3,7 +3,7 @@ class Gaslight.Views.ShareView extends Backbone.View
   template: JST["backbone/templates/share"]
   active: true
   mobileWidth: 768
-  targetScrollRatio: 0.5
+  targetScrollRatio: 0.75
 
   events:
     "click .share__deactivate": "deactivate"
