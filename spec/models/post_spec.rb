@@ -40,15 +40,17 @@ describe Post do
   end
 
   describe "related" do
-    let(:post) { FactoryGirl.create(:post, tags: ["cincinnati", "qcmerge", "culture"]) }
-    let(:similar_post) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
-    let!(:similar_post2) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
-    let!(:similar_post3) { FactoryGirl.create(:post, tags: ["cincinnati"]) } 
+    let(:post) { FactoryGirl.create(:post, tag_list: "cincinnati, qcmerge, culture") }
+    let(:similar_post) { FactoryGirl.create(:post, tag_list: "cincinnati") }
+    let!(:similar_post2) { FactoryGirl.create(:post, tag_list: "cincinnati") }
+    let!(:similar_post3) { FactoryGirl.create(:post, tag_list: "cincinnati") }
     it "returns similar posts" do
       post.related.should include similar_post
     end
     it "returns limit to x number of similar posts" do
-      post.related(2).count.should == 2
+      # this will make you a sad panda:
+      # https://github.com/mbleigh/acts-as-taggable-on/issues/139
+      post.related.load.should have(2).items
     end
   end
 

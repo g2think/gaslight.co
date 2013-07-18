@@ -40,8 +40,8 @@ class Post < ActiveRecord::Base
   validates_length_of :title, maximum: 255
 
   after_validation :update_html
-  attr_taggable :tags
 
+  acts_as_taggable
   acts_as_url :title, url_attribute: :slug, sync_url: true
 
   def to_param
@@ -54,16 +54,6 @@ class Post < ActiveRecord::Base
 
   def title
     read_attribute(:title) || ""
-  end
-
-  def tag_list
-    tags = self.tags
-    tags.empty? ? [] : tags.join(', ')
-  end
-
-  def tag_list=(list)
-    list.gsub!(/,\Z/, '')
-    self.tags = list
   end
 
   def next
@@ -80,7 +70,7 @@ class Post < ActiveRecord::Base
   end
 
   def related(limit = 10)
-    tagged_similar.limit(limit)
+    find_related_tags.limit(limit).to_a
   end
 
   def author_info

@@ -43,6 +43,13 @@ GIT
       actionpack (>= 3.0)
 
 GIT
+  remote: git://github.com/mbleigh/acts-as-taggable-on.git
+  revision: 2f2768f854324000ea28d441ef3c0a378158ed40
+  specs:
+    acts-as-taggable-on (2.4.2.pre)
+      rails (>= 3, < 5)
+
+GIT
   remote: git://github.com/milgner/compass-rails.git
   revision: c86e7fd9c2605c80816a2f64a3fb8b7c3a09e494
   branch: rails4
@@ -321,6 +328,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  acts-as-taggable-on!
   coffee-rails (~> 4.0.0)
   compass-rails!
   database_cleaner

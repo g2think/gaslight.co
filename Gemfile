@@ -19,13 +19,13 @@ gem 'pygments.rb', require: false
 
 gem 'foundation_rails_helper', github: 'sgruhier/foundation_rails_helper'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
-#gem 'rocket_tag', github: 'bradphelan/rocket_tag'
 
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'ransack',             github: 'ernie/ransack',         branch: 'rails-4'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'compass-rails',       github: 'milgner/compass-rails', branch: 'rails4'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 # Gems used only for assets and not required
 # in production environments by default.
