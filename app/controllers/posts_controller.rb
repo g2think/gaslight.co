@@ -52,7 +52,13 @@ class PostsController < ApplicationController
   helper_method :search_date
 
   def items_per_page
-    request.format == 'rss' ? 10 : 3
+    return 15 if request.format == 'rss'
+    index? ? 3 : 100
+  end
+
+  def index?
+    actions = %w(q tagged author year)
+    (params.keys & actions).none?
   end
 end
 
