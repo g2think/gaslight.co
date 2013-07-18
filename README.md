@@ -1,6 +1,6 @@
 # gaslight.co
 
-[![Stories in Ready](http://badge.waffle.io/gaslight/gaslight.co.png)](http://waffle.io/gaslight/gaslight.co)
+[![Code Climate](https://codeclimate.com/github/gaslight/gaslight.co.png)](https://codeclimate.com/github/gaslight/gaslight.co)
 [![Build Status](https://travis-ci.org/gaslight/gaslight.co.png?branch=master)](https://travis-ci.org/gaslight/gaslight.co)
 
 The Ruby on Rails application that powers [gaslight.co][gco].
