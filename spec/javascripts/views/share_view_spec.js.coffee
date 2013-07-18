@@ -2,40 +2,40 @@
 
 describe "ShareView", ->
   beforeEach ->
-    @post = $("<div style='height: 1000px;'></div>")
-    @body = $('body')
-    @body.height(400)
-    @body.append(@post)
+    @target = $("<div style='height: 1000px;'></div>")
+    @viewport = $("<div style='height: 400px; overflow: scroll;'></div>")
+    @viewport.append(@target)
+    $('body').append(@viewport)
 
     @shareView = new Gaslight.Views.ShareView
       shareUrl: "http://whatup.com"
-      viewportEl: @body
-      targetEl: @post
+      viewportEl: @viewport
+      targetEl: @target
 
   describe "default", ->
     it "shouldn't be active", ->
       expect(@shareView.$el.attr("class")).to.not.match /active/
 
   describe "srolling", ->
-    describe "less than 50%", ->
+    describe "less than 50% down the viewportEl", ->
       beforeEach ->
-        @body.scrollTop(50)
-        @body.trigger "scroll"
+        @viewport.scrollTop(50)
+        @viewport.trigger "scroll"
       it "doesn't shows the shareView", ->
         expect(@shareView.$el.attr("class")).to.not.match /active/
 
-    describe "more than 50%", ->
+    describe "more than 50% down the viewportEl", ->
       beforeEach ->
-        @body.scrollTop(400)
-        @body.trigger "scroll"
-      it "doesn't shows the shareView", ->
+        @viewport.scrollTop(500)
+        @viewport.trigger "scroll"
+      it "shows the shareView", ->
         expect(@shareView.$el.attr("class")).to.match /active/
 
     describe "on mobile", ->
       beforeEach ->
-        @body.width(300)
-        @body.scrollTop(400)
-        @body.trigger "scroll"
+        @viewport.width(300)
+        @viewport.scrollTop(400)
+        @viewport.trigger "scroll"
       it "doesn't show", ->
         expect(@shareView.$el.attr("class")).to.not.match /active/
 
