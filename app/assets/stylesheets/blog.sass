@@ -52,79 +52,72 @@ ul.post__list li
   margin-bottom: 10em
   &:last-of-type
     margin-bottom: 0
-  .post__header
-    margin-bottom: 1em
-    padding: 0.5em
-  .post__title
-    color: #fff
-    width: 112.5%
-    font-size: 30px
-    line-height: 1.2em
-    position: relative
-    margin-top: 0px
-    margin-bottom: 0.5em
-    text-transform: capitalize
-    background: $brand1
-    padding: 10px 20px 10px 65px
-    margin-left: -65px
-    border-top-right-radius: 3px
-    border-bottom-right-radius: 3px
-    float: right
-    a
-      font-weight: bold
-      color: #fff
-      @include transition-property(color)
-      @include transition-duration(0.5s)
-      &:hover
-        color: #eee
 
-  .post__time
-    &:before
-      content: "  \2022  "
-  .post__avatar
-    padding: 0px
-    +border-radius($avatar-size)
-    &.hide-for-medium-down
-      left: 0
-      top: 50%
-      margin-top: - ($avatar-size / 2)
-      margin-left: - ($avatar-size / 2)
-      width: ($avatar-size)
-      height: ($avatar-size)
-      width: $avatar-size
-      height: $avatar-size
-  .post__author
+.post__header
+  margin-bottom: 1.5em
+
+.post__title
+  color: #fff
+  font-size: 30px
+  line-height: 1.2em
+  position: relative
+  margin-top: 0px
+  margin-bottom: 0.5em
+  text-transform: capitalize
+  background: $brand1
+  padding: 10px 20px 10px 65px
+  margin-left: -65px
+  border-top-right-radius: 3px
+  border-bottom-right-radius: 3px
+  a
     font-weight: bold
-  .post__player
-    margin-bottom: 20px
-
-  .post__body
-    font-family: Helvetica, Arial, sans-serif
+    color: #fff
+    @include transition-property(color)
+    @include transition-duration(0.5s)
+    &:hover
+      color: #eee
+.post__time
+  &:before
+    content: "  \2022  "
+.post__avatar
+  position: absolute
+  left: 0
+  top: 50%
+  margin-top: - ($avatar-size / 2)
+  margin-left: - ($avatar-size / 2)
+  width: $avatar-size
+  height: $avatar-size
+  +border-radius($avatar-size)
+.post__author
+  font-weight: bold
+.post__player
+  margin-bottom: 20px
+.post__body
+  font-family: Helvetica, Arial, sans-serif
+  color: #333
+  margin-bottom: 4em
+  img
+    padding-bottom: 0.5em
+    &.small
+      max-width: 35%
+    &.wide
+      clear: both
+      width: 100%
+      margin-bottom: 1em
+  h1
+    font-size: $blog-mobile-heading-font-size
+    font-weight: bold
     color: #333
-    margin-bottom: 4em
-    img
-      padding-right: 0.5em
-      padding-bottom: 0.5em
-      &.small
-        max-width: 35%
-      &.wide
-        clear: both
-        width: 100%
-        margin-bottom: 1em
-    h1
-      font-size: $blog-mobile-heading-font-size
-      font-weight: bold
-      color: #333
-    h2
-      font-size: $blog-mobile-heading-font-size * .875
-    h3
-      font-size: $blog-mobile-heading-font-size * .75
-    h4
-      font-size: $blog-mobile-heading-font-size * .625
-    h5
-      font-size: $blog-mobile-heading-font-size * .5
-    h6
-      font-size: $blog-mobile-heading-font-size * .4
+  h2
+    font-size: $blog-mobile-heading-font-size * .875
+  h3
+    font-size: $blog-mobile-heading-font-size * .75
+  h4
+    font-size: $blog-mobile-heading-font-size * .625
+  h5
+    font-size: $blog-mobile-heading-font-size * .5
+  h6
+    font-size: $blog-mobile-heading-font-size * .4
   ul, ol,
     margin-left: 20px
   pre
@@ -154,13 +147,18 @@ ul.post__list li
     width: 50%
     height: auto
     float: left
+    padding-right: 0.5em
   .right-align
     width: 50%
     height: auto
     float: right
+    padding-left: 0.5em
   .center-align
     margin: 0 auto
     width: 50%
     height: auto
     display: block
+
+
+  
 
