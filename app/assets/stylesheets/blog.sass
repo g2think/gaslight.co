@@ -1,6 +1,6 @@
 @import tango.min
 
-$avatar-size:70px
+$avatar-size: 70px
 
 .tag
   padding: 4px 8px
@@ -78,9 +78,11 @@ ul.post__list li
     @include transition-duration(0.5s)
     &:hover
       color: #eee
+
 .post__time
   &:before
     content: "  \2022  "
+
 .post__avatar
   position: absolute
   left: 0
@@ -90,11 +92,14 @@ ul.post__list li
   width: $avatar-size
   height: $avatar-size
   @include border-radius($avatar-size)
+
 .post__author
   font-weight: bold
   display: inline-block
+
 .post__player
   margin-bottom: 20px
+
 .post__body
   font-family: Helvetica, Arial, sans-serif
   color: #333
@@ -161,7 +166,3 @@ ul.post__list li
     width: 50%
     height: auto
     display: block
-
-
-  
-
