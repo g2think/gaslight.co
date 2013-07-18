@@ -11,6 +11,7 @@
   text-shadow: 1px 1px #fff
   @include border-radius(4px)
   @include transition-property(background-color)
+  @include transition-property(border-radius)
   @include transition-duration(0.5s)
   &[data-count]:after
     position: absolute
@@ -22,12 +23,19 @@
     width: 0px
     height: 100%
     padding: 4px 0
-    background: #ccc
+    background: #57c0e8
     z-index: 1
     overflow: hidden
     @include transition(all 0.5s)
+    @include border-top-right-radius(3px)
+    @include border-bottom-right-radius(3px)
   &:hover
     background-color: #ddd
+    +border-top-right-radius(0px)
+    +border-bottom-right-radius(0px)
+    @include transition-property(border-radius)
+    @include transition-duration(0.5s)
+
     &[data-count]:after
       width: 20px
       right: -20px
