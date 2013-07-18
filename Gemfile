@@ -51,7 +51,6 @@ group :test do
 end
 
 group :staging, :production do
-  gem 'newrelic_rpm'
   gem 'rails_on_heroku'
 end
 
