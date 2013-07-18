@@ -37,7 +37,7 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails', '~> 2.9.0'
+  gem 'rspec-rails'
   gem 'dotenv'
   gem 'konacha'
 end
