@@ -14,7 +14,6 @@ gem 'pg'
 gem 'activeadmin'
 gem 'decent_exposure'
 
-gem 'tumblr_client', require: false
 gem 'redcarpet', require: false
 gem 'pygments.rb', require: false
 
