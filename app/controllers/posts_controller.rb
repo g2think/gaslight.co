@@ -3,7 +3,6 @@ require 'rewrite'
 class PostsController < ApplicationController
 
   respond_to :html, :rss, :json
-  caches_page :show
 
   expose(:posts) { Post.published.by_publish_date }
   expose(:post) { Post.published.find_by_slug(params[:slug] || params[:id]) }

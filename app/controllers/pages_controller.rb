@@ -1,6 +1,4 @@
 class PagesController < HighVoltage::PagesController
-  caches_page :show
-
   protected
 
   # FIXME: Where does this belong?
