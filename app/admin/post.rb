@@ -8,6 +8,10 @@ ActiveAdmin.register Post do
       @post = Post.new(published_at: Time.now)
       new!
     end
+
+    def permitted_params
+      params.permit(post: [:title, :body, :author, :audio_url, :slug, :tag_list, :published_at])
+    end
   end
 
   index do
