@@ -1,0 +1,9 @@
+language: ruby
+gemfile:
+  - gemfiles/rails30.gemfile
+  - gemfiles/rails31.gemfile
+  - gemfiles/rails32.gemfile
+rvm:
+  - 1.9.2
+  - 1.9.3
+bundler_args: --without development
