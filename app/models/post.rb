@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
   def self.published
-    where('posts.published_at is not null')
+    where('posts.published_at <= ?', Time.now)
   end
 
   def self.by_publish_date
@@ -91,7 +91,7 @@ class Post < ActiveRecord::Base
   end
 
   def published?
-    persisted? && published_at.present?
+    persisted? && published_at && published_at <= Time.now
   end
 
   private
