@@ -1,17 +1,14 @@
 !!! 5
-
-<!--[if lt IE 9]>    <html lang="en" class="crappy-browser"> <![endif]-->
+/[if lt IE 9] <html class="crappy-browser" lang="en">
 <!--[if gt IE 8]><!-->
-%html{ :lang => "en" }
-  <![endif]-->
-
+%html{lang: 'en'}
+  <!--<![endif]-->
   %head
-    <!--[if lt IE 9]>
-    = javascript_include_tag "html5shiv"
-    <![endif]-->
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
     %title= content_for?(:title) ? content_for(:title) : "Gaslight: Ruby on Rails, iOS and JavaScript development"
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no", name: "viewport"}/
     = auto_discovery_link_tag(:rss, posts_url(format: :rss))
     = favicon_link_tag "/assets/32x32icon.png"
     = stylesheet_link_tag "application"
