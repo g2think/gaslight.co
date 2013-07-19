@@ -1,10 +1,6 @@
 <% content_for(:title) { "Coffee Friday" } %>
-
-<% content_for :head do %>
-  <%= stylesheet_link_tag "coffee" %>
-  <%= javascript_include_tag "coffee" %>
-<% end %>
-
+<% content_for(:head) { stylesheet_link_tag "coffee" } %>
+<% content_for(:javascript) { javascript_include_tag "coffee" } %>
 
 <%= render partial: 'application/nav' %>
 
