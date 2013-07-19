@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
     column(:title) { |p| link_to(p.title, p) }
     column :author
     column :published
-    column(:published_at, sortable: :published_at) { |p| l(p.published_at, format: :nice) }
+    column(:published_at, sortable: :published_at) { |p| l(p.published_at, format: :nice) unless p.published_at.nil? }
     default_actions
   end
 
