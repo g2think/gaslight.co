@@ -86,6 +86,10 @@ class Post < ActiveRecord::Base
     author_info[:email]
   end
 
+  def author_google_plus_url
+    author_info[:google_plus]
+  end
+
   def published?
     persisted? && published_at.present?
   end

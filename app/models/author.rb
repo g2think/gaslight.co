@@ -22,6 +22,7 @@ class Author
           "github": "st23am",
           "tumblr": "st23am",
           "twitter": "st23am",
+          "google_plus": "https://plus.google.com/113980464332251201073",
           "avatar": "http://gaslight.co/assets/team/james.jpg",
           "email": "st23am@gmail.com"
         },
@@ -32,6 +33,7 @@ class Author
           "github": "superchris",
           "tumblr": "superchris",
           "twitter": "superchris",
+          "google_plus": "https://plus.google.com/105278019135556439960",
           "avatar": "http://gaslight.co/assets/team/chris_n.jpg",
           "email": "chris@gaslight.co"
         },
@@ -42,6 +44,7 @@ class Author
           "github": "joelturnbull",
           "tumblr": "joelturnbull",
           "twitter": "joelturnbull",
+          "google_plus": "https://plus.google.com/115808887678738471827",
           "avatar": "http://gaslight.co/assets/team/joel.jpg",
           "email": "joelbywan@gmail.com"
         },
@@ -52,6 +55,7 @@ class Author
           "github": "kclasita",
           "tumblr": "kclasita",
           "twitter": "kclasita",
+          "google_plus": "https://plus.google.com/109786282517591442020",
           "avatar": "http://gaslight.co/assets/team/kristin.jpg",
           "email": "kristin@gaslight.co"
         },
@@ -62,6 +66,7 @@ class Author
           "github": "rockwood",
           "tumblr": "rockwood",
           "twitter": "kevinrockwood",
+          "google_plus": "https://plus.google.com/107834020099389143258",
           "avatar": "http://gaslight.co/assets/team/kevin.jpg",
           "email": "kevin@rockwood.me"
         },
@@ -72,6 +77,7 @@ class Author
           "github": "agilous",
           "tumblr": "agilous",
           "twitter": "agilous",
+          "google_plus": "https://plus.google.com/112353017921364693428",
           "avatar": "http://gaslight.co/assets/team/bill.jpg",
           "email": "bill@probas.co"
         },
@@ -82,6 +88,7 @@ class Author
           "github": "mitchlloyd",
           "tumblr": "mitchlloyd",
           "twitter": "too_mitch",
+          "google_plus": "https://plus.google.com/100999189103181446446",
           "avatar": "http://gaslight.co/assets/team/mitch.jpg",
           "email": "mitch.lloyd@gmail.com"
         },
@@ -92,6 +99,7 @@ class Author
           "github": "pkananen",
           "tumblr": "pkananen",
           "twitter": "pkananen",
+          "google_plus": "https://plus.google.com/104950233167105177992",
           "avatar": "http://gaslight.co/assets/team/peter.jpg",
           "email": "pkananen@gmail.com"
         },
@@ -102,6 +110,7 @@ class Author
           "github": "TammyGambrel",
           "tumblr": "tammygambrel",
           "twitter": "SilversunTammy",
+          "google_plus": "https://plus.google.com/104316095268998369464",
           "avatar": "http://gaslight.co/assets/team/tammy.jpg",
           "email": "tammygambrel@gmail.com"
         },
@@ -112,6 +121,7 @@ class Author
           "github": "mguterl",
           "twitter": "mguterl",
           "tumblr": "mguterl",
+          "google_plus": "https://plus.google.com/100056476877658796590",
           "avatar": null,
           "email": "michael@gaslight.co"
         },
@@ -122,6 +132,7 @@ class Author
           "github": "xero6",
           "tumblr": "xero6",
           "twitter": "xero6",
+          "google_plus": "https://plus.google.com/117306236393751273259",
           "avatar": "http://gaslight.co/assets/team/dewayne.jpg",
           "email": "dewayne@xero6.com"
         },
@@ -132,6 +143,7 @@ class Author
           "github": "dougalcorn",
           "tumblr": "dougalcorn",
           "twitter": "dougalcorn",
+          "google_plus": "https://plus.google.com/110260569055404012124",
           "avatar": "http://gaslight.co/assets/team/doug.jpg",
           "email": "dougalcorn@gmail.com"
         },
@@ -152,6 +164,7 @@ class Author
           "github": "cdmwebs",
           "tumblr": "cdmwebs",
           "twitter": "cdmwebs",
+          "google_plus": "https://plus.google.com/104336110723163548668",
           "avatar": "http://gaslight.co/assets/team/chris_m.jpg",
           "email": "chrism@gaslight.co"
         },
@@ -172,6 +185,7 @@ class Author
           "twitter": "",
           "avatar": "",
           "tumblr": "nockitoff",
+          "google_plus": "https://plus.google.com/101218977426849961413",
           "email": "nockll@ucmail.uc.edu"
         }
       ]
