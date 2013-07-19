@@ -6,6 +6,10 @@ class Author
     people.find { |person| person[:tumblr] == handle }
   end
 
+  def self.all
+    people.collect { |person| person[:tumblr] }.sort
+  end
+
   private
 
   def self.json_hash
