@@ -1,2 +1,2 @@
-web: bundle exec thin start -p $PORT
+web: rackup -s puma -p $PORT
 

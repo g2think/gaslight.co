@@ -4,7 +4,6 @@ ruby '2.0.0'
 
 gem 'rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'thin'
 gem 'haml', '~> 4.0'
 gem 'haml-rails'
 gem 'high_voltage', '>= 1.2.0'
@@ -52,5 +51,6 @@ end
 
 group :staging, :production do
   gem 'rails_12factor'
+  gem 'puma'
 end
 
