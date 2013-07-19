@@ -2,7 +2,6 @@
 #= require jquery_ujs
 #= require raphael
 #= require mediaelement-and-player
-#= require vendor/hubspot.js
 #= require underscore
 #= require moment
 #= require backbone
