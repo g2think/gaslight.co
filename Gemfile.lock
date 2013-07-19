@@ -179,7 +179,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (1.2.0)
-    high_voltage (1.2.1)
+    high_voltage (1.2.3)
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.4)
@@ -341,7 +341,7 @@ DEPENDENCIES
   foundation_rails_helper!
   haml (~> 4.0)
   haml-rails
-  high_voltage (>= 1.2.0)
+  high_voltage
   inherited_resources!
   jquery-rails
   konacha
