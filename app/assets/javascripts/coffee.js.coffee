@@ -9,7 +9,7 @@ class Gaslight.Views.TaglineView extends Backbone.View
     easing: 'easeInOutExpo'
 
   activeBrand: 1
-    
+
   constructor: (options) ->
     super
     @$taglines = @$el.children()
@@ -29,8 +29,8 @@ class Gaslight.Views.TaglineView extends Backbone.View
       @animate newTagline, {left: '0%'}
 
   animate: (element, options, callback)->
-    $(element).stop().delay(@animation.delay).animate options, @animation.duration, @animation.easing, ->      
-      callback() if callback 
+    $(element).stop().delay(@animation.delay).animate options, @animation.duration, @animation.easing, ->
+      callback() if callback
 
   activate: (element)->
     @$taglines.removeClass('active')
@@ -44,3 +44,4 @@ class Gaslight.Views.TaglineView extends Backbone.View
 $ ->
   new Gaslight.Views.TaglineView
     el: '#headings'
+
