@@ -4,14 +4,14 @@
     <%= f.input :title %>
     <%= f.input :body, as: :hidden %>
     <li class="text input required">
-      <label class="label">Body</label>
+      <label class="label">Body<abbr class="required">*</abbr></label>
         <div id="editor"></div>
       </label>
     </li>
-    <%= f.input :audio_url %>
-    <%= f.input :slug %>
-    <%= f.input :tag_list %>
-    <%= f.input :published_at, as: :datetime %>
+    <%= f.input :audio_url, label: 'Audio File URL', hint: 'Only useful for Podcasts.' %>
+    <%= f.input :slug, hint: 'This is automatically created based on your title, but you can override it here.' %>
+    <%= f.input :tag_list, hint: 'Comma separated. Ex: "cincinnati, javascript"' %>
+    <%= f.input :published_at, as: :datetime, hint: 'You can set this to a future date, too! Anything prior to now is "published".' %>
   <% end %>
   <%= f.actions do %>
     <%= f.action :submit %>

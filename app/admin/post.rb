@@ -3,6 +3,11 @@ ActiveAdmin.register Post do
 
   controller do
     defaults finder: :find_by_slug
+
+    def new
+      @post = Post.new(published_at: Time.now)
+      new!
+    end
   end
 
   index do
