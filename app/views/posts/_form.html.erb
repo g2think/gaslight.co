@@ -8,6 +8,7 @@
         <div id="editor"></div>
       </label>
     </li>
+    <%= f.input :description, label: 'Description (TL;DR)', hint: 'A paragraph, maybe. This shows up when links are shared and on search engines.' %>
     <%= f.input :audio_url, label: 'Audio File URL', hint: 'Only useful for Podcasts.' %>
     <%= f.input :slug, hint: 'This is automatically created based on your title, but you can override it here.' %>
     <%= f.input :tag_list, hint: 'Comma separated. Ex: "cincinnati, javascript"' %>
