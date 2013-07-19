@@ -8,6 +8,5 @@ FactoryGirl.define do
     body { "# Heading\n\nThis is the body in markdown." }
     author "authornick"
     published_at Time.now
-    published true
   end
 end

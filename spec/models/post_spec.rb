@@ -4,11 +4,37 @@ describe Post do
   its(:published_on) { should == Date.today }
   its(:title) { should == "" }
   its(:tag_list) { should be_empty }
+  it { should_not be_published}
 
   describe 'validation' do
     it { should have(1).error_on(:title) }
     it { should have(1).error_on(:body) }
     it { should have(1).error_on(:author) }
+  end
+
+  describe 'publishing' do
+    subject { FactoryGirl.build(:post) }
+
+    context 'unsaved' do
+      it { should_not be_published }
+    end
+
+    context 'saved' do
+      before { subject.save! }
+      it { should be_published }
+    end
+
+    describe 'future posts' do
+      before { subject.published_at = 1.week.from_now }
+
+      context 'now' do
+        it { should_not be_published }
+      end
+
+      context 'in two weeks' do
+        it { should_not be_published }
+      end
+    end
   end
 
   describe 'rendering html' do

@@ -10,7 +10,7 @@ ActiveAdmin.register Post do
     column :id
     column(:title) { |p| link_to(p.title, p) }
     column :author
-    column :published
+    column('Published?') { |p| p.published? ? 'Yes' : 'No' }
     column(:published_at, sortable: :published_at) { |p| l(p.published_at, format: :nice) unless p.published_at.nil? }
     default_actions
   end
@@ -23,7 +23,7 @@ ActiveAdmin.register Post do
       row(:html) { raw post.html }
       row :to_param
       row :tag_list
-      row :published
+      row('Published?') { |p| p.published? ? 'Yes' : 'No' }
       row :published_at
       row :created_at
       row :updated_at

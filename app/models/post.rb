@@ -1,11 +1,11 @@
 class Post < ActiveRecord::Base
 
   def self.published
-    where(published: true)
+    where('posts.published_at is not null')
   end
 
   def self.by_publish_date
-    order('published_at desc')
+    order('posts.published_at desc')
   end
 
   def self.recent(max = 5)
@@ -26,14 +26,14 @@ class Post < ActiveRecord::Base
 
   def self.posted_on(year = nil, month = nil, day = nil)
     posts = published
-    posts = posts.where('extract(year  from published_at) = ?', year) unless year.nil?
-    posts = posts.where('extract(month from published_at) = ?', month) unless month.nil?
-    posts = posts.where('extract(day   from published_at) = ?', day) unless day.nil?
+    posts = posts.where('extract(year  from posts.published_at) = ?', year) unless year.nil?
+    posts = posts.where('extract(month from posts.published_at) = ?', month) unless month.nil?
+    posts = posts.where('extract(day   from posts.published_at) = ?', day) unless day.nil?
     posts
   end
 
   def self.authors
-    published.select('author, count(id) as post_count').group('author').order('post_count desc')
+    published.select('posts.author, count(posts.id) as post_count').group('posts.author').order('post_count desc')
   end
 
   validates_presence_of :title, :body, :author
@@ -57,11 +57,11 @@ class Post < ActiveRecord::Base
   end
 
   def next
-    Post.where("published_at > ?", published_at).order("published_at asc").first
+    Post.where("posts.published_at > ?", published_at).order("posts.published_at asc").first
   end
 
   def previous
-    Post.where("published_at < ?", published_at).order("published_at desc").first
+    Post.where("posts.published_at < ?", published_at).order("posts.published_at desc").first
   end
 
   def type
@@ -84,6 +84,10 @@ class Post < ActiveRecord::Base
 
   def author_email
     author_info[:email]
+  end
+
+  def published?
+    persisted? && published_at.present?
   end
 
   private
