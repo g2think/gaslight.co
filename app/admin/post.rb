@@ -5,7 +5,7 @@ ActiveAdmin.register Post do
     defaults finder: :find_by_slug
 
     def new
-      @post = Post.new(published_at: Time.now)
+      @post = Post.new(author: github_user.login, published_at: Time.now)
       new!
     end
 
