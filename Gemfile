@@ -13,6 +13,7 @@ gem 'rack-rewrite'
 gem 'pg'
 gem 'decent_exposure'
 gem 'stringex'
+gem 'asset_sync'
 
 gem 'redcarpet', require: false
 gem 'pygments.rb', require: false
