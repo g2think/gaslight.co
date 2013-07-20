@@ -1,6 +1,6 @@
 class PagesController < HighVoltage::PagesController
-  expose(:posts) { Post.published.by_publish_date.limit(4) }
-  expose(:podcasts) { Post.published.tagged('podcast').by_publish_date.limit(4) }
+  expose(:posts) { Post.articles.recent }
+  expose(:podcasts) { Post.podcasts.recent }
 
   protected
 

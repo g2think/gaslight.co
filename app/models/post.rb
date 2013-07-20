@@ -36,6 +36,14 @@ class Post < ActiveRecord::Base
     published.select('posts.author, count(posts.id) as post_count').group('posts.author').order('post_count desc')
   end
 
+  def self.podcasts
+    tagged_with('podcast')
+  end
+
+  def self.articles
+    tagged_with('podcast', exclude: true)
+  end
+
   validates_presence_of :title, :body, :author
   validates_length_of :title, maximum: 255
 
