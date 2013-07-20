@@ -27,6 +27,7 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'compass-rails',       github: 'milgner/compass-rails', branch: 'rails4'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'warden-github-rails', github: 'fphilipe/warden-github-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
