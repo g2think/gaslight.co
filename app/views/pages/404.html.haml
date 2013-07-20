@@ -1,0 +1,37 @@
+- content_for(:title) { "Gaslight: Not Found" }
+= render partial: 'application/nav'
+
+#main.container.row
+  %header.row.brand1
+    .headline.four.columns
+      %h1 Uh oh!<br/><strong>It's missing!</strong>
+
+    .intro.eight.columns
+      %h3 The page you were looking for doesn't exist.
+      %p
+        We're terribly sorry for the inconvenience, but we couldn't find the
+        page you were looking for. How about something else instead?
+
+  %p.lead.show-for-small
+    As a design and development shop, we're passionate about building your best
+    ideas. We partner with you to create custom software, web apps and mobile
+    apps. Let’s work together to create something that takes your business new
+    places.
+
+  %section.row.recent
+    %a.anchor{name: "recent"}
+    .eleven.columns.centered
+      %h2.title.brand1 Recent Activity
+      .row
+        .columns.four
+          %h3 Blog Posts
+          = render(partial: 'posts/post_list', locals: { posts: posts })
+        .columns.four
+          %h3 Podcasts
+          = render(partial: 'posts/post_list', locals: { posts: podcasts })
+        .columns.four
+          %h3 Video
+          = render partial: 'application/videos'
+
+= render partial: 'application/footer'
+
