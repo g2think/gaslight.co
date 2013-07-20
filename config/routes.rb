@@ -1,7 +1,6 @@
 Gaslight::Application.routes.draw do
 
   ActiveAdmin.routes(self)
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resource :contact, controller: :contact, only: :create
 
@@ -21,6 +20,9 @@ Gaslight::Application.routes.draw do
   get 'post/:id(/:slug)', to: 'posts#old' # handle old tumblr urls
 
   get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
+
+  get '/login' => 'sessions#create', as: :login
+  get '/logout' => 'sessions#destroy', as: :logout
 
   # catch all the pages
   get '/:id', to: 'pages#show', as: :static
