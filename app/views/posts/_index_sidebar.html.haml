@@ -1,5 +1,6 @@
 .columns.three.prepend-1.sidebar
   = render partial: 'search_form'
+  = render partial: 'admin'
   = link_to_unless_current('Recent Posts', posts_path)
   |
   = link_to_unless_current('Archive', archive_posts_path)

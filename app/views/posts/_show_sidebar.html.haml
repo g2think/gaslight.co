@@ -1,5 +1,6 @@
 .columns.three.prepend-1.sidebar
   = render partial: 'search_form'
+  = render partial: 'admin'
   %h3.sidebar__heading Tags
   = popular_tag_links(post.tag_counts)
   %h3.sidebar__heading More
