@@ -1,6 +1,8 @@
 Gaslight::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+  github_authenticate(team: :gaslight) do
+    ActiveAdmin.routes(self)
+  end
 
   resource :contact, controller: :contact, only: :create
 
