@@ -29,6 +29,9 @@ The Ruby on Rails application that powers [gaslight.co][gco].
 1. `git remote add production git@heroku.com:gaslight.git`
 1. `git push production master`
 
+Assets are pushed to S3 and deployed to CloudFront on deploy. You don't
+need to do anything special.
+
 ## CI
 
 We're using [Travis][tci].
