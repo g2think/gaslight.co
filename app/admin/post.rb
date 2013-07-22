@@ -10,7 +10,7 @@ ActiveAdmin.register Post do
     end
 
     def permitted_params
-      params.permit(post: [:title, :body, :author, :audio_url, :slug, :tag_list, :published_at])
+      params.permit(post: [:title, :body, :author, :audio_url, :slug, :tag_list, :published_at, :description])
     end
   end
 
