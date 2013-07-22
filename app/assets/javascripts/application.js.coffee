@@ -1,3 +1,4 @@
+#= require ./analytics
 #= require jquery
 #= require jquery_ujs
 #= require raphael
