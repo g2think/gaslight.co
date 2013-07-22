@@ -1,49 +1,51 @@
 @import tango.min
 
-.tag
-  color: #aaa
-  position: relative
-  padding: 4px 8px
-  font-size: 12px
-  border: 1px solid #ccc
-  display: inline-block
-  margin: 2px 0
-  font-weight: 600
-  // text-shadow: 1px 1px #fff
-  @include border-radius(4px)
-  @include transition-property(background-color)
-  @include transition-property(border-radius)
-  @include transition-duration(0.5s)
-  &[data-count]:after
-    position: absolute
-    content: attr(data-count)
-    text-align: center
-    color: #fff
-    font-weight: bold
-    top: 0
-    right: 0
-    width: 0px
-    height: 100%
-    padding: 4px 0
-    background: #57c0e8
-    z-index: 1
-    overflow: hidden
-    @include transition(all 0.5s)
-    @include border-top-right-radius(3px)
-    @include border-bottom-right-radius(3px)
-  &:hover
-    background-color: #ddd
-    border: none
-    margin-right: 20px
-    +border-top-right-radius(0px)
-    +border-bottom-right-radius(0px)
+.tag-container
+  min-width: 200px
+  width: 100%
+  .tag
+    color: #aaa
+    position: relative
+    padding: 4px 8px
+    font-size: 12px
+    border: 1px solid #ccc
+    display: inline-block
+    margin: 2px 0
+    font-weight: 600
+    @include border-radius(4px)
+    @include transition-property(background-color)
     @include transition-property(border-radius)
-    @include transition-property(margin-right)
     @include transition-duration(0.5s)
-
     &[data-count]:after
-      width: 20px
-      right: -20px
+      position: absolute
+      content: attr(data-count)
+      text-align: center
+      color: #fff
+      font-weight: bold
+      top: 0
+      right: 0
+      width: 0px
+      height: 100%
+      padding: 4px 0
+      background: #57c0e8
+      z-index: 1
+      overflow: hidden
+      @include transition(all 0.5s)
+      @include border-top-right-radius(3px)
+      @include border-bottom-right-radius(3px)
+    &:hover
+      background-color: #ddd
+      border: none
+      margin-right: 20px
+      +border-top-right-radius(0px)
+      +border-bottom-right-radius(0px)
+      @include transition-property(border-radius)
+      @include transition-property(margin-right)
+      @include transition-duration(0.5s)
+
+      &[data-count]:after
+        width: 20px
+        right: -20px
 
 .sidebar
   border-left: 1px solid #eee
