@@ -16,8 +16,6 @@
 - content_for(:javascript) do
   :javascript
 
-    #{post_analytics(post)}
-
     $(window).load(function(){
       shareView = new Gaslight.Views.ShareView({
         shareUrl: window.location,

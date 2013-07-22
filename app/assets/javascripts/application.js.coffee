@@ -1,6 +1,6 @@
-#= require ./analytics
 #= require jquery
 #= require jquery_ujs
+#= require ./analytics
 #= require raphael
 #= require mediaelement-and-player
 #= require underscore

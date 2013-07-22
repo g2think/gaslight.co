@@ -29,13 +29,4 @@ module ApplicationHelper
   def player_iframe(source)
     %Q{<iframe src="#{source}" frameborder="0" allowtransparency="true" scrolling="no" width="500" height="30"></iframe>}
   end
-
-  def post_analytics(post)
-    analytics = []
-    analytics.push "_gaq.push(['_setCustomVar',2,'Author','#{post.author}',3]);" if post.author.present?
-    post.tags.each do |tag|
-      analytics.push "_gaq.push(['_setCustomVar',1,'Tag','#{tag}',3]);"
-    end
-    analytics.join("\n")
-  end
 end
