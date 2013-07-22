@@ -6,7 +6,7 @@ $("meta[property='og:article:tag']").each(function(){
   _gaq.push(['_setCustomVar', 1, 'Tag', $(this).attr('content'), 3]);
 });
 
-$("meta[property='og:article:author']").each(function(){
+$("meta[property='author']").each(function(){
   _gaq.push(['_setCustomVar', 1, 'Author', $(this).attr('content'), 3]);
 });
 
