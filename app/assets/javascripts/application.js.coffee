@@ -9,8 +9,7 @@
 #= require backbone/gaslight
 
 track = (category, action, value = "") ->
-  if _gaq?
-    _gaq.push(['_trackEvent', category, action, value])
+  _gaq.push(['_trackEvent', category, action, value])
 
 $ ->
   $('#nav .toggle').on 'click touchstart', (event)->
@@ -24,6 +23,12 @@ $ ->
     if not ((event.metaKey or event.ctrlKey) or link.attr('target') is "_blank")
       event.preventDefault()
       setTimeout("document.location = '#{link.attr('href')}'", 100)
+
+  $("meta[property='og:article:tag']").each ->
+    track('Blog', 'Tag', $(this).attr('content'))
+
+  $("meta[property='author']").each ->
+    track('Blog', 'Author', $(this).attr('content'))
 
   $('audio').mediaelementplayer
     pluginPath: '/assets/'
