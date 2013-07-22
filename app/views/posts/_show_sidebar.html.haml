@@ -1,9 +1,9 @@
 .columns.three.prepend-1.sidebar
   = render partial: 'search_form'
   %h3.sidebar__heading Tags
-  = popular_tag_links(post.tag_counts)
-  %h3.sidebar__heading More
   .tag-container
+    = popular_tag_links(post.tag_counts)
+  %h3.sidebar__heading More
   - if post.previous
     %p.sidebar__nav Previous: #{link_to(post.previous.title, post.previous)}
   - if post.next
